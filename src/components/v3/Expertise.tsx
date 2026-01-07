@@ -41,19 +41,19 @@ export function Expertise() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section id="services" className="py-32 px-6 md:px-16 bg-white overflow-hidden">
-      <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+    <section id="services" className="py-20 md:py-32 px-4 md:px-16 bg-white overflow-hidden">
+      <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 items-start">
         
         {/* Title Block */}
-        <div className="lg:col-span-4 space-y-8 sticky top-32">
-          <div className="space-y-4">
-            <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40">Services</span>
-          <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
+        <div className="lg:col-span-4 space-y-6 md:space-y-8 lg:sticky lg:top-32">
+          <div className="space-y-3 md:space-y-4">
+            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40">Services</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
             Sessions for <br />
             <span className="italic font-light opacity-50 text-moss">Every Season.</span>
           </h2>
         </div>
-          <p className="text-slate/60 font-sans font-light leading-relaxed max-w-sm">
+          <p className="text-base md:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
             Whether you want a full hour to explore a beautiful park or just a quick 20-minute update for your holiday cards, we have a session that fits your family's needs. My goal is to make this the easiest photo session you've ever had.
           </p>
           <div className="pt-8">

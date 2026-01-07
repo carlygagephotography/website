@@ -64,7 +64,7 @@ export function FloatingInquiryForm() {
     <>
       {/* Floating Button */}
       {!isOpen && (
-        <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[9998]">
+        <div className="fixed right-4 bottom-6 md:right-6 md:top-1/2 md:-translate-y-1/2 z-[9998]">
           <button
             onClick={() => setIsOpen(true)}
             className="group bg-gradient-to-br from-slate via-slate to-slate/95 text-bone px-5 py-4 rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:scale-[1.03] transition-all duration-300 overflow-hidden border border-slate/30 relative"
@@ -131,9 +131,9 @@ export function FloatingInquiryForm() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 400 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed right-0 top-0 h-full w-full max-w-md bg-gradient-to-b from-bone via-bone to-bone/95 shadow-2xl z-[9998] overflow-y-auto"
+              className="fixed right-0 top-0 h-full w-full md:max-w-md bg-gradient-to-b from-bone via-bone to-bone/95 shadow-2xl z-[9998] overflow-y-auto"
             >
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 {/* Header with Value Proposition */}
                 <div className="mb-8">
                   <div className="flex items-center justify-between mb-4">

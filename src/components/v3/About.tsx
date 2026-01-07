@@ -9,9 +9,9 @@ export function About() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section id="about" className="py-40 bg-bone overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-6 md:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+    <section id="about" className="py-20 md:py-40 bg-bone overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 items-center">
           
           {/* Portrait Column */}
           <div className="lg:col-span-5 relative">
@@ -37,17 +37,17 @@ export function About() {
           </div>
 
           {/* Text Column */}
-          <div className="lg:col-span-7 space-y-12">
-            <div className="space-y-6">
-              <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40 block">The Artist</span>
-            <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
+          <div className="lg:col-span-7 space-y-8 md:space-y-12">
+            <div className="space-y-4 md:space-y-6">
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">The Artist</span>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
               Meet <br />
               <span className="italic font-light opacity-50 text-moss">Carly.</span>
             </h2>
             </div>
 
-            <div className="space-y-8 max-w-2xl">
-              <p className="text-xl text-slate/60 font-sans font-light leading-relaxed">
+            <div className="space-y-6 md:space-y-8 max-w-2xl">
+              <p className="text-lg md:text-xl text-slate/60 font-sans font-light leading-relaxed">
                 I know that getting the whole family ready for photos can feel like a lot of work—but I promise, once you arrive, I take care of the rest. For over 10 years, I've been helping DFW families relax, laugh, and actually enjoy their session.
               </p>
               

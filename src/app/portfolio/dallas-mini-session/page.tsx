@@ -32,23 +32,23 @@ export default function DallasMiniSessionPage() {
         <FloatingInquiryForm />
 
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-6 md:px-16">
+        <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-16">
           <div className="max-w-[1800px] mx-auto">
             <Link
               href="/#portfolios"
-              className="inline-flex items-center gap-4 text-slate/60 hover:text-slate transition-colors mb-12 group"
+              className="inline-flex items-center gap-3 md:gap-4 text-slate/60 hover:text-slate transition-colors mb-8 md:mb-12 group"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-[10px] uppercase tracking-[0.3em]">Back to Portfolio</span>
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.3em]">Back to Portfolio</span>
             </Link>
 
-            <div className="space-y-8 mb-16">
-              <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40 block">Mini Session</span>
-              <h1 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
+            <div className="space-y-6 md:space-y-8 mb-12 md:mb-16">
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">Mini Session</span>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
                 Dallas Mini <br />
                 <span className="italic font-light opacity-50 text-moss">Sessions.</span>
               </h1>
-              <p className="text-xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl">
                 Perfect for busy families who want beautiful photos without the time commitment. A quick, focused session that captures your family's authentic moments in just 20 minutes.
               </p>
             </div>
@@ -56,9 +56,9 @@ export default function DallasMiniSessionPage() {
         </section>
 
         {/* Tight Editorial Masonry Grid */}
-        <section className="px-6 md:px-16 pb-20">
+        <section className="px-4 md:px-16 pb-12 md:pb-20">
           <div className="max-w-[1800px] mx-auto">
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-3 md:gap-4">
               {images.map((image, i) => (
                 <div
                   key={image.src}

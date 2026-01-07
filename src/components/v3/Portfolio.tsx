@@ -58,23 +58,23 @@ export function Portfolio() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section id="portfolios" className="py-40 bg-bone overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-6 md:px-16 space-y-32">
+    <section id="portfolios" className="py-20 md:py-40 bg-bone overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-16 space-y-16 md:space-y-32">
         
         {/* Editorial Header */}
-        <div className="max-w-4xl space-y-8">
-          <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40 block">The Portfolio</span>
-          <h2 className="text-[12vw] lg:text-[8vw] font-serif leading-[0.8] text-slate tracking-tighter">
+        <div className="max-w-4xl space-y-6 md:space-y-8">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">The Portfolio</span>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[8vw] font-serif leading-[0.85] md:leading-[0.8] text-slate tracking-tighter">
             Galleries Full <br />
             <span className="italic font-light opacity-50 text-moss">of Life.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl lg:text-2xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl">
             Real families, real moments, real joy. Every session is a celebration of what makes your family uniquely yours.
           </p>
         </div>
 
         {/* Artistic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-16 md:gap-y-32">
            {works.map((work, i) => (
              <motion.div
                 key={work.id}

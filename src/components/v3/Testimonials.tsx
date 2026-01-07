@@ -29,12 +29,12 @@ export function Testimonials() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section className="py-40 bg-white overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-6 md:px-16">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-24">
-          <div className="space-y-6">
-            <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40">Client Voices</span>
-            <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
+    <section className="py-20 md:py-40 bg-white overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-16">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12 mb-16 md:mb-24">
+          <div className="space-y-4 md:space-y-6">
+            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40">Client Voices</span>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
               What DFW Families <br />
               <span className="italic font-light opacity-50 text-moss">Are Saying.</span>
             </h2>
@@ -42,7 +42,7 @@ export function Testimonials() {
           <div className="h-[1px] w-24 bg-sand hidden md:block mt-20" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 md:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-24">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.author}

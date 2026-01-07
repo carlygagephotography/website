@@ -29,8 +29,8 @@ export function Navigation() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn(
-        "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-6 md:px-16",
-        isScrolled ? "py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" : "py-10 bg-transparent"
+        "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
+        isScrolled ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" : "py-6 md:py-10 bg-transparent"
       )}
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
@@ -79,7 +79,7 @@ export function Navigation() {
         </div>
 
         {/* Action */}
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8">
            <Link
              href={isHomePage ? "#contact" : "/#contact"}
              onClick={(e) => {
@@ -89,9 +89,10 @@ export function Navigation() {
                  window.location.href = "/#contact";
                }
              }}
-             className="bg-slate text-bone px-8 py-4 rounded-sm text-[10px] uppercase tracking-[0.4em] hover:bg-slate/90 transition-all shadow-lg shadow-slate/5 active:scale-95 inline-block"
+             className="bg-slate text-bone px-4 py-2.5 md:px-8 md:py-4 rounded-sm text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-slate/90 transition-all shadow-lg shadow-slate/5 active:scale-95 inline-block whitespace-nowrap"
            >
-             Book Your Session
+             <span className="hidden sm:inline">Book Your Session</span>
+             <span className="sm:hidden">Book</span>
            </Link>
         </div>
       </div>

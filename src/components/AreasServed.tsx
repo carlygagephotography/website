@@ -15,15 +15,15 @@ const suburbs = [
 
 export function AreasServed() {
   return (
-    <section className="py-24 bg-bone border-t border-sand/30">
-      <div className="max-w-[1800px] mx-auto px-6 md:px-16">
-        <div className="space-y-12">
-          <div className="space-y-4">
-            <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40 block">Local Relevance</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-slate">
+    <section className="py-16 md:py-24 bg-bone border-t border-sand/30">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-16">
+        <div className="space-y-8 md:space-y-12">
+          <div className="space-y-3 md:space-y-4">
+            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">Local Relevance</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate">
               Serving Our Neighbors in <span className="italic text-moss opacity-60">North Texas</span>
             </h2>
-            <p className="text-slate/60 font-sans font-light max-w-xl">
+            <p className="text-base md:text-lg text-slate/60 font-sans font-light max-w-xl">
               Based in Flower Mound, serving families throughout the Dallas-Fort Worth metroplex.
             </p>
           </div>

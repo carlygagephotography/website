@@ -24,23 +24,23 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-40 px-6 md:px-16 bg-bone overflow-hidden">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
+    <section id="faq" className="py-20 md:py-40 px-4 md:px-16 bg-bone overflow-hidden">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
         
         {/* FAQ Header */}
-        <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-40 h-fit">
-          <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40 block">The Specifics</span>
-          <h2 className="text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
+        <div className="lg:col-span-5 space-y-6 md:space-y-8 lg:sticky lg:top-40 h-fit">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">The Specifics</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
             Common <br />
             <span className="italic font-light opacity-50 text-clay">Questions.</span>
           </h2>
-          <p className="text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
+          <p className="text-base md:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
             Everything you need to know about preparing for your legacy portrait session.
           </p>
         </div>
 
         {/* FAQ Items - Not an accordion, more like an editorial list */}
-        <div className="lg:col-span-7 space-y-20">
+        <div className="lg:col-span-7 space-y-12 md:space-y-20">
           {faqs.map((faq, i) => (
             <motion.article
               key={i}

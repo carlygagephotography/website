@@ -69,21 +69,21 @@ export function Inquiry() {
   }
 
   return (
-    <section id="contact" className="py-40 px-6 md:px-16 bg-bone overflow-hidden">
+    <section id="contact" className="py-20 md:py-40 px-4 md:px-16 bg-bone overflow-hidden">
       <div className="max-w-[1800px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 items-start">
           
           {/* Form Header */}
-          <div className="lg:col-span-5 space-y-12">
-            <div className="space-y-6">
-              <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40">Get In Touch</span>
-              <h2 className="text-6xl md:text-[6vw] font-serif leading-[0.85] text-slate tracking-tighter">
+          <div className="lg:col-span-5 space-y-8 md:space-y-12">
+            <div className="space-y-4 md:space-y-6">
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40">Get In Touch</span>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[6vw] font-serif leading-[0.9] md:leading-[0.85] text-slate tracking-tighter">
                 Let's Tell <br />
                 <span className="italic font-light opacity-50 text-clay">Your Story.</span>
               </h2>
             </div>
             
-            <p className="text-xl text-slate/60 font-sans font-light max-w-md leading-relaxed">
+            <p className="text-lg md:text-xl text-slate/60 font-sans font-light max-w-md leading-relaxed">
               Ready to book or have a few questions? Fill out the form below and I'll get back to you within 24 hours.
             </p>
 
@@ -105,9 +105,9 @@ export function Inquiry() {
 
           {/* Actual Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-10 md:p-20 rounded-sm shadow-2xl border border-sand">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-white p-6 md:p-10 lg:p-20 rounded-sm shadow-2xl border border-sand">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 md:space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                   <div className="space-y-2 group">
                     <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Full Name *</label>
                     <input {...register("name")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="Alexandra Smith" required />
