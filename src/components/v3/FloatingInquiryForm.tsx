@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle } from "lucide-react";
+import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, Calendar } from "lucide-react";
 import { sendInquiry } from "@/app/actions/sendInquiry";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 const schema = z.object({
   name: z.string().min(2, "Please share your name").nonempty("Name is required"),
@@ -22,7 +21,7 @@ export function FloatingInquiryForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const { scrollToSection } = useSmoothScroll();
+  const [showBanner, setShowBanner] = useState(true);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: zodResolver(schema),
@@ -56,18 +55,57 @@ export function FloatingInquiryForm() {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Prominent Floating Button with Banner */}
       <AnimatePresence>
-        {!isOpen && (
+        {!isOpen && showBanner && (
+          <motion.div
+            initial={{ opacity: 0, y: 100, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 100, scale: 0.9 }}
+            className="fixed right-8 bottom-8 z-[9998] flex flex-col items-end gap-3"
+          >
+            {/* Value Proposition Banner */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-slate text-bone px-6 py-3 rounded-lg shadow-2xl max-w-xs"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <Sparkles className="w-4 h-4 text-moss" />
+                <span className="text-xs font-bold uppercase tracking-wider">Limited Availability</span>
+              </div>
+              <p className="text-sm font-sans">2026 sessions booking now</p>
+            </motion.div>
+
+            {/* Main CTA Button */}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsOpen(true)}
+              className="bg-moss text-bone px-8 py-5 rounded-full shadow-2xl hover:bg-moss/90 transition-all flex items-center gap-3 group relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Mail className="w-6 h-6 relative z-10" />
+              <span className="text-base font-sans font-semibold uppercase tracking-wider relative z-10">Book Your Session</span>
+              <Calendar className="w-5 h-5 relative z-10 opacity-70" />
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* Compact Button When Banner is Dismissed */}
+        {!isOpen && !showBanner && (
           <motion.button
             initial={{ opacity: 0, scale: 0.8, x: 100 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.8, x: 100 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed right-8 bottom-8 z-[9998] bg-slate text-bone px-6 py-4 rounded-full shadow-2xl hover:bg-slate/90 transition-all flex items-center gap-3 group"
+            className="fixed right-8 bottom-8 z-[9998] bg-moss text-bone px-6 py-4 rounded-full shadow-2xl hover:bg-moss/90 transition-all flex items-center gap-3 group"
           >
             <Mail className="w-5 h-5" />
-            <span className="text-sm font-sans uppercase tracking-wider">Inquire</span>
+            <span className="text-sm font-sans font-semibold uppercase tracking-wider">Inquire</span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -81,8 +119,11 @@ export function FloatingInquiryForm() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-slate/50 backdrop-blur-sm z-[9997]"
+              onClick={() => {
+                setIsOpen(false);
+                setShowBanner(false);
+              }}
+              className="fixed inset-0 bg-slate/60 backdrop-blur-md z-[9997]"
             />
             
             {/* Form Panel */}
@@ -90,30 +131,55 @@ export function FloatingInquiryForm() {
               initial={{ opacity: 0, x: 400 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 400 }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed right-0 top-0 h-full w-full max-w-md bg-bone shadow-2xl z-[9998] overflow-y-auto"
             >
               <div className="p-8">
-                {/* Header */}
-                <div className="flex items-center justify-between mb-8">
-                  <h3 className="text-2xl font-serif text-slate">Inquire About Your Session</h3>
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    className="w-10 h-10 rounded-full bg-slate/10 hover:bg-slate/20 flex items-center justify-center transition-colors"
-                  >
-                    <X className="w-5 h-5 text-slate" />
-                  </button>
+                {/* Header with Value Prop */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-serif text-slate mb-1">Let's Capture Your Story</h3>
+                      <p className="text-sm text-slate/60 font-sans">Quick & easy booking</p>
+                    </div>
+                    <button
+                      onClick={() => {
+                        setIsOpen(false);
+                        setShowBanner(false);
+                      }}
+                      className="w-10 h-10 rounded-full bg-slate/10 hover:bg-slate/20 flex items-center justify-center transition-colors"
+                    >
+                      <X className="w-5 h-5 text-slate" />
+                    </button>
+                  </div>
+                  
+                  {/* Trust Indicators */}
+                  <div className="flex items-center gap-4 text-xs text-slate/60 font-sans">
+                    <div className="flex items-center gap-1">
+                      <CheckCircle className="w-3 h-3 text-moss" />
+                      <span>24hr Response</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <CheckCircle className="w-3 h-3 text-moss" />
+                      <span>No Commitment</span>
+                    </div>
+                  </div>
                 </div>
 
                 {isSuccess ? (
                   <div className="flex flex-col items-center justify-center h-[60vh] text-center space-y-6">
-                    <div className="w-16 h-16 bg-moss/10 rounded-full flex items-center justify-center">
-                      <CheckCircle className="w-8 h-8 text-moss" />
-                    </div>
-                    <h4 className="text-xl font-serif text-slate">Thank You!</h4>
-                    <p className="text-slate/60 font-sans">I'll get back to you within 24 hours.</p>
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="w-20 h-20 bg-moss/10 rounded-full flex items-center justify-center"
+                    >
+                      <CheckCircle className="w-10 h-10 text-moss" />
+                    </motion.div>
+                    <h4 className="text-2xl font-serif text-slate">You're All Set!</h4>
+                    <p className="text-slate/60 font-sans max-w-xs">I'll get back to you within 24 hours to discuss your perfect session.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-[0.3em] text-slate/60 font-bold flex items-center gap-2">
                         <User className="w-3 h-3" />
@@ -121,7 +187,7 @@ export function FloatingInquiryForm() {
                       </label>
                       <input 
                         {...register("name")} 
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-slate transition-all font-serif text-sm" 
+                        className="w-full bg-white border-2 border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm" 
                         placeholder="Your name"
                         required
                       />
@@ -136,7 +202,7 @@ export function FloatingInquiryForm() {
                       <input 
                         {...register("email")} 
                         type="email"
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-slate transition-all font-serif text-sm" 
+                        className="w-full bg-white border-2 border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm" 
                         placeholder="your@email.com"
                         required
                       />
@@ -151,7 +217,7 @@ export function FloatingInquiryForm() {
                       <input 
                         {...register("phone")} 
                         type="tel"
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-slate transition-all font-serif text-sm" 
+                        className="w-full bg-white border-2 border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm" 
                         placeholder="555.000.0000"
                         required
                       />
@@ -165,7 +231,7 @@ export function FloatingInquiryForm() {
                       </label>
                       <select 
                         {...register("sessionType")} 
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-slate transition-all font-serif text-sm appearance-none cursor-pointer"
+                        className="w-full bg-white border-2 border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm appearance-none cursor-pointer"
                         required
                       >
                         <option value="">Select session type...</option>
@@ -185,7 +251,7 @@ export function FloatingInquiryForm() {
                       <input 
                         {...register("location")} 
                         type="text"
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-slate transition-all font-serif text-sm" 
+                        className="w-full bg-white border-2 border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm" 
                         placeholder="e.g. Flower Mound, Frisco..."
                         required
                       />
@@ -197,7 +263,7 @@ export function FloatingInquiryForm() {
                       <textarea 
                         {...register("message")} 
                         rows={3}
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-slate transition-all font-serif text-sm resize-none" 
+                        className="w-full bg-white border-2 border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm resize-none" 
                         placeholder="Tell me about your family..."
                       />
                       {errors.message && <span className="text-[10px] text-red-400">{errors.message.message as string}</span>}
@@ -206,17 +272,24 @@ export function FloatingInquiryForm() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-slate text-bone py-4 rounded-sm text-[11px] uppercase tracking-[0.5em] hover:bg-slate/90 transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+                      className="w-full bg-moss text-bone py-4 rounded-sm text-sm font-semibold uppercase tracking-wider hover:bg-moss/90 transition-all flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg"
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <Loader2 className="w-5 h-5 animate-spin" />
                           Sending...
                         </>
                       ) : (
-                        "Submit Inquiry"
+                        <>
+                          <Mail className="w-5 h-5" />
+                          Send My Inquiry
+                        </>
                       )}
                     </button>
+
+                    <p className="text-xs text-slate/50 text-center font-sans">
+                      By submitting, you agree to be contacted within 24 hours
+                    </p>
                   </form>
                 )}
               </div>
@@ -227,4 +300,3 @@ export function FloatingInquiryForm() {
     </>
   );
 }
-

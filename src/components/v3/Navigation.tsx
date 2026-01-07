@@ -40,7 +40,12 @@ export function Navigation() {
           onClick={(e) => {
             if (isHomePage) {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              const lenis = (window as any).lenis;
+              if (lenis) {
+                lenis.scrollTo(0, { duration: 1.5 });
+              } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
             }
             // Otherwise, just navigate to home page
           }}
