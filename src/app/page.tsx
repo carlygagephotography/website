@@ -41,10 +41,11 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      <main className="min-h-screen selection:bg-slate selection:text-bone">
-        
-        <Navigation />
-        <FloatingInquiryForm />
+      <div className="min-h-screen bg-bone md:bg-transparent">
+        <main className="min-h-screen selection:bg-slate selection:text-bone">
+          
+          <Navigation />
+          <FloatingInquiryForm />
 
         <Hero />
 
@@ -64,7 +65,8 @@ export default function Home() {
 
         <Footer />
 
-      </main>
+        </main>
+      </div>
     </ReactLenis>
   );
 }

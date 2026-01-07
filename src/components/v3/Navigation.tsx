@@ -25,19 +25,16 @@ export function Navigation() {
   }, [scrollY]);
 
   return (
-    <>
-      {/* Mobile background overlay to prevent content showing through above nav bar */}
-      <div className="fixed top-0 left-0 w-full h-[100vh] md:h-0 z-[998] bg-bone pointer-events-none" />
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className={cn(
-          "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
-          isScrolled 
-            ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
-            : "py-6 md:py-10 bg-transparent"
-        )}
-      >
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={cn(
+        "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
+        isScrolled 
+          ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
+          : "py-6 md:py-10 bg-transparent"
+      )}
+    >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
         {/* Brand */}
         <Link 
@@ -102,7 +99,6 @@ export function Navigation() {
         </div>
       </div>
     </motion.nav>
-    </>
   );
 }
 
