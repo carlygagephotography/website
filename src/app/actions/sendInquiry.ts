@@ -11,7 +11,7 @@ if (!resendApiKey) {
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export async function sendInquiry(formData: any) {
-  const { name, email, phone, location, message } = formData;
+  const { name, email, phone, sessionType, location, message } = formData;
 
   if (!resend) {
     console.error("Resend API key is not configured");
@@ -33,8 +33,9 @@ export async function sendInquiry(formData: any) {
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Session Type:</strong> ${sessionType}</p>
           <p><strong>Location:</strong> ${location}</p>
-          <p><strong>Vision:</strong></p>
+          <p><strong>Message:</strong></p>
           <p style="background: #f9f9f9; padding: 15px; border-radius: 5px;">${message}</p>
         </div>
       `,

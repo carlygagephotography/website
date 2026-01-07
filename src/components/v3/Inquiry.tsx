@@ -9,10 +9,11 @@ import { Loader2, ArrowRight, CheckCircle } from "lucide-react";
 import { sendInquiry } from "@/app/actions/sendInquiry";
 
 const schema = z.object({
-  name: z.string().min(2, "Please share your name"),
-  email: z.string().email("A valid email is required"),
-  phone: z.string().min(10, "A valid phone is required"),
-  location: z.string().min(1, "Please select a location"),
+  name: z.string().min(2, "Please share your name").nonempty("Name is required"),
+  email: z.string().email("A valid email is required").nonempty("Email is required"),
+  phone: z.string().min(10, "A valid phone is required").nonempty("Phone number is required"),
+  sessionType: z.string().min(1, "Please select a session type"),
+  location: z.string().min(1, "Please enter your location"),
   message: z.string().min(10, "Please share a bit more about your vision"),
 });
 
@@ -108,34 +109,38 @@ export function Inquiry() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   <div className="space-y-2 group">
-                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Full Name</label>
-                    <input {...register("name")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="Alexandra Smith" />
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Full Name *</label>
+                    <input {...register("name")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="Alexandra Smith" required />
                     {errors.name && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.name.message as string}</span>}
                   </div>
                   <div className="space-y-2 group">
-                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Email Address</label>
-                    <input {...register("email")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="hello@email.com" />
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Email Address *</label>
+                    <input {...register("email")} type="email" className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="hello@email.com" required />
                     {errors.email && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.email.message as string}</span>}
                   </div>
                 </div>
 
+                <div className="space-y-2 group">
+                  <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Session Type *</label>
+                  <select {...register("sessionType")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl appearance-none cursor-pointer" required>
+                    <option value="">Select a session type...</option>
+                    <option value="family">Family Session</option>
+                    <option value="maternity">Maternity</option>
+                    <option value="baby-announcement">Baby Announcement</option>
+                    <option value="mini">Mini Session</option>
+                  </select>
+                  {errors.sessionType && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.sessionType.message as string}</span>}
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   <div className="space-y-2 group">
-                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Phone Number</label>
-                    <input {...register("phone")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="555.000.0000" />
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Phone Number *</label>
+                    <input {...register("phone")} type="tel" className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="555.000.0000" required />
                     {errors.phone && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.phone.message as string}</span>}
                   </div>
                   <div className="space-y-2 group">
-                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Location</label>
-                    <select {...register("location")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl appearance-none cursor-pointer">
-                      <option value="">Select your city...</option>
-                      <option value="southlake">Southlake</option>
-                      <option value="highland-park">Highland Park</option>
-                      <option value="frisco">Frisco</option>
-                      <option value="flower-mound">Flower Mound</option>
-                      <option value="prosper">Prosper</option>
-                      <option value="other">Other DFW Area</option>
-                    </select>
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Location *</label>
+                    <input {...register("location")} type="text" className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="e.g. Flower Mound, Frisco, Southlake..." required />
                     {errors.location && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.location.message as string}</span>}
                   </div>
                 </div>

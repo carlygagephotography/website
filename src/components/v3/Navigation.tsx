@@ -32,16 +32,23 @@ export function Navigation() {
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
         {/* Brand */}
-        <Link href="/" className="group">
+        <Link 
+          href="/" 
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="group"
+        >
           <Logo variant="dark" />
         </Link>
 
         {/* Menu - Hidden on mobile, minimal on desktop */}
         <div className="hidden lg:flex items-center gap-16">
           {[
-            { label: "Experience", href: "#services" },
             { label: "Services", href: "#services" },
-            { label: "Portfolios", href: "#portfolios" },
+            { label: "About", href: "#about" },
+            { label: "Portfolio", href: "#portfolios" },
             { label: "Contact", href: "#contact" }
           ].map((item) => (
             <Link 
