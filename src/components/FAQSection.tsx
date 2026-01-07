@@ -5,8 +5,8 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    question: "Do you travel for sessions outside of Dallas-Fort Worth?",
-    answer: "Yes, Carly Gage Photography is based in Southlake but frequently serves families in Frisco, Flower Mound, Highland Park, and Plano. Travel fees may apply for locations beyond a 30-mile radius of DFW Airport."
+    question: "Do you serve areas outside of Flower Mound?",
+    answer: "Yes! While we are based in Flower Mound, we serve families throughout the DFW metroplex including Frisco, Southlake, Highland Park, Plano, and surrounding areas. Sessions are available in these locations."
   },
   {
     question: "When is the best time to book our family session?",

@@ -24,7 +24,7 @@ export function AreasServed() {
               Serving Our Neighbors in <span className="italic text-moss opacity-60">North Texas</span>
             </h2>
             <p className="text-slate/60 font-sans font-light max-w-xl">
-              We are based in Flower Mound and love traveling to meet families all over the metroplex.
+              Based in Flower Mound, serving families throughout the Dallas-Fort Worth metroplex.
             </p>
           </div>
 

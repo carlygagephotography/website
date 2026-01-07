@@ -17,8 +17,8 @@ const faqs = [
     answer: "I recommend comfortable, coordinating outfits that make you feel like your best self. We can discuss styling options during your consultation."
   },
   {
-    question: "Do you travel to other areas like Frisco or Southlake?",
-    answer: "Yes! While we are based in Flower Mound, we serve the entire DFW metroplex including Southlake, Plano, Highland Park, and McKinney. No travel fees for our preferred locations."
+    question: "Do you serve other areas like Frisco or Southlake?",
+    answer: "Yes! While we are based in Flower Mound, we serve the entire DFW metroplex including Southlake, Plano, Highland Park, and McKinney. Sessions are available throughout these areas."
   }
 ];
 
