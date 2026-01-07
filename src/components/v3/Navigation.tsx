@@ -30,7 +30,10 @@ export function Navigation() {
       animate={{ opacity: 1, y: 0 }}
       className={cn(
         "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
-        isScrolled ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" : "py-6 md:py-10 bg-transparent"
+        // On mobile: always solid background and taller, on desktop: transparent when not scrolled
+        isScrolled 
+          ? "py-4 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
+          : "py-5 md:py-10 bg-bone md:bg-transparent border-b border-sand md:border-b-0"
       )}
     >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
