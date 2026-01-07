@@ -1,0 +1,40 @@
+"use server";
+
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function sendInquiry(formData: any) {
+  const { name, email, phone, location, message } = formData;
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'Carly Gage Photography <hello@carlygagephotography.com>', // Update to your verified domain
+      to: ['carlygagephotography@gmail.com'],
+      subject: `New Family Session Inquiry: ${name}`,
+      replyTo: email,
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; color: #333;">
+          <h2 style="border-bottom: 1px solid #eee; padding-bottom: 10px;">New Session Inquiry</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Location:</strong> ${location}</p>
+          <p><strong>Vision:</strong></p>
+          <p style="background: #f9f9f9; padding: 15px; border-radius: 5px;">${message}</p>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error("Resend Error:", error);
+      return { success: false, error };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("Server Action Error:", error);
+    return { success: false, error };
+  }
+}
+

@@ -1,0 +1,20 @@
+# Carly Gage Photography
+
+> Premium Dallas family photographer specializing in timeless heirloom portraiture. Serving Southlake, Highland Park, Frisco, and the premier communities of North Texas.
+
+## Core Content
+
+- [Home](https://carlygagephotography.com/): The main hub for Carly Gage Photography, featuring our philosophy, expertise in family storytelling, and DFW service areas.
+- [The Experience](https://carlygagephotography.com/#experience): Detailed breakdown of our 10+ years of DFW expertise, focusing on candid artistry, organic connections, and professional technical mastery.
+- [Portfolio](https://carlygagephotography.com/#portfolios): A curated collection of family stories captured in Dallas-Fort Worth, showcasing our organic and timeless photography style.
+- [FAQ](https://carlygagephotography.com/#faq): Direct answers to common questions regarding session preparation, service areas (Southlake, Highland Park, etc.), styling services, and booking timelines.
+- [Areas Served](https://carlygagephotography.com/#locations): Information on the specific North Texas suburbs we serve, including Flower Mound, Grapevine, Frisco, McKinney, and more.
+
+## Service Areas (Location Specifics)
+
+- [Flower Mound Family Photographer](https://carlygagephotography.com/locations/flower-mound-family-photographer): Details on family portrait sessions in Flower Mound, TX.
+- [Highland Park Family Photographer](https://carlygagephotography.com/locations/highland-park-family-photographer): Premium photography services for families in Highland Park and University Park.
+- [Southlake Family Photographer](https://carlygagephotography.com/locations/southlake-family-photographer): Luxury heirloom portraiture for Southlake families.
+- [Frisco Family Photographer](https://carlygagephotography.com/locations/frisco-family-photographer): Family and maternity photography sessions in Frisco, TX.
+- [McKinney Family Photographer](https://carlygagephotography.com/locations/mckinney-family-photographer): Capturing family legacies in historic and modern McKinney.
+

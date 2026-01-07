@@ -1,0 +1,166 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Loader2, ArrowRight, CheckCircle } from "lucide-react";
+import { sendInquiry } from "@/app/actions/sendInquiry";
+
+const schema = z.object({
+  name: z.string().min(2, "Please share your name"),
+  email: z.string().email("A valid email is required"),
+  phone: z.string().min(10, "A valid phone is required"),
+  location: z.string().min(1, "Please select a location"),
+  message: z.string().min(10, "Please share a bit more about your vision"),
+});
+
+export function Inquiry() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = async (data: any) => {
+    setIsSubmitting(true);
+    const result = await sendInquiry(data);
+    
+    if (result.success) {
+      setIsSuccess(true);
+    } else {
+      alert("Something went wrong. Please try again or email me directly at carlygagephotography@gmail.com");
+    }
+    
+    setIsSubmitting(false);
+  };
+
+  if (isSuccess) {
+    return (
+      <section className="min-h-[80vh] flex flex-col items-center justify-center bg-bone px-6">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="text-center space-y-8 max-w-xl"
+        >
+          <div className="w-20 h-20 bg-moss/10 rounded-full flex items-center justify-center mx-auto">
+            <CheckCircle className="w-10 h-10 text-moss" />
+          </div>
+          <h2 className="text-4xl md:text-6xl font-serif text-slate leading-tight">
+            Can't Wait to <br /> <span className="italic opacity-50">Meet You!</span>
+          </h2>
+          <p className="text-slate/60 font-sans font-light text-lg">
+            Thank you for reaching out! I personally review every inquiry and will be in touch within 24 hours to chat about your session.
+          </p>
+          <div className="pt-8">
+             <button onClick={() => setIsSuccess(false)} className="text-[10px] uppercase tracking-[0.4em] text-slate/40 border-b border-sand pb-1 hover:text-slate transition-colors">Return to Portfolio</button>
+          </div>
+        </motion.div>
+      </section>
+    );
+  }
+
+  return (
+    <section id="contact" className="py-40 px-6 md:px-16 bg-bone overflow-hidden">
+      <div className="max-w-[1800px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+          
+          {/* Form Header */}
+          <div className="lg:col-span-5 space-y-12">
+            <div className="space-y-6">
+              <span className="text-[10px] uppercase tracking-[0.6em] text-slate/40">Get In Touch</span>
+              <h2 className="text-6xl md:text-[6vw] font-serif leading-[0.85] text-slate tracking-tighter">
+                Let's Tell <br />
+                <span className="italic font-light opacity-50 text-clay">Your Story.</span>
+              </h2>
+            </div>
+            
+            <p className="text-xl text-slate/60 font-sans font-light max-w-md leading-relaxed">
+              Ready to book or have a few questions? Fill out the form below and I'll get back to you within 24 hours.
+            </p>
+
+            <div className="space-y-6 pt-12 border-t border-sand">
+               <div className="flex items-center gap-6">
+                  <div className="w-12 h-[1px] bg-sand" />
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-slate/40 font-bold">What to Expect</span>
+               </div>
+               <ul className="space-y-4">
+                  {["Quick Response", "Helpful Styling Tips", "Fun, Stress-Free Session", "Beautiful Images Delivered"].map(item => (
+                    <li key={item} className="text-xs uppercase tracking-[0.1em] text-slate/80 flex items-center gap-3">
+                       <div className="w-1 h-1 bg-moss rounded-full" />
+                       {item}
+                    </li>
+                  ))}
+               </ul>
+            </div>
+          </div>
+
+          {/* Actual Form */}
+          <div className="lg:col-span-7">
+            <div className="bg-white p-10 md:p-20 rounded-sm shadow-2xl border border-sand">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="space-y-2 group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Full Name</label>
+                    <input {...register("name")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="Alexandra Smith" />
+                    {errors.name && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.name.message as string}</span>}
+                  </div>
+                  <div className="space-y-2 group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Email Address</label>
+                    <input {...register("email")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="hello@email.com" />
+                    {errors.email && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.email.message as string}</span>}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                  <div className="space-y-2 group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Phone Number</label>
+                    <input {...register("phone")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="555.000.0000" />
+                    {errors.phone && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.phone.message as string}</span>}
+                  </div>
+                  <div className="space-y-2 group">
+                    <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Location</label>
+                    <select {...register("location")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl appearance-none cursor-pointer">
+                      <option value="">Select your city...</option>
+                      <option value="southlake">Southlake</option>
+                      <option value="highland-park">Highland Park</option>
+                      <option value="frisco">Frisco</option>
+                      <option value="flower-mound">Flower Mound</option>
+                      <option value="prosper">Prosper</option>
+                      <option value="other">Other DFW Area</option>
+                    </select>
+                    {errors.location && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.location.message as string}</span>}
+                  </div>
+                </div>
+
+                <div className="space-y-2 group">
+                  <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Tell me about your family!</label>
+                  <textarea {...register("message")} rows={4} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl resize-none" placeholder="Share a few details about your family..." />
+                  {errors.message && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.message.message as string}</span>}
+                </div>
+
+                <div className="pt-8">
+                  <button 
+                    disabled={isSubmitting}
+                    className="w-full bg-slate text-bone py-8 rounded-sm text-[11px] uppercase tracking-[0.5em] hover:bg-slate/90 transition-all flex items-center justify-center gap-4 group"
+                  >
+                    {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : (
+                      <>
+                        Let's Chat
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
