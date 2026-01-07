@@ -92,6 +92,14 @@ h1, h2, h3, h4 {
   background: var(--rh-slate);
 }
 
+/* Prevent overscroll on mobile to stop content showing above nav */
+@media (max-width: 768px) {
+  html, body {
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* Lenis Smooth Scroll Overrides */
 html.lenis {
   height: auto;

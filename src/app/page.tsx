@@ -41,8 +41,10 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      <div className="min-h-screen bg-bone md:bg-transparent">
-        <main className="min-h-screen selection:bg-slate selection:text-bone">
+      {/* Fixed background overlay for mobile to prevent content showing above nav */}
+      <div className="fixed top-0 left-0 right-0 bottom-0 bg-bone md:hidden z-[997] pointer-events-none" />
+      <div className="min-h-screen bg-bone md:bg-transparent relative">
+        <main className="min-h-screen selection:bg-slate selection:text-bone relative z-10">
           
           <Navigation />
           <FloatingInquiryForm />
