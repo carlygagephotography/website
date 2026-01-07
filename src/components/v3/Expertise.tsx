@@ -10,28 +10,28 @@ const pillars = [
   {
     id: "01",
     title: "Family Sessions",
-    titleLink: "/services/dallas-family-photography",
+    titleLink: "/portfolio/dallas-family-session",
     description: "One hour of fun at a beautiful location. We focus on play, laughter, and connection to get those genuine smiles. 40 edited images included.",
     icon: <Users className="w-5 h-5" />,
   },
   {
     id: "02",
     title: "Maternity",
-    titleLink: "/services/dallas-maternity-photography",
+    titleLink: "/portfolio/dallas-maternity-session",
     description: "Celebrate your journey with a relaxed one-hour session. Two outfit changes allowed to showcase your glow. Partners are always welcome.",
     icon: <Heart className="w-5 h-5" />,
   },
   {
     id: "03",
     title: "Baby Announcement",
-    titleLink: "/services/baby-announcement-photography",
+    titleLink: "/portfolio/dallas-baby-announcement",
     description: "Share your big news! A one-hour creative session to capture the excitement of your growing family. Perfect for social media and keepsakes.",
     icon: <Baby className="w-5 h-5" />,
   },
   {
     id: "04",
     title: "Mini Sessions",
-    titleLink: "/dallas-mini-sessions",
+    titleLink: "/portfolio/dallas-mini-session",
     description: "Short, sweet, and simple. A 20-minute session at a set location delivering 10 beautiful images. Perfect for milestones and busy families.",
     icon: <Timer className="w-5 h-5" />,
   }
