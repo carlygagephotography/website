@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
@@ -12,6 +13,8 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
   const { handleAnchorClick } = useSmoothScroll();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   
   // Transition background and padding on scroll
   useEffect(() => {
@@ -35,8 +38,11 @@ export function Navigation() {
         <Link 
           href="/" 
           onClick={(e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (isHomePage) {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            // Otherwise, just navigate to home page
           }}
           className="group"
         >
@@ -53,8 +59,15 @@ export function Navigation() {
           ].map((item) => (
             <Link 
               key={item.label} 
-              href={item.href}
-              onClick={(e) => handleAnchorClick(e, item.href)}
+              href={isHomePage ? item.href : `/${item.href}`}
+              onClick={(e) => {
+                if (isHomePage) {
+                  handleAnchorClick(e, item.href);
+                } else {
+                  // Navigate to home page with anchor
+                  window.location.href = `/${item.href}`;
+                }
+              }}
               className="text-[10px] uppercase tracking-[0.3em] font-sans text-slate/60 hover:text-slate transition-colors relative group"
             >
               {item.label}
@@ -66,8 +79,14 @@ export function Navigation() {
         {/* Action */}
         <div className="flex items-center gap-8">
            <Link
-             href="#contact"
-             onClick={(e) => handleAnchorClick(e, "#contact")}
+             href={isHomePage ? "#contact" : "/#contact"}
+             onClick={(e) => {
+               if (isHomePage) {
+                 handleAnchorClick(e, "#contact");
+               } else {
+                 window.location.href = "/#contact";
+               }
+             }}
              className="bg-slate text-bone px-8 py-4 rounded-sm text-[10px] uppercase tracking-[0.4em] hover:bg-slate/90 transition-all shadow-lg shadow-slate/5 active:scale-95 inline-block"
            >
              Book Your Session

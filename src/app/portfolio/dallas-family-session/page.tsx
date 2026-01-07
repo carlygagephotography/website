@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, ArrowLeft, X } from "lucide-react";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 
 // Images sorted in shooting order
 const imageNumbers = [
@@ -31,6 +32,7 @@ export default function WellsFamilySessionPage() {
     <ReactLenis root>
       <main className="min-h-screen selection:bg-slate selection:text-bone bg-bone">
         <Navigation />
+        <FloatingInquiryForm />
 
         {/* Hero Section */}
         <section className="pt-32 pb-20 px-6 md:px-16">
