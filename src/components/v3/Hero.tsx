@@ -90,19 +90,21 @@ export function Hero() {
             <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />
           </motion.div>
 
-          {/* Floating Trust Signal */}
+          {/* Floating Testimonial Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, duration: 1.5 }}
-            className="absolute -bottom-10 -left-10 bg-white/90 backdrop-blur-md p-10 rounded-sm shadow-xl border border-sand hidden xl:block"
+            className="absolute -bottom-10 -left-10 bg-white/90 backdrop-blur-md p-10 rounded-sm shadow-xl border border-sand hidden xl:block w-[550px]"
           >
             <div className="space-y-4">
-               <span className="text-[9px] uppercase tracking-[0.5em] text-slate/40 block">Serving Flower Mound, Frisco, Southlake & Beyond</span>
-               <div className="flex flex-wrap gap-x-6 gap-y-2 max-w-[300px]">
-                  {cities.map(city => (
-                    <span key={city} className="text-[10px] uppercase tracking-wider text-slate/80">{city}</span>
-                  ))}
+               <span className="text-[9px] uppercase tracking-[0.5em] text-slate/40 block mb-2">What Families Say</span>
+               <p className="text-sm text-slate/70 font-sans font-light leading-relaxed italic">
+                 "Carly made our session so easy and fun. The photos captured our family perfectly—real smiles and genuine moments we'll treasure forever."
+               </p>
+               <div className="pt-2 border-t border-sand/30">
+                 <span className="text-[10px] uppercase tracking-wider text-slate/60">The Johnson Family</span>
+                 <span className="text-[10px] text-slate/40 block mt-1">Flower Mound</span>
                </div>
             </div>
           </motion.div>

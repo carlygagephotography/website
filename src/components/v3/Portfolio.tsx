@@ -15,7 +15,7 @@ const works = [
     pos: "50% 25%", 
     title: "Fun in the Field", 
     cat: "Family",
-    desc: "Sun-drenched laughter at Murrell Park.",
+    desc: "Golden hour moments with a growing family in the North Texas countryside.",
     alt: "Family photography session at Flower Mound park with kids playing and laughing",
     link: "/portfolio/dallas-family-session"
   },

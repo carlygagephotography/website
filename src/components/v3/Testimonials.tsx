@@ -9,7 +9,7 @@ const testimonials = [
     quote: "I was worried my toddler wouldn't cooperate, but Carly was magic! She played games with him and got the best smiles. We are obsessed with these photos.",
     author: "Sarah J.",
     location: "Flower Mound",
-    image: "/images/marquee-1.jpg"
+    image: "/images/Jordan-Bryce-and-Jenson021_websize.jpg"
   },
   {
     quote: "We do the Mini Sessions every fall. It's quick, easy, and the photos are always stunning. Highly recommend for busy families!",
@@ -21,7 +21,7 @@ const testimonials = [
     quote: "Relaxed, professional, and so kind. We felt comfortable immediately.",
     author: "Mike & Jessica",
     location: "Southlake",
-    image: "/images/marquee-4.jpg"
+    image: "/images/tiff-holiday-photos017.jpg"
   }
 ];
 
