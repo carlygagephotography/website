@@ -1,20 +1,51 @@
 # Carly Gage Photography
 
-> Premium Dallas family photographer specializing in timeless heirloom portraiture. Serving Southlake, Highland Park, Frisco, and the premier communities of North Texas.
+> Friendly Dallas family photographer based in Flower Mound, specializing in authentic, stress-free family sessions, maternity photos, and mini sessions. Serving families across the entire Dallas-Fort Worth metroplex.
 
 ## Core Content
 
-- [Home](https://carlygagephotography.com/): The main hub for Carly Gage Photography, featuring our philosophy, expertise in family storytelling, and DFW service areas.
-- [The Experience](https://carlygagephotography.com/#experience): Detailed breakdown of our 10+ years of DFW expertise, focusing on candid artistry, organic connections, and professional technical mastery.
-- [Portfolio](https://carlygagephotography.com/#portfolios): A curated collection of family stories captured in Dallas-Fort Worth, showcasing our organic and timeless photography style.
-- [FAQ](https://carlygagephotography.com/#faq): Direct answers to common questions regarding session preparation, service areas (Southlake, Highland Park, etc.), styling services, and booking timelines.
-- [Areas Served](https://carlygagephotography.com/#locations): Information on the specific North Texas suburbs we serve, including Flower Mound, Grapevine, Frisco, McKinney, and more.
+- [Home](https://carlygage.com/): The main hub featuring services, portfolio galleries, and information about stress-free family photography sessions.
+- [Services](https://carlygage.com/#services): Four session types - Family Sessions, Maternity, Baby Announcement, and Mini Sessions with details on duration, images included, and locations.
+- [About](https://carlygage.com/#about): Meet Carly - patient, playful photographer who captures real family moments in Flower Mound, Frisco, Southlake, and throughout DFW.
+- [Portfolio](https://carlygage.com/#portfolios): Real families, real moments, real joy. Galleries showcasing authentic family photography.
+- [Contact](https://carlygage.com/#contact): Inquiry form to book sessions or ask questions. Quick response within 24 hours.
+- [FAQ](https://carlygage.com/#faq): Common questions about session timing, locations, what to wear, and service areas.
 
-## Service Areas (Location Specifics)
+## Portfolio Galleries
 
-- [Flower Mound Family Photographer](https://carlygagephotography.com/locations/flower-mound-family-photographer): Details on family portrait sessions in Flower Mound, TX.
-- [Highland Park Family Photographer](https://carlygagephotography.com/locations/highland-park-family-photographer): Premium photography services for families in Highland Park and University Park.
-- [Southlake Family Photographer](https://carlygagephotography.com/locations/southlake-family-photographer): Luxury heirloom portraiture for Southlake families.
-- [Frisco Family Photographer](https://carlygagephotography.com/locations/frisco-family-photographer): Family and maternity photography sessions in Frisco, TX.
-- [McKinney Family Photographer](https://carlygagephotography.com/locations/mckinney-family-photographer): Capturing family legacies in historic and modern McKinney.
+- [Dallas Family Session](https://carlygage.com/portfolio/dallas-family-session): Authentic family moments captured in natural settings.
+- [Dallas Maternity Session](https://carlygage.com/portfolio/dallas-maternity-session): Beautiful pregnancy portraits celebrating the journey.
+- [Dallas Baby Announcement](https://carlygage.com/portfolio/dallas-baby-announcement): Creative sessions for sharing exciting news.
+- [Dallas Mini Session](https://carlygage.com/portfolio/dallas-mini-session): Quick 20-minute sessions perfect for busy families.
 
+## Service Areas (Location Pages)
+
+- [Flower Mound Family Photographer](https://carlygage.com/locations/flower-mound-family-photographer): Based in Flower Mound, serving local families with beautiful park and natural area sessions.
+- [Frisco Family Photographer](https://carlygage.com/locations/frisco-family-photographer): Stress-free family sessions in Frisco's beautiful parks and community spaces.
+- [Southlake Family Photographer](https://carlygage.com/locations/southlake-family-photographer): Authentic, joyful photography for Southlake families.
+- [Plano Family Photographer](https://carlygage.com/locations/plano-family-photographer): Serving Plano families with warm, patient photography.
+- [McKinney Family Photographer](https://carlygage.com/locations/mckinney-family-photographer): Historic charm and natural beauty for McKinney family sessions.
+- [Grapevine Family Photographer](https://carlygage.com/locations/grapevine-family-photographer): Beautiful lake settings and community spaces in Grapevine.
+- [Coppell Family Photographer](https://carlygage.com/locations/coppell-family-photographer): Authentic, stress-free photography for Coppell families.
+- [Colleyville Family Photographer](https://carlygage.com/locations/colleyville-family-photographer): Warm, patient photography celebrating Colleyville families.
+- [Highland Park Family Photographer](https://carlygage.com/locations/highland-park-family-photographer): Serving Highland Park and University Park families.
+- [Prosper Family Photographer](https://carlygage.com/locations/prosper-family-photographer): Relaxed, fun photography for Prosper families.
+
+## Session Types
+
+**Family Sessions**: One hour at a beautiful location. Focus on play, laughter, and connection. 40 edited images included.
+
+**Maternity Sessions**: Relaxed one-hour session celebrating pregnancy. Two outfit changes allowed. Partners always welcome.
+
+**Baby Announcement**: One-hour creative session to capture excitement. Perfect for social media and keepsakes. 40 edited images.
+
+**Mini Sessions**: Short, sweet, and simple. 20-minute session delivering 10 beautiful images. Perfect for milestones and busy families.
+
+## Key Information
+
+- **Base Location**: Flower Mound, Texas
+- **Service Area**: Entire Dallas-Fort Worth metroplex
+- **Style**: Authentic, joyful, stress-free photography
+- **Approach**: Patient, playful, capturing real moments
+- **Response Time**: Within 24 hours for inquiries
+- **Booking**: Available for 2026 sessions
