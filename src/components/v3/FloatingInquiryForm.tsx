@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,6 +21,11 @@ export function FloatingInquiryForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: zodResolver(schema),
@@ -55,17 +60,23 @@ export function FloatingInquiryForm() {
   return (
     <>
       {/* Floating CTA - Single Elegant Button */}
-      <AnimatePresence>
-        {!isOpen && (
+      {isMounted && (
+        <AnimatePresence mode="wait">
+          {!isOpen && (
           <motion.button
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.05, x: -5 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed right-0 top-1/2 -translate-y-1/2 z-[9998] bg-moss text-bone px-6 py-8 rounded-l-2xl shadow-2xl hover:bg-moss/90 transition-all flex flex-col items-center gap-3 group relative overflow-hidden"
-            style={{ boxShadow: '-4px 0 20px rgba(0,0,0,0.15)' }}
+            className="fixed right-0 top-1/2 z-[9999] bg-moss text-bone px-6 py-8 rounded-l-2xl shadow-2xl hover:bg-moss/90 transition-all flex flex-col items-center gap-3 group relative overflow-hidden"
+            style={{ 
+              boxShadow: '-4px 0 20px rgba(0,0,0,0.15)',
+              transform: 'translateY(-50%)',
+              top: '50%'
+            }}
           >
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
             
@@ -86,8 +97,9 @@ export function FloatingInquiryForm() {
             {/* Arrow indicator */}
             <ChevronLeft className="w-5 h-5 relative z-10 opacity-70 group-hover:translate-x-[-2px] transition-transform" />
           </motion.button>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
+      )}
 
       {/* Floating Form Panel */}
       <AnimatePresence>
