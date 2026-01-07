@@ -144,10 +144,7 @@ export default function DallasMaternitySessionPage() {
                 href="/#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.location.href = "/";
-                  setTimeout(() => {
-                    scrollToSection("#contact");
-                  }, 100);
+                  window.location.href = "/#contact";
                 }}
                 className="group relative bg-slate text-bone px-12 py-6 rounded-sm text-[11px] uppercase tracking-[0.5em] overflow-hidden transition-all hover:pr-16 inline-flex items-center gap-4"
               >
