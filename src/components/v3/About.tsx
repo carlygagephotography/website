@@ -20,13 +20,13 @@ export function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className="relative aspect-[4/5] rounded-sm overflow-hidden shadow-editorial"
+              className="relative aspect-[4/5] rounded-sm overflow-hidden shadow-editorial group"
             >
               <Image
                 src="/images/planetblue038.jpg"
                 alt="Carly Gage - Flower Mound based Dallas family photographer specializing in heirloom portraiture"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 style={{ objectPosition: "50% 20%" }}
               />
               <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />
