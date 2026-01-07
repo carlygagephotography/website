@@ -20,8 +20,10 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-hook-form": "^7.69.0",
+    "react-photo-album": "^3.4.0",
     "resend": "^6.6.0",
     "tailwind-merge": "^3.4.0",
+    "yet-another-react-lightbox": "^3.28.0",
     "zod": "^4.2.1"
   },
   "devDependencies": {

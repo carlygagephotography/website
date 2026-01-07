@@ -40,16 +40,13 @@ export function Navigation() {
           onClick={(e) => {
             if (isHomePage) {
               e.preventDefault();
-              const lenis = (window as any).lenis;
-              if (lenis) {
-                lenis.scrollTo(0, { duration: 1.5 });
-              } else {
+              if (window.scrollY > 0) {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }
             // Otherwise, just navigate to home page
           }}
-          className="group"
+          className="group cursor-pointer"
         >
           <Logo variant="dark" />
         </Link>

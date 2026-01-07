@@ -11,6 +11,7 @@ import { FAQ } from "@/components/v3/FAQ";
 import { Footer } from "@/components/v3/Footer";
 import { AreasServed } from "@/components/AreasServed";
 import { About } from "@/components/v3/About";
+import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 import { useEffect } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
 
@@ -43,6 +44,7 @@ export default function Home() {
       <main className="min-h-screen selection:bg-slate selection:text-bone">
         
         <Navigation />
+        <FloatingInquiryForm />
 
         <Hero />
 
