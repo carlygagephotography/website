@@ -26,15 +26,20 @@ export function Inquiry() {
 
   const onSubmit = async (data: any) => {
     setIsSubmitting(true);
-    const result = await sendInquiry(data);
-    
-    if (result.success) {
-      setIsSuccess(true);
-    } else {
-      alert("Something went wrong. Please try again or email me directly at carlygagephotography@gmail.com");
+    try {
+      const result = await sendInquiry(data);
+      
+      if (result.success) {
+        setIsSuccess(true);
+      } else {
+        alert(result.error || "Something went wrong. Please try again or email me directly at carlygagephotography@gmail.com");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please email me directly at carlygagephotography@gmail.com");
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    setIsSubmitting(false);
   };
 
   if (isSuccess) {

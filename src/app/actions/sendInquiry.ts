@@ -2,10 +2,24 @@
 
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+
+if (!resendApiKey) {
+  console.error("RESEND_API_KEY is not set in environment variables");
+}
+
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export async function sendInquiry(formData: any) {
   const { name, email, phone, location, message } = formData;
+
+  if (!resend) {
+    console.error("Resend API key is not configured");
+    return { 
+      success: false, 
+      error: "Email service is not configured. Please contact carlygagephotography@gmail.com directly." 
+    };
+  }
 
   try {
     const { data, error } = await resend.emails.send({
