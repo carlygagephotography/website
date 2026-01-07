@@ -54,11 +54,6 @@
 
 html {
   background: var(--background);
-  /* Prevent content from showing through when scrolling on mobile */
-  @media (max-width: 768px) {
-    background: var(--rh-bone);
-    min-height: 100vh;
-  }
 }
 
 body {

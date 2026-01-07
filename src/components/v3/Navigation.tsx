@@ -25,9 +25,6 @@ export function Navigation() {
   }, [scrollY]);
 
   return (
-    <>
-      {/* Mobile-only top background strip to mask overscroll area above transparent nav */}
-      <div className="fixed top-0 left-0 w-full h-40 md:hidden bg-bone z-[999] pointer-events-none" />
       <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -102,7 +99,6 @@ export function Navigation() {
         </div>
       </div>
     </motion.nav>
-    </>
   );
 }
 
