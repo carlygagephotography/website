@@ -9,7 +9,7 @@ export async function sendInquiry(formData: any) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Carly Gage Photography <hello@carlygagephotography.com>', // Update to your verified domain
+      from: 'Carly Gage Photography <hello@carlygage.com>', // Verified domain
       to: ['carlygagephotography@gmail.com'],
       subject: `New Family Session Inquiry: ${name}`,
       replyTo: email,
