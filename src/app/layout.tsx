@@ -98,11 +98,10 @@ export const metadata: Metadata = {
   description: "Carly Gage is a Dallas family photographer based in Flower Mound. We specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico" },
+      { url: "/icon.svg?v=2", type: "image/svg+xml" },
     ],
-    shortcut: ["/icon.svg"],
-    apple: ["/icon.svg"],
+    shortcut: ["/icon.svg?v=2"],
+    apple: ["/icon.svg?v=2"],
   },
 };
 
