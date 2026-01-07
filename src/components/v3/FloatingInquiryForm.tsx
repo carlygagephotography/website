@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, Calendar } from "lucide-react";
+import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, Calendar, ChevronLeft } from "lucide-react";
 import { sendInquiry } from "@/app/actions/sendInquiry";
 
 const schema = z.object({
@@ -21,7 +21,6 @@ export function FloatingInquiryForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [showBanner, setShowBanner] = useState(true);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: zodResolver(schema),
@@ -55,57 +54,37 @@ export function FloatingInquiryForm() {
 
   return (
     <>
-      {/* Prominent Floating Button with Banner */}
+      {/* Floating CTA - Single Elegant Button */}
       <AnimatePresence>
-        {!isOpen && showBanner && (
-          <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 100, scale: 0.9 }}
-            className="fixed right-8 bottom-8 z-[9998] flex flex-col items-end gap-3"
-          >
-            {/* Value Proposition Banner */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="bg-slate text-bone px-6 py-3 rounded-lg shadow-2xl max-w-xs"
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <Sparkles className="w-4 h-4 text-moss" />
-                <span className="text-xs font-bold uppercase tracking-wider">Limited Availability</span>
-              </div>
-              <p className="text-sm font-sans">2026 sessions booking now</p>
-            </motion.div>
-
-            {/* Main CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setIsOpen(true)}
-              className="bg-moss text-bone px-8 py-5 rounded-full shadow-2xl hover:bg-moss/90 transition-all flex items-center gap-3 group relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Mail className="w-6 h-6 relative z-10" />
-              <span className="text-base font-sans font-semibold uppercase tracking-wider relative z-10">Book Your Session</span>
-              <Calendar className="w-5 h-5 relative z-10 opacity-70" />
-            </motion.button>
-          </motion.div>
-        )}
-
-        {/* Compact Button When Banner is Dismissed */}
-        {!isOpen && !showBanner && (
+        {!isOpen && (
           <motion.button
-            initial={{ opacity: 0, scale: 0.8, x: 100 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            exit={{ opacity: 0, scale: 0.8, x: 100 }}
-            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            whileHover={{ scale: 1.05, x: -5 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed right-8 bottom-8 z-[9998] bg-moss text-bone px-6 py-4 rounded-full shadow-2xl hover:bg-moss/90 transition-all flex items-center gap-3 group"
+            className="fixed right-0 top-1/2 -translate-y-1/2 z-[9998] bg-moss text-bone px-6 py-8 rounded-l-2xl shadow-2xl hover:bg-moss/90 transition-all flex flex-col items-center gap-3 group relative overflow-hidden"
+            style={{ boxShadow: '-4px 0 20px rgba(0,0,0,0.15)' }}
           >
-            <Mail className="w-5 h-5" />
-            <span className="text-sm font-sans font-semibold uppercase tracking-wider">Inquire</span>
+            <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+            
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center gap-2">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-xs font-bold uppercase tracking-wider">Limited</span>
+              </div>
+              <Mail className="w-6 h-6 relative z-10" />
+              <div className="text-center">
+                <p className="text-xs font-semibold uppercase tracking-wider">Book Your</p>
+                <p className="text-xs font-semibold uppercase tracking-wider">Session</p>
+              </div>
+              <div className="text-[10px] text-bone/80 font-sans mt-1">2026 Now</div>
+            </div>
+
+            {/* Arrow indicator */}
+            <ChevronLeft className="w-5 h-5 relative z-10 opacity-70 group-hover:translate-x-[-2px] transition-transform" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -119,14 +98,11 @@ export function FloatingInquiryForm() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => {
-                setIsOpen(false);
-                setShowBanner(false);
-              }}
+              onClick={() => setIsOpen(false)}
               className="fixed inset-0 bg-slate/60 backdrop-blur-md z-[9997]"
             />
             
-            {/* Form Panel */}
+            {/* Form Panel - Right Side */}
             <motion.div
               initial={{ opacity: 0, x: 400 }}
               animate={{ opacity: 1, x: 0 }}
@@ -139,14 +115,15 @@ export function FloatingInquiryForm() {
                 <div className="mb-8">
                   <div className="flex items-center justify-between mb-4">
                     <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <Sparkles className="w-4 h-4 text-moss" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-moss">2026 Sessions Open</span>
+                      </div>
                       <h3 className="text-2xl font-serif text-slate mb-1">Let's Capture Your Story</h3>
                       <p className="text-sm text-slate/60 font-sans">Quick & easy booking</p>
                     </div>
                     <button
-                      onClick={() => {
-                        setIsOpen(false);
-                        setShowBanner(false);
-                      }}
+                      onClick={() => setIsOpen(false)}
                       className="w-10 h-10 rounded-full bg-slate/10 hover:bg-slate/20 flex items-center justify-center transition-colors"
                     >
                       <X className="w-5 h-5 text-slate" />
@@ -154,7 +131,7 @@ export function FloatingInquiryForm() {
                   </div>
                   
                   {/* Trust Indicators */}
-                  <div className="flex items-center gap-4 text-xs text-slate/60 font-sans">
+                  <div className="flex items-center gap-4 text-xs text-slate/60 font-sans pt-3 border-t border-sand">
                     <div className="flex items-center gap-1">
                       <CheckCircle className="w-3 h-3 text-moss" />
                       <span>24hr Response</span>
