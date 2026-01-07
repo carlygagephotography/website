@@ -15,9 +15,9 @@ const suburbs = [
 
 export function AreasServed() {
   return (
-    <section className="py-16 md:py-24 bg-bone border-t border-sand/30">
+    <section className="py-12 md:py-16 lg:py-24 bg-bone border-t border-sand/30">
       <div className="max-w-[1800px] mx-auto px-4 md:px-16">
-        <div className="space-y-8 md:space-y-12">
+        <div className="space-y-6 md:space-y-8 lg:space-y-12">
           <div className="space-y-3 md:space-y-4">
             <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">Local Relevance</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate">

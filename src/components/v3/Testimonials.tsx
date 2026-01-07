@@ -29,9 +29,9 @@ export function Testimonials() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section className="py-20 md:py-40 bg-white overflow-hidden">
+    <section className="py-16 md:py-24 lg:py-40 bg-white overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-4 md:px-16">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12 mb-16 md:mb-24">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-6 md:gap-8 lg:gap-12 mb-12 md:mb-16 lg:mb-24">
           <div className="space-y-4 md:space-y-6">
             <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40">Client Voices</span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">

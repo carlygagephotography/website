@@ -24,23 +24,23 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-20 md:py-40 px-4 md:px-16 bg-bone overflow-hidden">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24">
+    <section id="faq" className="py-16 md:py-24 lg:py-40 px-4 md:px-16 bg-bone overflow-hidden">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24">
         
         {/* FAQ Header */}
-        <div className="lg:col-span-5 space-y-6 md:space-y-8 lg:sticky lg:top-40 h-fit">
+        <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:space-y-8 lg:sticky lg:top-40 h-fit">
           <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">The Specifics</span>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
             Common <br />
             <span className="italic font-light opacity-50 text-clay">Questions.</span>
           </h2>
-          <p className="text-base md:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
+          <p className="text-sm md:text-base lg:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
             Everything you need to know about preparing for your legacy portrait session.
           </p>
         </div>
 
         {/* FAQ Items - Not an accordion, more like an editorial list */}
-        <div className="lg:col-span-7 space-y-12 md:space-y-20">
+        <div className="lg:col-span-7 space-y-8 md:space-y-12 lg:space-y-20">
           {faqs.map((faq, i) => (
             <motion.article
               key={i}
@@ -48,15 +48,15 @@ export function FAQ() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.1, duration: 1 }}
               viewport={{ once: true }}
-              className="space-y-6 group"
+              className="space-y-4 md:space-y-6 group"
             >
-              <div className="flex items-start gap-8">
-                <span className="text-sm font-serif italic text-sand mt-1">0{i + 1}</span>
-                <div className="space-y-4">
-                  <h3 className="text-2xl font-serif text-slate group-hover:text-clay transition-colors duration-500">
+              <div className="flex items-start gap-4 md:gap-6 lg:gap-8">
+                <span className="text-xs md:text-sm font-serif italic text-sand mt-1 flex-shrink-0">0{i + 1}</span>
+                <div className="space-y-3 md:space-y-4">
+                  <h3 className="text-xl md:text-2xl font-serif text-slate group-hover:text-clay transition-colors duration-500">
                     {faq.question}
                   </h3>
-                  <p className="text-slate/60 font-sans font-light text-md leading-relaxed">
+                  <p className="text-sm md:text-base text-slate/60 font-sans font-light leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

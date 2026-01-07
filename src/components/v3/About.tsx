@@ -9,9 +9,9 @@ export function About() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section id="about" className="py-20 md:py-40 bg-bone overflow-hidden">
+    <section id="about" className="py-16 md:py-24 lg:py-40 bg-bone overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-4 md:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-center">
           
           {/* Portrait Column */}
           <div className="lg:col-span-5 relative">

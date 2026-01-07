@@ -41,8 +41,8 @@ export function Expertise() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section id="services" className="py-20 md:py-32 px-4 md:px-16 bg-white overflow-hidden">
-      <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-24 items-start">
+    <section id="services" className="py-16 md:py-24 lg:py-32 px-4 md:px-16 bg-white overflow-hidden">
+      <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start">
         
         {/* Title Block */}
         <div className="lg:col-span-4 space-y-6 md:space-y-8 lg:sticky lg:top-32">

@@ -73,9 +73,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8 pb-6 md:pb-8">
             <div className="flex flex-wrap gap-x-6 gap-y-3">
               {[
-                { label: "Experience", href: "#services" },
                 { label: "Services", href: "#services" },
-                { label: "Portfolios", href: "#portfolios" },
+                { label: "About", href: "#about" },
+                { label: "Portfolio", href: "#portfolios" },
                 { label: "Contact", href: "#contact" }
               ].map(item => (
                 <Link 

@@ -58,8 +58,8 @@ export function Portfolio() {
   const { handleAnchorClick } = useSmoothScroll();
   
   return (
-    <section id="portfolios" className="py-20 md:py-40 bg-bone overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-4 md:px-16 space-y-16 md:space-y-32">
+    <section id="portfolios" className="py-16 md:py-24 lg:py-40 bg-bone overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-4 md:px-16 space-y-12 md:space-y-20 lg:space-y-32">
         
         {/* Editorial Header */}
         <div className="max-w-4xl space-y-6 md:space-y-8">
