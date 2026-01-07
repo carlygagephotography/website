@@ -25,17 +25,19 @@ export function Navigation() {
   }, [scrollY]);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className={cn(
-        "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
-        // On mobile: always solid background and taller, on desktop: transparent when not scrolled
-        isScrolled 
-          ? "py-4 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
-          : "py-5 md:py-10 bg-bone md:bg-transparent border-b border-sand md:border-b-0"
-      )}
-    >
+    <>
+      {/* Mobile background overlay to prevent content showing through */}
+      <div className="fixed top-0 left-0 w-full h-20 md:h-0 z-[999] bg-bone pointer-events-none" />
+      <motion.nav
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className={cn(
+          "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
+          isScrolled 
+            ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
+            : "py-6 md:py-10 bg-bone/95 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none"
+        )}
+      >
       <div className="max-w-[1800px] mx-auto flex items-center justify-between">
         {/* Brand */}
         <Link 
@@ -100,6 +102,7 @@ export function Navigation() {
         </div>
       </div>
     </motion.nav>
+    </>
   );
 }
 
