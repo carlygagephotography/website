@@ -11,6 +11,7 @@ export function StickyMobileBar() {
   const { handleAnchorClick } = useSmoothScroll();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isPortfolioPage = pathname?.startsWith("/portfolio");
 
   return (
     <>
@@ -37,9 +38,9 @@ export function StickyMobileBar() {
                   window.location.href = "/#contact";
                 }
               }}
-              className="bg-slate text-bone px-6 py-2.5 rounded-sm text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-slate/90 transition-all active:scale-95 flex-shrink-0"
+              className="bg-slate text-bone px-4 py-2.5 rounded-sm text-[9px] md:text-[10px] uppercase tracking-[0.25em] md:tracking-[0.3em] font-bold hover:bg-slate/90 transition-all active:scale-95 flex-shrink-0 text-center"
             >
-              Book Now
+              {isPortfolioPage ? "Book a Session Like This" : "Book Now"}
             </Link>
           </div>
         </div>
