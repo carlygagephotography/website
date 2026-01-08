@@ -83,7 +83,7 @@ export function Inquiry() {
               </h2>
             </div>
             
-            <p className="text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light max-w-md leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light max-w-md leading-relaxed text-left">
               Ready to book or have a few questions? Fill out the form below and I'll get back to you within 24 hours.
             </p>
 
@@ -110,7 +110,7 @@ export function Inquiry() {
               Let's Tell <br />
               <span className="italic font-light opacity-50 text-clay">Your Story.</span>
             </h2>
-            <p className="text-sm text-slate/60 font-sans font-light leading-relaxed">
+            <p className="text-sm text-slate/60 font-sans font-light leading-relaxed text-left">
               Ready to book or have questions? Fill out the form below and I'll get back to you within 24 hours.
             </p>
           </div>

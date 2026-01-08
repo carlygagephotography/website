@@ -16,7 +16,76 @@ export function Hero() {
 
   return (
     <section className="relative w-full min-h-[100vh] md:h-[110vh] overflow-hidden bg-bone flex items-center pt-20 md:pt-24 lg:pt-20 pb-16 md:pb-20 lg:pb-0">
-      <div className="max-w-[1800px] mx-auto w-full px-4 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 lg:gap-16 relative z-10">
+      {/* Mobile: Image First Layout */}
+      <div className="md:hidden w-full">
+        <div className="relative h-[70vh] w-full overflow-hidden">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="relative w-full h-full"
+          >
+            <Image
+              src="/images/hero-stephanie-new.jpg"
+              alt="Dallas family photographer capturing joyful family moments"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "50% 25%" }}
+              priority
+              quality={100}
+            />
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate/60 via-slate/20 to-transparent" />
+          </motion.div>
+          {/* Text Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 pb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="space-y-3"
+            >
+              <div className="flex items-center gap-2 text-white/90 mb-2">
+                <span className="text-[8px] uppercase tracking-[0.4em]">DFW FAMILY & MATERNITY PHOTOGRAPHY</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-serif leading-[0.9] text-white tracking-tighter drop-shadow-lg">
+                Real Moments. <br />
+                <span className="italic font-light opacity-90">Beautifully Kept.</span>
+              </h1>
+              <p className="text-sm text-white/90 font-sans font-light leading-relaxed max-w-md pt-2">
+                Authentic, joyful photography that captures your family's real moments.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+        
+        {/* Content below image on mobile */}
+        <div className="px-4 py-8 space-y-6">
+          <div className="space-y-4">
+            <a 
+              href="#portfolios"
+              onClick={(e) => handleAnchorClick(e, "#portfolios")}
+              className="group relative bg-slate text-bone px-8 py-4 rounded-sm text-[10px] uppercase tracking-[0.4em] overflow-hidden transition-all inline-flex items-center gap-3 w-full justify-center active:scale-[0.98]"
+            >
+              <span className="relative z-10">See My Work</span>
+              <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
+              <div className="absolute inset-0 bg-moss transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+            </a>
+            
+            <div className="text-center">
+              <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40 block mb-1">Now Booking</span>
+              <span className="text-xs font-serif italic text-slate border-b border-sand pb-1">2026 Sessions</span>
+            </div>
+          </div>
+          
+          <p className="text-sm text-slate/60 font-sans font-light leading-relaxed text-left">
+            Based in Flower Mound, serving families across the entire Dallas-Fort Worth metroplex.
+          </p>
+        </div>
+      </div>
+
+      {/* Desktop: Original Layout */}
+      <div className="hidden md:block max-w-[1800px] mx-auto w-full px-4 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 lg:gap-16 relative z-10">
         
         {/* Left Content - Lead Focused */}
         <div className="lg:col-span-7 flex flex-col justify-center space-y-5 md:space-y-8 lg:space-y-12 relative z-20">
@@ -41,7 +110,7 @@ export function Hero() {
               Carly Gage Photography provides authentic, joyful family and maternity photography in Dallas-Fort Worth. Specializing in stress-free sessions that capture real connections, we serve Flower Mound, Frisco, Southlake, and all DFW families with a warm, patient approach.
             </div>
 
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light max-w-lg leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light max-w-lg leading-relaxed text-left">
               Authentic, joyful photography that captures your family's real moments. Based in Flower Mound, serving families across the entire Dallas-Fort Worth metroplex.
             </p>
           </motion.div>

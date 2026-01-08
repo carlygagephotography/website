@@ -68,13 +68,73 @@ export function Portfolio() {
             Galleries Full <br />
             <span className="italic font-light opacity-50 text-moss">of Life.</span>
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl lg:text-2xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl text-left">
             Real families, real moments, real joy. Every session is a celebration of what makes your family uniquely yours.
           </p>
         </div>
 
-        {/* Artistic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-16 md:gap-y-32">
+        {/* Mobile: Horizontal Carousel */}
+        <div className="md:hidden">
+          <div className="overflow-hidden relative">
+            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4">
+              {works.map((work, i) => (
+                <div
+                  key={work.id}
+                  className="flex-shrink-0 w-[85vw] snap-center"
+                >
+                  {work.link ? (
+                    <Link href={work.link} className="cursor-pointer block space-y-6">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-fog shadow-editorial">
+                         <Image 
+                            src={work.src} 
+                            alt={work.alt || work.title} 
+                            fill 
+                            className="object-cover transition-transform duration-[2s]"
+                            style={{ objectPosition: work.pos }}
+                            sizes="85vw"
+                         />
+                      </div>
+                      <div className="space-y-3">
+                         <div className="flex justify-between items-baseline">
+                            <h3 className="text-2xl font-serif text-slate tracking-tight">{work.title}</h3>
+                            <span className="text-[9px] uppercase tracking-[0.3em] text-slate/40">{work.cat}</span>
+                         </div>
+                         <p className="text-sm text-slate/50 font-sans font-light leading-relaxed text-left">
+                            {work.desc}
+                         </p>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="space-y-6">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-fog shadow-editorial">
+                         <Image 
+                            src={work.src} 
+                            alt={work.alt || work.title} 
+                            fill 
+                            className="object-cover transition-transform duration-[2s]"
+                            style={{ objectPosition: work.pos }}
+                            sizes="85vw"
+                         />
+                      </div>
+                      <div className="space-y-3">
+                         <div className="flex justify-between items-baseline">
+                            <h3 className="text-2xl font-serif text-slate tracking-tight">{work.title}</h3>
+                            <span className="text-[9px] uppercase tracking-[0.3em] text-slate/40">{work.cat}</span>
+                         </div>
+                         <p className="text-sm text-slate/50 font-sans font-light leading-relaxed text-left">
+                            {work.desc}
+                         </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop: Artistic Grid */}
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-16 md:gap-y-32">
            {works.map((work, i) => (
              <motion.div
                 key={work.id}
@@ -136,7 +196,7 @@ export function Portfolio() {
                       )}
                       <span className="text-[10px] uppercase tracking-[0.3em] text-slate/40">{work.cat}</span>
                    </div>
-                   <p className="text-sm text-slate/50 font-sans font-light leading-relaxed max-w-sm">
+                   <p className="text-sm text-slate/50 font-sans font-light leading-relaxed max-w-sm text-left">
                       {work.desc}
                    </p>
                 </div>
@@ -145,11 +205,11 @@ export function Portfolio() {
         </div>
 
         {/* Lead Gen Callout */}
-        <div className="pt-20 text-center flex flex-col items-center space-y-12">
+        <div className="pt-12 md:pt-20 text-center flex flex-col items-center space-y-8 md:space-y-12">
            <div className="h-[1px] w-40 bg-sand" />
            
-           <div className="space-y-8">
-              <h3 className="text-4xl font-serif text-slate tracking-tight max-w-xl mx-auto">
+           <div className="space-y-6 md:space-y-8">
+              <h3 className="text-3xl md:text-4xl font-serif text-slate tracking-tight max-w-xl mx-auto">
                 Ready to Preserve Your <span className="italic opacity-60">Family History?</span>
               </h3>
               

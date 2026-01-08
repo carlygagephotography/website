@@ -42,7 +42,44 @@ export function Testimonials() {
           <div className="h-[1px] w-24 bg-sand hidden md:block mt-20" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-24">
+        {/* Mobile: Horizontal Carousel */}
+        <div className="md:hidden">
+          <div className="overflow-hidden relative">
+            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4">
+              {testimonials.map((t, i) => (
+                <div
+                  key={t.author}
+                  className="flex-shrink-0 w-[85vw] snap-center"
+                >
+                  <div className="flex flex-col space-y-6 group">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-bone">
+                      <Image
+                        src={t.image}
+                        alt={`${t.author} - ${t.location} family photography testimonial`}
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        style={{ objectPosition: "50% 20%" }}
+                      />
+                      <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />
+                    </div>
+                    <div className="space-y-4">
+                      <p className="font-serif text-lg leading-relaxed text-slate/80 italic text-left">
+                        "{t.quote}"
+                      </p>
+                      <div className="pt-3 border-t border-sand">
+                        <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate text-left">{t.author}</p>
+                        <p className="text-[9px] uppercase tracking-[0.2em] text-slate/40 mt-1 text-left">{t.location}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop: Grid Layout */}
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-24">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.author}
@@ -63,12 +100,12 @@ export function Testimonials() {
                 <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />
               </div>
               <div className="space-y-6">
-                <p className="font-serif text-2xl leading-relaxed text-slate/80 italic">
+                <p className="font-serif text-2xl leading-relaxed text-slate/80 italic text-left">
                   "{t.quote}"
                 </p>
                 <div className="pt-4 border-t border-sand">
-                  <p className="text-[11px] uppercase tracking-[0.3em] font-bold text-slate">{t.author}</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-slate/40 mt-1">{t.location}</p>
+                  <p className="text-[11px] uppercase tracking-[0.3em] font-bold text-slate text-left">{t.author}</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-slate/40 mt-1 text-left">{t.location}</p>
                 </div>
               </div>
             </motion.div>
@@ -76,14 +113,14 @@ export function Testimonials() {
         </div>
 
         {/* Dynamic CTA */}
-        <div className="mt-32 pt-24 border-t border-sand/30 text-center space-y-12">
-           <h3 className="text-4xl md:text-5xl font-serif text-slate tracking-tight">
+        <div className="mt-16 md:mt-32 pt-12 md:pt-24 border-t border-sand/30 text-center space-y-8 md:space-y-12">
+           <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-slate tracking-tight">
              Ready to Capture <span className="italic opacity-60">Your Family's Joy?</span>
            </h3>
            <a 
               href="#contact"
               onClick={(e) => handleAnchorClick(e, "#contact")}
-              className="inline-block border border-slate text-slate px-16 py-8 rounded-sm text-[11px] uppercase tracking-[0.5em] hover:bg-slate hover:text-bone transition-all duration-700"
+              className="inline-block border border-slate text-slate px-10 py-5 md:px-16 md:py-8 rounded-sm text-[10px] md:text-[11px] uppercase tracking-[0.4em] md:tracking-[0.5em] hover:bg-slate hover:text-bone transition-all duration-700 active:scale-[0.98]"
             >
               Start the Conversation
             </a>

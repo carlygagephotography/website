@@ -23,7 +23,7 @@ export function AreasServed() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate">
               Serving Our Neighbors in <span className="italic text-moss opacity-60">North Texas</span>
             </h2>
-            <p className="text-base md:text-lg text-slate/60 font-sans font-light max-w-xl">
+            <p className="text-base md:text-lg text-slate/60 font-sans font-light max-w-xl text-left">
               Based in Flower Mound, serving families throughout the Dallas-Fort Worth metroplex.
             </p>
           </div>

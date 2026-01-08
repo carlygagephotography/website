@@ -62,9 +62,9 @@ export function FloatingInquiryForm() {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Button - Hidden on mobile (sticky bar used instead) */}
       {!isOpen && (
-        <div className="fixed right-4 bottom-6 md:right-6 md:top-1/2 md:-translate-y-1/2 z-[9998]">
+        <div className="hidden md:block fixed right-6 top-1/2 -translate-y-1/2 z-[9998]">
           <button
             onClick={() => setIsOpen(true)}
             className="group bg-gradient-to-br from-slate via-slate to-slate/95 text-bone px-5 py-4 rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:scale-[1.03] transition-all duration-300 overflow-hidden border border-slate/30 relative"

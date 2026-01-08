@@ -53,7 +53,7 @@ export function Expertise() {
             <span className="italic font-light opacity-50 text-moss">Every Season.</span>
           </h2>
         </div>
-          <p className="text-sm md:text-base lg:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
+          <p className="text-sm md:text-base lg:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm text-left">
             Whether you want a full hour to explore a beautiful park or just a quick 20-minute update for your holiday cards, we have a session that fits your family's needs. My goal is to make this the easiest photo session you've ever had.
           </p>
           <div className="pt-4 md:pt-6 lg:pt-8">

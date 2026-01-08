@@ -47,11 +47,11 @@ export function About() {
             </div>
 
             <div className="space-y-4 md:space-y-6 lg:space-y-8 max-w-2xl">
-              <p className="text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light leading-relaxed text-left">
                 I know that getting the whole family ready for photos can feel like a lot of work—but I promise, once you arrive, I take care of the rest. For over 10 years, I've been helping DFW families relax, laugh, and actually enjoy their session.
               </p>
               
-              <p className="text-sm md:text-base text-slate/50 font-sans font-light leading-relaxed">
+              <p className="text-sm md:text-base text-slate/50 font-sans font-light leading-relaxed text-left">
                 I don't expect your kids to be perfect; I expect them to be kids! Whether we are in Flower Mound, Frisco, or Southlake, my approach is patient and playful. I'm here to capture the chaos, the cuddles, and the love that makes your family yours.
               </p>
 

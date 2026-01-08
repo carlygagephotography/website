@@ -95,3 +95,27 @@ html.lenis {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+/* Hide scrollbar for horizontal carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Snap scrolling for horizontal carousels */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+.snap-center {
+  scroll-snap-align: center;
+}
+
+/* Mobile-specific: Left-align paragraphs for readability */
+@media (max-width: 768px) {
+  p {
+    text-align: left;
+  }
+}
