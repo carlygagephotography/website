@@ -170,7 +170,7 @@ export default function WellsFamilySessionPage() {
                       return (
                         <div key={`cta-${i}`} className="col-span-2 py-6 px-4 bg-bone rounded-sm border border-sand/30 my-2">
                           <p className="text-sm font-serif text-slate text-center mb-4 italic">
-                            Love this location? We shoot here in the Spring and Fall.
+                            Love this shoot? Let's create something beautiful for your family.
                           </p>
                           <Link
                             href="/#contact"
@@ -180,7 +180,7 @@ export default function WellsFamilySessionPage() {
                             }}
                             className="block w-full bg-slate text-bone text-center py-3 rounded-sm text-[9px] uppercase tracking-[0.35em] font-bold hover:bg-slate/90 transition-all active:scale-[0.98]"
                           >
-                            Inquire Now
+                            Reach Out
                           </Link>
                         </div>
                       );
@@ -226,7 +226,7 @@ export default function WellsFamilySessionPage() {
                         <div key={`cta-${i}`} className="break-inside-avoid mb-4">
                           <div className="bg-bone p-8 rounded-sm border border-sand/30">
                             <p className="text-base font-serif text-slate text-center mb-4 italic">
-                              Love this location? We shoot here in the Spring and Fall.
+                              Love this shoot? Let's create something beautiful for your family.
                             </p>
                             <Link
                               href="/#contact"
@@ -236,7 +236,7 @@ export default function WellsFamilySessionPage() {
                               }}
                               className="block w-full bg-slate text-bone text-center py-4 rounded-sm text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-slate/90 transition-all"
                             >
-                              Inquire Now
+                              Reach Out
                             </Link>
                           </div>
                         </div>
