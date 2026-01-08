@@ -60,7 +60,7 @@ const jsonLd = {
           "name": "What can we expect from our family portrait session?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Expect a relaxed, organic experience focused on genuine connection. We move beyond stiff posing to capture the natural interactions that define your family's unique story."
+            "text": "Expect a relaxed, organic experience focused on genuine connection. I move beyond stiff posing to capture the natural interactions that define your family's unique story."
           }
         },
         {
@@ -68,7 +68,7 @@ const jsonLd = {
           "name": "Which areas of North Texas do you serve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We primarily serve the premier communities of DFW, including Southlake, Highland Park, Frisco, Flower Mound, Prosper, Colleyville, Grapevine, McKinney, Coppell, and Plano."
+            "text": "I primarily serve the premier communities of DFW, including Southlake, Highland Park, Frisco, Flower Mound, Prosper, Colleyville, Grapevine, McKinney, Coppell, and Plano."
           }
         },
         {
@@ -76,7 +76,7 @@ const jsonLd = {
           "name": "Do you provide styling for the whole family?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Our boutique experience includes full styling consultation and access to our curated client wardrobe, featuring high-end pieces for mothers and children."
+            "text": "Yes. My boutique experience includes full styling consultation and access to my curated client wardrobe, featuring high-end pieces for mothers and children."
           }
         }
       ]
@@ -96,7 +96,7 @@ const jsonLd = {
 
 export const metadata: Metadata = {
   title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
-  description: "Carly Gage is a Dallas family photographer based in Flower Mound. We specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
+  description: "Carly Gage is a Dallas family photographer based in Flower Mound. I specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
   icons: {
     icon: [
       { url: "/icon.svg?v=2", type: "image/svg+xml" },

@@ -165,7 +165,7 @@ export default function DallasMiniSessionPage() {
                       return (
                         <div key={`cta-${i}`} className="col-span-2 py-6 px-4 bg-bone rounded-sm border border-sand/30 my-2">
                           <p className="text-sm font-serif text-slate text-center mb-4 italic">
-                            Love this location? We shoot here in the Spring and Fall.
+                            Love this shoot? Let's create something beautiful for your family.
                           </p>
                           <Link
                             href="/#contact"
@@ -221,7 +221,7 @@ export default function DallasMiniSessionPage() {
                         <div key={`cta-${i}`} className="break-inside-avoid mb-4">
                           <div className="bg-bone p-8 rounded-sm border border-sand/30">
                             <p className="text-base font-serif text-slate text-center mb-4 italic">
-                              Love this location? We shoot here in the Spring and Fall.
+                              Love this shoot? Let's create something beautiful for your family.
                             </p>
                             <Link
                               href="/#contact"

@@ -52,7 +52,7 @@ export function About() {
               </p>
               
               <p className="text-sm md:text-base text-slate/50 font-sans font-light leading-relaxed text-left">
-                I don't expect your kids to be perfect; I expect them to be kids! Whether we are in Flower Mound, Frisco, or Southlake, my approach is patient and playful. I'm here to capture the chaos, the cuddles, and the love that makes your family yours.
+                I don't expect your kids to be perfect; I expect them to be kids! Whether I'm shooting in Flower Mound, Frisco, or Southlake, my approach is patient and playful. I'm here to capture the chaos, the cuddles, and the love that makes your family yours.
               </p>
 
               <div className="pt-4 md:pt-6 lg:pt-8 flex flex-col gap-4 md:gap-6 lg:gap-8">

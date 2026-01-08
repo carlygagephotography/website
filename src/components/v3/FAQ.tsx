@@ -7,19 +7,19 @@ import { useState } from "react";
 const faqs = [
   {
     question: "My kids are super energetic/shy. Is that okay?",
-    answer: "Absolutely! I have years of experience working with all personality types. We follow their lead, play games, and take breaks. The best photos often happen when kids are just being themselves."
+    answer: "Absolutely! I have years of experience working with all personality types. I follow their lead, play games, and take breaks. The best photos often happen when kids are just being themselves."
   },
   {
     question: "Do you offer Mini Sessions year-round?",
-    answer: "We offer Mini Sessions on specific dates each season (Spring and Fall). Contact us to grab a spot before they sell out!"
+    answer: "I offer Mini Sessions on specific dates each season (Spring and Fall). Contact me to grab a spot before they sell out!"
   },
   {
     question: "What should we wear?",
-    answer: "I recommend comfortable, coordinating outfits that make you feel like your best self. We can discuss styling options during your consultation."
+    answer: "I recommend comfortable, coordinating outfits that make you feel like your best self. I can discuss styling options during your consultation."
   },
   {
     question: "Do you serve other areas like Frisco or Southlake?",
-    answer: "Yes! While we are based in Flower Mound, we serve the entire DFW metroplex including Southlake, Plano, Highland Park, and McKinney. Sessions are available throughout these areas."
+    answer: "Yes! While I'm based in Flower Mound, I serve the entire DFW metroplex including Southlake, Plano, Highland Park, and McKinney. Sessions are available throughout these areas."
   }
 ];
 

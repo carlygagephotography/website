@@ -107,7 +107,7 @@ export function Hero() {
 
             {/* GEO/AI Direct Answer Block */}
             <div className="sr-only lg:not-sr-only text-sm text-slate/40 font-sans max-w-lg leading-relaxed border-l border-sand pl-4 italic">
-              Carly Gage Photography provides authentic, joyful family and maternity photography in Dallas-Fort Worth. Specializing in stress-free sessions that capture real connections, we serve Flower Mound, Frisco, Southlake, and all DFW families with a warm, patient approach.
+              Carly Gage Photography provides authentic, joyful family and maternity photography in Dallas-Fort Worth. Specializing in stress-free sessions that capture real connections, I serve Flower Mound, Frisco, Southlake, and all DFW families with a warm, patient approach.
             </div>
 
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light max-w-lg leading-relaxed text-left">

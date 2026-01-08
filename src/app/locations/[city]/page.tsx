@@ -30,7 +30,7 @@ const cityData: Record<string, {
     faqs: [
       { q: "Do you shoot in Flower Mound year-round?", a: "Yes! I'm based in Flower Mound and shoot here throughout all seasons. Fall and spring offer beautiful colors, while summer provides lush greenery." },
       { q: "What's the best time for photos in Flower Mound?", a: "Golden hour (the hour before sunset) is ideal. For summer sessions, early morning or locations with ample shade work best to keep everyone comfortable." },
-      { q: "Do you have favorite spots in Flower Mound?", a: "I love working with local families to find locations that match their style—from natural parks to more urban settings. We'll discuss the best spots for your family's vibe during our consultation." },
+      { q: "Do you have favorite spots in Flower Mound?", a: "I love working with local families to find locations that match their style—from natural parks to more urban settings. I'll discuss the best spots for your family's vibe during our consultation." },
     ],
   },
   "frisco": {
@@ -46,7 +46,7 @@ const cityData: Record<string, {
     faqs: [
       { q: "How far in advance should we book a session in Frisco?", a: "I recommend booking 4-6 weeks in advance, especially for fall sessions when schedules fill up quickly. Spring and summer availability is generally more flexible." },
       { q: "What should we bring to our Frisco session?", a: "Just your family and a change of clothes if you'd like variety. I'll handle the rest! Water bottles and snacks for kids are always welcome." },
-      { q: "Do you shoot at Frisco's sports fields or indoor locations?", a: "I specialize in natural light outdoor sessions, but we can discuss indoor options if you have a specific vision in mind." },
+      { q: "Do you shoot at Frisco's sports fields or indoor locations?", a: "I specialize in natural light outdoor sessions, but I can discuss indoor options if you have a specific vision in mind." },
     ],
   },
   "southlake": {
@@ -61,8 +61,8 @@ const cityData: Record<string, {
     ],
     faqs: [
       { q: "What makes Southlake sessions special?", a: "Southlake offers beautiful, well-maintained parks and natural areas that provide stunning backdrops. Plus, the community feel makes sessions relaxed and authentic." },
-      { q: "How long do sessions typically last in Southlake?", a: "Family and maternity sessions run about one hour, while mini sessions are 20 minutes. We'll take our time to get those genuine moments." },
-      { q: "Can we include pets in our Southlake session?", a: "Absolutely! Pets are family too. Just let me know ahead of time so we can plan the best locations and timing." },
+      { q: "How long do sessions typically last in Southlake?", a: "Family and maternity sessions run about one hour, while mini sessions are 20 minutes. I take my time to get those genuine moments." },
+      { q: "Can we include pets in our Southlake session?", a: "Absolutely! Pets are family too. Just let me know ahead of time so I can plan the best locations and timing." },
     ],
   },
   "plano": {
@@ -76,8 +76,8 @@ const cityData: Record<string, {
       { name: "Plano's Historic Downtown Areas", description: "Urban settings with character and good natural light for a different vibe." },
     ],
     faqs: [
-      { q: "What's the best season for photos in Plano?", a: "Fall and spring are beautiful, but we can shoot year-round! Each season offers its own charm—lush summers and even mild winter days can work great." },
-      { q: "How do we choose a location in Plano?", a: "During our consultation, we'll discuss your family's style and what you're looking for. I'll recommend Plano locations that match your vision." },
+      { q: "What's the best season for photos in Plano?", a: "Fall and spring are beautiful, but I can shoot year-round! Each season offers its own charm—lush summers and even mild winter days can work great." },
+      { q: "How do we choose a location in Plano?", a: "During our consultation, I'll discuss your family's style and what you're looking for. I'll recommend Plano locations that match your vision." },
       { q: "Do you offer weekday sessions in Plano?", a: "Yes! Weekday sessions are often available and sometimes work better for busy families. Let's find what works for your schedule." },
     ],
   },
@@ -92,9 +92,9 @@ const cityData: Record<string, {
       { name: "Erwin Park", description: "Natural area with trails and wooded sections offering authentic North Texas scenery." },
     ],
     faqs: [
-      { q: "What's special about McKinney photography sessions?", a: "McKinney offers a unique blend of historic charm and natural beauty. We can capture both classic family moments and authentic, playful interactions." },
-      { q: "Can we do sessions in McKinney's historic downtown?", a: "Absolutely! Downtown McKinney offers beautiful architectural backdrops. We'll plan timing to avoid crowds and get the best light." },
-      { q: "What if weather doesn't cooperate in McKinney?", a: "We'll reschedule if needed. I keep an eye on the forecast and will communicate with you about any changes well in advance." },
+      { q: "What's special about McKinney photography sessions?", a: "McKinney offers a unique blend of historic charm and natural beauty. I can capture both classic family moments and authentic, playful interactions." },
+      { q: "Can we do sessions in McKinney's historic downtown?", a: "Absolutely! Downtown McKinney offers beautiful architectural backdrops. I'll plan timing to avoid crowds and get the best light." },
+      { q: "What if weather doesn't cooperate in McKinney?", a: "I'll reschedule if needed. I keep an eye on the forecast and will communicate with you about any changes well in advance." },
     ],
   },
   "grapevine": {
@@ -109,8 +109,8 @@ const cityData: Record<string, {
     ],
     faqs: [
       { q: "What makes Grapevine lake sessions special?", a: "Grapevine Lake offers beautiful waterfront settings that are perfect for golden hour photography. The natural light reflecting off the water creates stunning backdrops." },
-      { q: "Are lake sessions safe for kids?", a: "Absolutely! We choose safe, accessible locations with plenty of space away from the water's edge. Safety is always my top priority." },
-      { q: "Can we do sessions near Grapevine's wineries or historic areas?", a: "We can discuss specific locations that match your vision. Let's talk about what makes your family unique during our consultation." },
+      { q: "Are lake sessions safe for kids?", a: "Absolutely! I choose safe, accessible locations with plenty of space away from the water's edge. Safety is always my top priority." },
+      { q: "Can we do sessions near Grapevine's wineries or historic areas?", a: "I can discuss specific locations that match your vision. Let's talk about what makes your family unique during our consultation." },
     ],
   },
   "coppell": {
@@ -126,7 +126,7 @@ const cityData: Record<string, {
     faqs: [
       { q: "What's the best time to schedule a Coppell session?", a: "Golden hour (the hour before sunset) is ideal for beautiful natural light. Early morning sessions also work great, especially during summer months." },
       { q: "How do we prepare for our Coppell session?", a: "I'll send you helpful tips after booking, but the main thing is to come relaxed and ready to have fun! I'll guide you through everything else." },
-      { q: "Do you have favorite Coppell locations?", a: "I love exploring Coppell with families to find spots that match their style. We'll discuss options during our consultation to find the perfect fit." },
+      { q: "Do you have favorite Coppell locations?", a: "I love exploring Coppell with families to find spots that match their style. I'll discuss options during our consultation to find the perfect fit." },
     ],
   },
   "colleyville": {
@@ -140,9 +140,9 @@ const cityData: Record<string, {
       { name: "Local Neighborhood Settings", description: "Quieter community spaces with less traffic, great for intimate family portraits." },
     ],
     faqs: [
-      { q: "What makes Colleyville photography sessions unique?", a: "Colleyville offers a mix of natural spaces and beautiful neighborhoods. We can create sessions that feel both authentic and polished, depending on your family's style." },
+      { q: "What makes Colleyville photography sessions unique?", a: "Colleyville offers a mix of natural spaces and beautiful neighborhoods. I can create sessions that feel both authentic and polished, depending on your family's style." },
       { q: "How far in advance should we book?", a: "I recommend booking 4-6 weeks in advance, especially for popular times like fall. That said, I sometimes have last-minute availability, so it never hurts to ask!" },
-      { q: "What if my kids are nervous about photos?", a: "No worries! I'm patient and playful with kids. We'll let them lead, play games, and take breaks. The best photos often happen when kids are just being themselves." },
+      { q: "What if my kids are nervous about photos?", a: "No worries! I'm patient and playful with kids. I'll let them lead, play games, and take breaks. The best photos often happen when kids are just being themselves." },
     ],
   },
   "highland-park": {
@@ -156,8 +156,8 @@ const cityData: Record<string, {
       { name: "SMU Area Settings", description: "Campus and surrounding areas with good architecture and natural settings." },
     ],
     faqs: [
-      { q: "What's the photography style for Highland Park sessions?", a: "I adapt to each family's style—from elegant and polished to more relaxed and candid. During our consultation, we'll discuss what feels authentic to your family." },
-      { q: "Can we do sessions in specific Highland Park locations?", a: "Absolutely! If you have a meaningful location in mind, we can make it work. Let's discuss your vision during our consultation." },
+      { q: "What's the photography style for Highland Park sessions?", a: "I adapt to each family's style—from elegant and polished to more relaxed and candid. During our consultation, I'll discuss what feels authentic to your family." },
+      { q: "Can we do sessions in specific Highland Park locations?", a: "Absolutely! If you have a meaningful location in mind, I can make it work. Let's discuss your vision during our consultation." },
       { q: "How long until we see our photos?", a: "I typically deliver your edited gallery within 2-3 weeks. You'll receive an online gallery where you can download your images and share with family." },
     ],
   },
@@ -173,7 +173,7 @@ const cityData: Record<string, {
     ],
     faqs: [
       { q: "What's special about Prosper photography sessions?", a: "Prosper offers beautiful, newer parks and natural spaces that provide clean, modern backdrops. Plus, the community feel makes sessions relaxed and authentic." },
-      { q: "Can we do sessions at Prosper's sports fields or community centers?", a: "I specialize in natural light outdoor sessions, but we can discuss specific locations that are meaningful to your family during our consultation." },
+      { q: "Can we do sessions at Prosper's sports fields or community centers?", a: "I specialize in natural light outdoor sessions, but I can discuss specific locations that are meaningful to your family during our consultation." },
       { q: "How do we prepare for our Prosper session?", a: "I'll send you helpful preparation tips after booking, including outfit suggestions and what to expect. The main thing is to come ready to relax and have fun!" },
     ],
   },
@@ -215,7 +215,7 @@ export default async function LocationPage({ params }: Props) {
         <div className="pt-32 pb-20 px-4 md:px-16">
           <div className="max-w-[1200px] mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-serif text-slate mb-4">Location Not Found</h1>
-            <p className="text-lg text-slate/60 mb-8">We couldn't find information for this location.</p>
+            <p className="text-lg text-slate/60 mb-8">I couldn't find information for this location.</p>
             <Link href="/" className="text-slate hover:text-moss underline">Return Home</Link>
           </div>
         </div>
@@ -326,7 +326,7 @@ export default async function LocationPage({ params }: Props) {
                   <Users className="w-8 h-8 text-moss mb-4" />
                   <h3 className="text-2xl font-serif text-slate mb-3 group-hover:text-moss transition-colors">Family Sessions</h3>
                   <p className="text-slate/60 font-sans font-light leading-relaxed mb-4">
-                    One hour of fun at a beautiful location. We focus on play, laughter, and connection to get those genuine smiles. 40 edited images included.
+                    One hour of fun at a beautiful location. I focus on play, laughter, and connection to get those genuine smiles. 40 edited images included.
                   </p>
                   <span className="text-sm text-moss flex items-center gap-2 group-hover:gap-4 transition-all">
                     View Gallery <ArrowRight className="w-4 h-4" />

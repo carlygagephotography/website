@@ -11,7 +11,7 @@ const pillars = [
     id: "01",
     title: "Family Sessions",
     titleLink: "/portfolio/dallas-family-session",
-    description: "One hour of fun at a beautiful location. We focus on play, laughter, and connection to get those genuine smiles. 40 edited images included.",
+    description: "One hour of fun at a beautiful location. I focus on play, laughter, and connection to get those genuine smiles. 40 edited images included.",
     icon: <Users className="w-5 h-5" />,
   },
   {
@@ -54,7 +54,7 @@ export function Expertise() {
           </h2>
         </div>
           <p className="text-sm md:text-base lg:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm text-left">
-            Whether you want a full hour to explore a beautiful park or just a quick 20-minute update for your holiday cards, we have a session that fits your family's needs. My goal is to make this the easiest photo session you've ever had.
+            Whether you want a full hour to explore a beautiful park or just a quick 20-minute update for your holiday cards, I have a session that fits your family's needs. My goal is to make this the easiest photo session you've ever had.
           </p>
           <div className="pt-4 md:pt-6 lg:pt-8">
              <a 
