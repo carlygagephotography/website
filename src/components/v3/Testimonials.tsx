@@ -113,7 +113,7 @@ export function Testimonials() {
         </div>
 
         {/* Dynamic CTA */}
-        <div className="mt-16 md:mt-32 pt-12 md:pt-24 border-t border-sand/30 text-center space-y-8 md:space-y-12">
+        <div className="mt-6 md:mt-32 pt-6 md:pt-24 border-t border-sand/30 text-center space-y-4 md:space-y-12">
            <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-slate tracking-tight">
              Ready to Capture <span className="italic opacity-60">Your Family's Joy?</span>
            </h3>

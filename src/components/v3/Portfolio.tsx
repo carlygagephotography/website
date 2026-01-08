@@ -74,7 +74,7 @@ export function Portfolio() {
         </div>
 
         {/* Mobile: Horizontal Carousel */}
-        <div className="md:hidden">
+        <div className="md:hidden mb-6">
           <div className="overflow-hidden relative">
             <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4">
               {works.map((work, i) => (
@@ -205,24 +205,24 @@ export function Portfolio() {
         </div>
 
         {/* Lead Gen Callout */}
-        <div className="pt-12 md:pt-20 text-center flex flex-col items-center space-y-8 md:space-y-12">
+        <div className="pt-6 md:pt-20 text-center flex flex-col items-center space-y-4 md:space-y-12">
            <div className="h-[1px] w-40 bg-sand" />
            
-           <div className="space-y-6 md:space-y-8">
+           <div className="space-y-4 md:space-y-8">
               <h3 className="text-3xl md:text-4xl font-serif text-slate tracking-tight max-w-xl mx-auto">
                 Ready to Preserve Your <span className="italic opacity-60">Family History?</span>
               </h3>
               
-              <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 md:gap-8 items-center justify-center">
                 <a 
                   href="#contact"
                   onClick={(e) => handleAnchorClick(e, "#contact")}
-                  className="bg-slate text-bone px-12 py-6 rounded-sm text-[11px] uppercase tracking-[0.5em] hover:bg-moss transition-all duration-500"
+                  className="bg-slate text-bone px-10 py-5 md:px-12 md:py-6 rounded-sm text-[10px] md:text-[11px] uppercase tracking-[0.4em] md:tracking-[0.5em] hover:bg-moss transition-all duration-500 active:scale-[0.98]"
                 >
                   Book Your Session
                 </a>
                 
-                <button className="group text-[12px] uppercase tracking-[0.6em] text-slate/60 hover:text-slate transition-all duration-500 flex items-center gap-4">
+                <button className="group text-[11px] md:text-[12px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/60 hover:text-slate transition-all duration-500 flex items-center gap-4">
                   Explore All Stories
                   <span className="h-[1px] w-0 bg-slate transition-all duration-500 group-hover:w-12" />
                 </button>
