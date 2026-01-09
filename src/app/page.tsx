@@ -13,6 +13,7 @@ import { AreasServed } from "@/components/AreasServed";
 import { About } from "@/components/v3/About";
 import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 import { StickyMobileBar } from "@/components/v3/StickyMobileBar";
+import { FacebookPixelDebug } from "@/components/FacebookPixelDebug";
 import { useEffect } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
 
@@ -43,7 +44,7 @@ export default function Home() {
   return (
     <ReactLenis root>
       <main className="min-h-screen selection:bg-slate selection:text-bone pb-16 md:pb-0">
-          
+          <FacebookPixelDebug />
           <Navigation />
           <StickyMobileBar />
           <FloatingInquiryForm />
