@@ -15,9 +15,9 @@ export function Hero() {
   const opacityText = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
-    <section className="relative w-full min-h-[100vh] md:h-[110vh] overflow-hidden bg-bone flex items-center pt-20 md:pt-24 lg:pt-20 pb-16 md:pb-20 lg:pb-0">
+    <section className="relative w-full min-h-[100vh] overflow-hidden bg-bone">
       {/* Mobile: Image First Layout */}
-      <div className="md:hidden w-full">
+      <div className="md:hidden w-full pt-20 pb-16">
         <div className="relative h-[70vh] w-full overflow-hidden">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -85,10 +85,11 @@ export function Hero() {
       </div>
 
       {/* Desktop: Original Layout */}
-      <div className="hidden md:block max-w-[1800px] mx-auto w-full px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 relative z-10">
+      <div className="hidden md:flex md:items-center min-h-screen pt-20 pb-20">
+        <div className="max-w-[1800px] mx-auto w-full px-8 lg:px-16 grid grid-cols-12 gap-12 lg:gap-16 relative z-10">
         
         {/* Left Content - Lead Focused */}
-        <div className="lg:col-span-7 flex flex-col justify-center space-y-8 lg:space-y-12 relative z-20">
+        <div className="col-span-12 md:col-span-7 flex flex-col justify-center space-y-8 lg:space-y-12 relative z-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -141,7 +142,7 @@ export function Hero() {
         </div>
 
         {/* Right - Hero Image (Editorial) */}
-        <div className="lg:col-span-5 relative h-[60vh] lg:h-[85vh] w-full">
+        <div className="col-span-12 md:col-span-5 relative h-[50vh] md:h-[70vh] lg:h-[85vh] w-full">
           <motion.div 
             style={{ y: yImage }}
             className="relative w-full h-full rounded-[1rem] overflow-hidden shadow-2xl"
@@ -177,6 +178,7 @@ export function Hero() {
                </div>
             </div>
           </motion.div>
+        </div>
         </div>
       </div>
 
