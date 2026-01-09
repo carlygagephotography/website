@@ -11,6 +11,7 @@ import { ArrowRight, ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-reac
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 import { StickyMobileBar } from "@/components/v3/StickyMobileBar";
+import { trackViewContent } from "@/lib/facebook-pixel";
 
 // Get actual images from the folder - sorted in shooting order (numerical)
 const imageNumbers = [
@@ -36,6 +37,11 @@ export default function DallasMaternitySessionPage() {
 
   // Minimum swipe distance (px)
   const minSwipeDistance = 50;
+
+  // Track ViewContent event when page loads
+  useEffect(() => {
+    trackViewContent('Portfolio', 'Dallas Maternity Session');
+  }, []);
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchEndX.current = null;

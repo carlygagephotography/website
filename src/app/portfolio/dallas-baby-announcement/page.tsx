@@ -11,6 +11,7 @@ import { ArrowRight, ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-reac
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 import { StickyMobileBar } from "@/components/v3/StickyMobileBar";
+import { trackViewContent } from "@/lib/facebook-pixel";
 
 // Images sorted in shooting order
 const imageNumbers = [
@@ -35,6 +36,11 @@ export default function DallasBabyAnnouncementPage() {
 
   // Minimum swipe distance (px)
   const minSwipeDistance = 50;
+
+  // Track ViewContent event when page loads
+  useEffect(() => {
+    trackViewContent('Portfolio', 'Dallas Baby Announcement');
+  }, []);
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchEndX.current = null;

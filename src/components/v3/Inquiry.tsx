@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Loader2, ArrowRight, CheckCircle } from "lucide-react";
 import { sendInquiry } from "@/app/actions/sendInquiry";
+import { trackLead } from "@/lib/facebook-pixel";
 
 const schema = z.object({
   name: z.string().min(2, "Please share your name").nonempty("Name is required"),
@@ -31,6 +32,8 @@ export function Inquiry() {
       const result = await sendInquiry(data);
       
       if (result.success) {
+        // Track Facebook Pixel Lead event
+        trackLead(data.sessionType, data.location);
         setIsSuccess(true);
       } else {
         alert(result.error || "Something went wrong. Please try again or email me directly at carlygagephotography@gmail.com");

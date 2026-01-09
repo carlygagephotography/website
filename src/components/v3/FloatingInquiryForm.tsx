@@ -8,6 +8,7 @@ import * as z from "zod";
 import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, Clock, Gift } from "lucide-react";
 import { sendInquiry } from "@/app/actions/sendInquiry";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import { trackLead } from "@/lib/facebook-pixel";
 
 const schema = z.object({
   name: z.string().min(2, "Please share your name").nonempty("Name is required"),
@@ -42,6 +43,8 @@ export function FloatingInquiryForm() {
       const result = await sendInquiry(data);
       
       if (result.success) {
+        // Track Facebook Pixel Lead event
+        trackLead(data.sessionType, data.location);
         setIsSuccess(true);
         reset();
         setShowNotification(false);
