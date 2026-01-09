@@ -24,6 +24,7 @@ export function FloatingInquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+  const [hasTrackedLead, setHasTrackedLead] = useState(false);
 
   // Remove notification functionality - keeping for future use if needed
   const { scrollToSection } = useSmoothScroll();
@@ -38,19 +39,25 @@ export function FloatingInquiryForm() {
   // Notification removed per user request
 
   const onSubmit = async (data: any) => {
+    if (isSubmitting) return; // Prevent duplicate submissions
+    
     setIsSubmitting(true);
     try {
       const result = await sendInquiry(data);
       
       if (result.success) {
-        // Track Facebook Pixel Lead event
-        trackLead(data.sessionType, data.location);
+        // Track Facebook Pixel Lead event (only once per submission)
+        if (!hasTrackedLead) {
+          trackLead(data.sessionType, data.location);
+          setHasTrackedLead(true);
+        }
         setIsSuccess(true);
         reset();
         setShowNotification(false);
         setTimeout(() => {
           setIsSuccess(false);
           setIsOpen(false);
+          setHasTrackedLead(false); // Reset after form closes
         }, 3000);
       } else {
         alert(result.error || "Something went wrong. Please try again or email carlygagephotography@gmail.com");

@@ -19,8 +19,30 @@ export function trackFacebookEvent(
   eventName: string,
   params?: Record<string, any>
 ) {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', eventName, params);
+  if (typeof window !== 'undefined') {
+    // Wait for fbq to be available (with timeout)
+    if (window.fbq) {
+      try {
+        window.fbq('track', eventName, params);
+        console.log(`Facebook Pixel: Tracked ${eventName}`, params);
+      } catch (error) {
+        console.error(`Facebook Pixel: Error tracking ${eventName}`, error);
+      }
+    } else {
+      // Retry after a short delay if fbq isn't loaded yet
+      setTimeout(() => {
+        if (window.fbq) {
+          try {
+            window.fbq('track', eventName, params);
+            console.log(`Facebook Pixel: Tracked ${eventName} (delayed)`, params);
+          } catch (error) {
+            console.error(`Facebook Pixel: Error tracking ${eventName}`, error);
+          }
+        } else {
+          console.warn(`Facebook Pixel: fbq not available for ${eventName}`);
+        }
+      }, 500);
+    }
   }
 }
 
@@ -40,15 +62,28 @@ export function trackFacebookCustomEvent(
 
 /**
  * Track a Lead conversion event (form submission)
- * @param sessionType - Type of session selected
- * @param location - Location selected
+ * @param sessionType - Type of session selected (e.g., 'family', 'maternity', 'mini')
+ * @param location - Location selected (e.g., 'Flower Mound', 'Frisco')
  */
 export function trackLead(sessionType?: string, location?: string) {
-  trackFacebookEvent('Lead', {
-    content_name: 'Session Inquiry',
-    content_category: sessionType || 'General',
-    location: location || 'Unknown',
-  });
+  // Format sessionType for better readability
+  const formattedSessionType = sessionType 
+    ? sessionType.charAt(0).toUpperCase() + sessionType.slice(1).replace(/-/g, ' ')
+    : 'General';
+  
+  // Build parameters object with standard Facebook Pixel parameters
+  const params: Record<string, any> = {
+    content_name: 'Session Inquiry Form',
+    content_category: formattedSessionType,
+  };
+  
+  // Add location as a custom parameter (Facebook allows custom parameters)
+  // Using a simple key without underscores to avoid issues
+  if (location) {
+    params.location = location;
+  }
+  
+  trackFacebookEvent('Lead', params);
 }
 
 /**

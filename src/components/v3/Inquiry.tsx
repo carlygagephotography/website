@@ -21,19 +21,25 @@ const schema = z.object({
 export function Inquiry() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [hasTrackedLead, setHasTrackedLead] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data: any) => {
+    if (isSubmitting) return; // Prevent duplicate submissions
+    
     setIsSubmitting(true);
     try {
       const result = await sendInquiry(data);
       
       if (result.success) {
-        // Track Facebook Pixel Lead event
-        trackLead(data.sessionType, data.location);
+        // Track Facebook Pixel Lead event (only once per submission)
+        if (!hasTrackedLead) {
+          trackLead(data.sessionType, data.location);
+          setHasTrackedLead(true);
+        }
         setIsSuccess(true);
       } else {
         alert(result.error || "Something went wrong. Please try again or email me directly at carlygagephotography@gmail.com");
@@ -64,7 +70,10 @@ export function Inquiry() {
             Thank you for reaching out! I personally review every inquiry and will be in touch within 24 hours to chat about your session.
           </p>
           <div className="pt-6 md:pt-8">
-             <button onClick={() => setIsSuccess(false)} className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-slate/40 border-b border-sand pb-1 hover:text-slate transition-colors">Return to Portfolio</button>
+             <button onClick={() => {
+               setIsSuccess(false);
+               setHasTrackedLead(false); // Reset tracking flag to allow new submission
+             }} className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] text-slate/40 border-b border-sand pb-1 hover:text-slate transition-colors">Return to Portfolio</button>
           </div>
         </motion.div>
       </section>
