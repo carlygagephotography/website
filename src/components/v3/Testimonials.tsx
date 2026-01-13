@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
@@ -27,6 +28,11 @@ const testimonials = [
 
 export function Testimonials() {
   const { handleAnchorClick } = useSmoothScroll();
+  const carouselRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollXProgress } = useScroll({
+    container: carouselRef,
+  });
   
   return (
     <section className="py-16 md:py-24 lg:py-40 bg-white overflow-hidden">
@@ -44,12 +50,20 @@ export function Testimonials() {
 
         {/* Mobile: Horizontal Carousel */}
         <div className="md:hidden">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-[1px] bg-moss/40" />
+            <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">Swipe to hear more</span>
+          </div>
+
           <div className="overflow-hidden relative">
-            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4">
+            <div 
+              ref={carouselRef}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4"
+            >
               {testimonials.map((t, i) => (
                 <div
                   key={t.author}
-                  className="flex-shrink-0 w-[85vw] snap-center"
+                  className="flex-shrink-0 w-[82vw] snap-center"
                 >
                   <div className="flex flex-col space-y-6 group">
                     <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-bone">
@@ -59,6 +73,7 @@ export function Testimonials() {
                         fill
                         className="object-cover transition-transform duration-1000 group-hover:scale-105"
                         style={{ objectPosition: "50% 20%" }}
+                        sizes="82vw"
                       />
                       <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />
                     </div>
@@ -74,6 +89,24 @@ export function Testimonials() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Scroll Progress Indicator */}
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex-1 h-[1px] bg-sand relative overflow-hidden">
+                <motion.div 
+                  style={{ 
+                    scaleX: scrollXProgress,
+                    transformOrigin: "left"
+                  }}
+                  className="absolute inset-0 bg-moss"
+                />
+              </div>
+              <div className="flex gap-1.5 items-center">
+                 <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">01</span>
+                 <div className="w-4 h-[1px] bg-sand" />
+                 <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">0{testimonials.length}</span>
+              </div>
             </div>
           </div>
         </div>
