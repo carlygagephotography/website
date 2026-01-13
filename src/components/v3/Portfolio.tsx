@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -56,6 +57,11 @@ const works = [
 
 export function Portfolio() {
   const { handleAnchorClick } = useSmoothScroll();
+  const carouselRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollXProgress } = useScroll({
+    container: carouselRef,
+  });
   
   return (
     <section id="portfolios" className="py-16 md:py-24 lg:py-40 bg-bone overflow-hidden">
@@ -75,12 +81,20 @@ export function Portfolio() {
 
         {/* Mobile: Horizontal Carousel */}
         <div className="md:hidden mb-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-[1px] bg-moss/40" />
+            <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">Swipe to explore</span>
+          </div>
+
           <div className="overflow-hidden relative">
-            <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4">
+            <div 
+              ref={carouselRef}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4"
+            >
               {works.map((work, i) => (
                 <div
                   key={work.id}
-                  className="flex-shrink-0 w-[85vw] snap-center"
+                  className="flex-shrink-0 w-[82vw] snap-center"
                 >
                   {work.link ? (
                     <Link href={work.link} className="cursor-pointer block space-y-6">
@@ -91,7 +105,7 @@ export function Portfolio() {
                             fill 
                             className="object-cover transition-transform duration-[2s]"
                             style={{ objectPosition: work.pos }}
-                            sizes="85vw"
+                            sizes="82vw"
                          />
                       </div>
                       <div className="space-y-3">
@@ -113,7 +127,7 @@ export function Portfolio() {
                             fill 
                             className="object-cover transition-transform duration-[2s]"
                             style={{ objectPosition: work.pos }}
-                            sizes="85vw"
+                            sizes="82vw"
                          />
                       </div>
                       <div className="space-y-3">
@@ -129,6 +143,24 @@ export function Portfolio() {
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Scroll Progress Indicator */}
+            <div className="mt-8 flex items-center gap-4">
+              <div className="flex-1 h-[1px] bg-sand relative overflow-hidden">
+                <motion.div 
+                  style={{ 
+                    scaleX: scrollXProgress,
+                    transformOrigin: "left"
+                  }}
+                  className="absolute inset-0 bg-moss"
+                />
+              </div>
+              <div className="flex gap-1.5 items-center">
+                 <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">01</span>
+                 <div className="w-4 h-[1px] bg-sand" />
+                 <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">0{works.length}</span>
+              </div>
             </div>
           </div>
         </div>
