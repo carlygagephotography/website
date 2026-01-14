@@ -32,6 +32,7 @@ RESEND_API_KEY=your_actual_api_key_here
 2. Create a new audience (e.g., "Main Website List").
 3. Once created, click on the audience and go to **Settings**.
 4. Copy the **Audience ID** and add it to your Vercel environment variables as `RESEND_AUDIENCE_ID`.
+   * **Your Current ID**: `0850988a-a3b1-484b-8a71-0d1aae3f53b9`
 5. Now, every form submission will automatically be added to this list for your future email blasts.
 
 ### 4. Verify Your Domain in Resend
