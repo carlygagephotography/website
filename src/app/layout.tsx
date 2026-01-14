@@ -17,16 +17,17 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-  "@type": "ProfessionalService",
+  "@type": "PhotographyBusiness",
   "name": "Carly Gage Photography",
-  "image": "https://carlygagephotography.com/images/dallas-family-photographer-hero.jpg",
-  "@id": "https://carlygagephotography.com",
-  "url": "https://carlygagephotography.com",
+  "image": "https://carlygage.com/images/dallas-family-photographer-hero.jpg",
+  "@id": "https://carlygage.com",
+  "url": "https://carlygage.com",
   "telephone": "+1-555-555-5555",
   "priceRange": "$$",
   "description": "Friendly and talented Dallas family photographer based in Flower Mound. Specializing in authentic family sessions, maternity photos, and seasonal mini sessions. Serving all families in Southlake, Frisco, and DFW.",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "",
     "addressLocality": "Flower Mound",
     "addressRegion": "TX",
     "postalCode": "75028",
@@ -83,18 +84,22 @@ const jsonLd = {
     },
     {
       "@type": "WebPage",
-      "@id": "https://carlygagephotography.com/#webpage",
-      "url": "https://carlygagephotography.com/",
+      "@id": "https://carlygage.com/#webpage",
+      "url": "https://carlygage.com/",
       "name": "Dallas Family Photographer | Carly Gage Photography",
       "datePublished": "2024-01-01T00:00:00+00:00",
       "dateModified": new Date().toISOString(),
-      "publisher": { "@id": "https://carlygagephotography.com" },
+      "publisher": { "@id": "https://carlygage.com" },
       "description": "Premier Dallas family photographer capturing organic, timeless moments in DFW. Serving Southlake, Highland Park, Frisco & more."
     }
   ]
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://carlygage.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
   description: "Carly Gage is a Dallas family photographer based in Flower Mound. I specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
   icons: {

@@ -196,6 +196,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${cityName} Family Photographer | Candid, Fun & Timeless Portraits`,
     description: `Carly Gage is a ${cityName} family photographer based in Flower Mound. Stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving ${cityName} and all of DFW.`,
+    alternates: {
+      canonical: `/locations/${citySlug}-family-photographer`,
+    },
     openGraph: {
       title: `${cityName} Family Photographer | Carly Gage Photography`,
       description: `Authentic, joyful family photography in ${cityName}, Texas. Capturing real moments and genuine connections.`,
