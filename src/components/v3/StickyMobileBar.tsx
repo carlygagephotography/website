@@ -11,6 +11,7 @@ export function StickyMobileBar() {
   const { handleAnchorClick } = useSmoothScroll();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isContestPage = pathname === "/contest";
   const isPortfolioPage = pathname?.startsWith("/portfolio");
 
   return (
@@ -30,9 +31,11 @@ export function StickyMobileBar() {
 
             {/* Book Now Button */}
             <Link
-              href={isHomePage ? "#contact" : "/#contact"}
+              href={isContestPage ? "#enter" : (isHomePage ? "#contact" : "/#contact")}
               onClick={(e) => {
-                if (isHomePage) {
+                if (isContestPage) {
+                  handleAnchorClick(e, "#enter");
+                } else if (isHomePage) {
                   handleAnchorClick(e, "#contact");
                 } else {
                   window.location.href = "/#contact";
@@ -40,7 +43,7 @@ export function StickyMobileBar() {
               }}
               className="bg-slate text-bone px-4 py-2.5 rounded-sm text-[9px] md:text-[10px] uppercase tracking-[0.25em] md:tracking-[0.3em] font-bold hover:bg-slate/90 transition-all active:scale-95 flex-shrink-0 text-center"
             >
-              {isPortfolioPage ? "Book a Session Like This" : "Book Now"}
+              {isContestPage ? "Enter to Win" : (isPortfolioPage ? "Book a Session Like This" : "Book Now")}
             </Link>
           </div>
         </div>
