@@ -8,12 +8,14 @@ import { ContestForm } from "@/components/v3/ContestForm";
 import { Testimonials } from "@/components/v3/Testimonials";
 import { Footer } from "@/components/v3/Footer";
 import { FAQ } from "@/components/v3/FAQ";
+import { FacebookPixelDebug } from "@/components/FacebookPixelDebug";
 import { Camera, Heart, Sparkles } from "lucide-react";
 
 export default function ContestPage() {
   return (
     <ReactLenis root>
       <main className="min-h-screen bg-bone">
+        <FacebookPixelDebug />
         <Navigation />
         <StickyMobileBar />
         

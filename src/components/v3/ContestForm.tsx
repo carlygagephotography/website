@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Loader2, ArrowRight, CheckCircle, Gift } from "lucide-react";
 import { submitContest } from "@/app/actions/submitContest";
+import { trackLead } from "@/lib/facebook-pixel";
 
 const schema = z.object({
   firstName: z.string().min(2, "First name is required"),
@@ -19,22 +20,35 @@ const schema = z.object({
 export function ContestForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [hasTrackedLead, setHasTrackedLead] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data: any) => {
+    if (isSubmitting) return;
     setIsSubmitting(true);
-    const result = await submitContest(data);
     
-    if (result.success) {
-      setIsSuccess(true);
-    } else {
+    try {
+      const result = await submitContest(data);
+      
+      if (result.success) {
+        // Track Facebook Pixel Lead event
+        if (!hasTrackedLead) {
+          trackLead('Giveaway Entry', data.location);
+          setHasTrackedLead(true);
+        }
+        setIsSuccess(true);
+      } else {
+        alert("Something went wrong. Please try again or email me directly at hello@carlygage.com");
+      }
+    } catch (error) {
+      console.error("Contest submission error:", error);
       alert("Something went wrong. Please try again or email me directly at hello@carlygage.com");
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    setIsSubmitting(false);
   };
 
   if (isSuccess) {
