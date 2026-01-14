@@ -1,15 +1,16 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { Navigation } from "@/components/v3/Navigation";
 import { Footer } from "@/components/v3/Footer";
-import { ArrowRight, Camera, Clock, MapPin, Users } from "lucide-react";
+import { ArrowRight, Camera, Clock, MapPin, Users, Heart, Sparkles, ShieldCheck } from "lucide-react";
+import { CITY_VIBES, ICP_CONTENT } from "@/data/icp-content";
+import { ContextualCTA } from "@/components/v3/ContextualCTA";
 
 type Props = {
   params: Promise<{ city: string }>;
 };
 
-// City-specific data
+// City-specific data (Legacy structure preserved but enhanced with Vibe Narrative)
 const cityData: Record<string, {
   name: string;
   displayName: string;
@@ -183,6 +184,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city } = await params;
   const citySlug = city.replace(/-family-photographer$/, "");
   const cityInfo = cityData[citySlug];
+  const vibeInfo = CITY_VIBES[citySlug];
   
   if (!cityInfo) {
     return {
@@ -195,7 +197,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${cityName} Family Photographer | Candid, Fun & Timeless Portraits`,
-    description: `Carly Gage is a ${cityName} family photographer based in Flower Mound. Stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving ${cityName} and all of DFW.`,
+    description: `Carly Gage is a ${cityName} family photographer specializing in stress-free sessions that capture your family's real joy. Serving ${cityName} with a ${vibeInfo?.vibe.toLowerCase() || "natural"} approach.`,
     alternates: {
       canonical: `/locations/${citySlug}-family-photographer`,
     },
@@ -203,6 +205,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${cityName} Family Photographer | Carly Gage Photography`,
       description: `Authentic, joyful family photography in ${cityName}, Texas. Capturing real moments and genuine connections.`,
     },
+    other: {
+      "geo.region": "US-TX",
+      "geo.placename": cityName,
+    }
   };
 }
 
@@ -210,6 +216,7 @@ export default async function LocationPage({ params }: Props) {
   const { city } = await params;
   const citySlug = city.replace(/-family-photographer$/, "");
   const cityInfo = cityData[citySlug];
+  const vibeInfo = CITY_VIBES[citySlug];
 
   if (!cityInfo) {
     return (
@@ -229,7 +236,7 @@ export default async function LocationPage({ params }: Props) {
 
   const cityName = cityInfo.displayName;
 
-  // JSON-LD Schema
+  // JSON-LD Schema 2.0
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -237,6 +244,48 @@ export default async function LocationPage({ params }: Props) {
     "url": `https://carlygage.com/locations/${city}`,
     "name": `${cityName} Family Photographer | Carly Gage Photography`,
     "description": cityInfo.description,
+    "mentions": [
+      {
+        "@type": "City",
+        "name": cityName,
+        "sameAs": vibeInfo?.wikipedia || `https://en.wikipedia.org/wiki/${cityName.replace(" ", "_")},_Texas`
+      }
+    ],
+    "knowsAbout": [
+      "Family Photography",
+      "Maternity Photography",
+      "Toddler Photography",
+      "Golden Hour Lighting",
+      "Stress-Free Family Sessions",
+      "Candid Portraits"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Photography Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full Family Session"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Maternity Session"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mini Sessions"
+          }
+        }
+      ]
+    },
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -274,15 +323,87 @@ export default async function LocationPage({ params }: Props) {
         {/* Hero Section */}
         <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-4 md:px-16">
           <div className="max-w-[1200px] mx-auto">
-            <div className="space-y-6 md:space-y-8 mb-12 md:mb-16">
+            <div className="space-y-6 md:space-y-8 mb-12 md:mb-16 text-center md:text-left">
               <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">Serving {cityName}</span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif leading-[0.9] tracking-tighter text-slate">
                 {cityName} Family <br />
                 <span className="italic font-light opacity-50 text-moss">Photographer.</span>
               </h1>
-              <p className="text-lg md:text-xl text-slate/60 font-sans font-light leading-relaxed max-w-3xl">
+              <p className="text-lg md:text-xl text-slate/60 font-sans font-light leading-relaxed max-w-3xl mx-auto md:mx-0">
                 {cityInfo.description}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Narrative Vibe Section - PHASE 2 CRITICAL */}
+        {vibeInfo && (
+          <section className="py-12 md:py-24 px-4 md:px-16 bg-white overflow-hidden">
+            <div className="max-w-[1200px] mx-auto">
+              <article className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-8">
+                  <div className="space-y-4">
+                    <h2 className="text-sm uppercase tracking-[0.3em] text-moss font-semibold">The {cityName} Vibe</h2>
+                    <p className="text-3xl md:text-4xl font-serif text-slate leading-tight">
+                      Capturing your family against the {vibeInfo.vibe.toLowerCase()} backdrop of {cityName}.
+                    </p>
+                  </div>
+                  <p className="text-lg text-slate/70 font-sans font-light leading-relaxed">
+                    {vibeInfo.narrative}
+                  </p>
+                  <div className="pt-4">
+                    <ContextualCTA intent="portfolio" cityName={cityName} />
+                  </div>
+                </div>
+                <div className="relative aspect-[4/5] bg-sand/20 rounded-sm overflow-hidden group">
+                  <div className="absolute inset-0 flex items-center justify-center text-slate/10 italic font-serif text-2xl px-12 text-center">
+                    "Why {cityName} is the perfect backdrop for your family story"
+                  </div>
+                  {/* Decorative element */}
+                  <div className="absolute bottom-8 left-8 right-8 p-8 bg-white/90 backdrop-blur-sm border border-sand/30 space-y-4">
+                    <Sparkles className="w-5 h-5 text-moss" />
+                    <p className="text-sm text-slate/60 font-sans leading-relaxed">
+                      Every city has a unique rhythm. In {cityName}, we lean into the {vibeInfo.vibe.toLowerCase()} energy to create portraits that feel like home.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        )}
+
+        {/* ICP Objection Handlers - Narrative Style */}
+        <section className="py-12 md:py-24 px-4 md:px-16 bg-bone">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="text-center mb-16 space-y-4">
+              <h2 className="text-3xl md:text-5xl font-serif text-slate">A Stress-Free Experience</h2>
+              <p className="text-lg text-slate/60 font-sans font-light max-w-2xl mx-auto">
+                I understand the anxiety that comes with family photos. Here is how I handle the most common concerns.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {ICP_CONTENT.map((persona) => (
+                <div key={persona.id} className="space-y-8 bg-white p-8 md:p-12 border border-sand/30 rounded-sm shadow-sm">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-moss/10 flex items-center justify-center">
+                      {persona.id === 'overwhelmed-mom' ? <Heart className="w-6 h-6 text-moss" /> : <ShieldCheck className="w-6 h-6 text-moss" />}
+                    </div>
+                    <h3 className="text-xl font-serif text-slate">{persona.name}</h3>
+                  </div>
+                  
+                  <div className="space-y-8">
+                    {persona.objections.map((obj, i) => (
+                      <article key={i} className="space-y-3">
+                        <h4 className="text-sm uppercase tracking-widest text-slate/40 font-semibold italic">"{obj.objection}"</h4>
+                        <p className="text-slate/70 font-sans font-light leading-relaxed">
+                          {obj.solutionNarrative}
+                        </p>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -303,13 +424,24 @@ export default async function LocationPage({ params }: Props) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {cityInfo.locations.map((location, i) => (
-                  <div key={i} className="space-y-2 p-6 border border-sand/30 rounded-sm bg-bone/30">
-                    <h3 className="font-serif text-xl text-slate">{location.name}</h3>
+                  <div key={i} className="space-y-2 p-6 border border-sand/30 rounded-sm bg-bone/30 hover:border-moss transition-colors group">
+                    <h3 className="font-serif text-xl text-slate group-hover:text-moss transition-colors">{location.name}</h3>
                     <p className="text-slate/60 font-sans font-light leading-relaxed">{location.description}</p>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Wardrobe/CTA Break */}
+        <section className="py-20 px-4 md:px-16 bg-slate text-bone text-center">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <h2 className="text-3xl md:text-4xl font-serif leading-tight">Nothing to wear? No problem.</h2>
+            <p className="text-lg text-bone/60 font-sans font-light">
+              Stop stressing about coordinating outfits. My client closet is full of beautiful, timeless pieces for you and your little ones, ensuring a cohesive and elevated look for your {cityName} session.
+            </p>
+            <ContextualCTA intent="wardrobe" cityName={cityName} className="!text-bone" />
           </div>
         </section>
 
@@ -373,25 +505,32 @@ export default async function LocationPage({ params }: Props) {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-12 md:py-20 px-4 md:px-16 bg-white">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="space-y-8 md:space-y-12">
-              <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl font-serif text-slate">Common Questions About {cityName} Sessions</h2>
-                <p className="text-lg text-slate/60 font-sans font-light max-w-2xl">
-                  Everything you need to know about booking a family photography session in {cityName}.
-                </p>
-              </div>
+        {/* Narrative FAQ Section - PHASE 2 CRITICAL */}
+        <section className="py-12 md:py-24 px-4 md:px-16 bg-white">
+          <div className="max-w-[800px] mx-auto">
+            <div className="space-y-4 text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-serif text-slate">Your {cityName} Session Questions, Answered.</h2>
+              <p className="text-lg text-slate/60 font-sans font-light">
+                Everything you need to know about capturing beautiful memories in {cityName}.
+              </p>
+            </div>
 
-              <div className="space-y-6 md:space-y-8">
-                {cityInfo.faqs.map((faq, i) => (
-                  <div key={i} className="space-y-3 pb-6 border-b border-sand/30 last:border-0">
-                    <h3 className="text-xl md:text-2xl font-serif text-slate">{faq.q}</h3>
-                    <p className="text-slate/60 font-sans font-light leading-relaxed">{faq.a}</p>
+            <div className="space-y-4">
+              {cityInfo.faqs.map((faq, i) => (
+                <details key={i} className="group border-b border-sand/30 pb-4">
+                  <summary className="flex items-center justify-between cursor-pointer list-none py-4">
+                    <h3 className="text-xl font-serif text-slate group-hover:text-moss transition-colors pr-8">{faq.q}</h3>
+                    <div className="w-6 h-6 flex items-center justify-center border border-sand/50 rounded-full group-open:rotate-180 transition-transform">
+                      <ArrowRight className="w-3 h-3 text-slate rotate-90" />
+                    </div>
+                  </summary>
+                  <div className="pt-2 pb-6 px-1">
+                    <p className="text-slate/60 font-sans font-light leading-relaxed">
+                      {faq.a}
+                    </p>
                   </div>
-                ))}
-              </div>
+                </details>
+              ))}
             </div>
           </div>
         </section>
@@ -405,12 +544,7 @@ export default async function LocationPage({ params }: Props) {
             <p className="text-xl text-slate/60 font-sans font-light max-w-2xl mx-auto">
               Let's chat about your vision and find the perfect {cityName} location for your family session.
             </p>
-            <Link
-              href="/#contact"
-              className="inline-block bg-slate text-bone px-10 py-5 rounded-sm text-[10px] uppercase tracking-[0.4em] hover:bg-slate/90 transition-all shadow-lg shadow-slate/5"
-            >
-              Book Your Session
-            </Link>
+            <ContextualCTA intent="booking" cityName={cityName} />
           </div>
         </section>
 
