@@ -8,6 +8,23 @@ export async function submitContest(formData: any) {
   const { firstName, lastName, email, phone, location } = formData;
 
   try {
+    // Add to Resend Audience (Contacts) if AUDIENCE_ID is provided
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (audienceId) {
+      try {
+        await resend.contacts.create({
+          email: email,
+          firstName: firstName,
+          lastName: lastName,
+          unsubscribed: false,
+          audienceId: audienceId,
+        });
+        console.log(`✅ Contest contact added to Resend: ${email}`);
+      } catch (contactError) {
+        console.error("Error adding contact to Resend:", contactError);
+      }
+    }
+
     const { data, error } = await resend.emails.send({
       from: 'Carly Gage Photography <hello@carlygage.com>',
       to: ['carlygagephotography@gmail.com'],

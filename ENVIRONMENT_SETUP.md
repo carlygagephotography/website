@@ -22,12 +22,19 @@ RESEND_API_KEY=your_actual_api_key_here
 1. Go to your Vercel dashboard: [https://vercel.com/elliots-projects-0a7be7b5/~/activity](https://vercel.com/elliots-projects-0a7be7b5/~/activity)
 2. Navigate to your project settings
 3. Go to Environment Variables section
-4. Add a new environment variable:
-   - Name: `RESEND_API_KEY`
-   - Value: Your Resend API key
+4. Add these environment variables:
+   - Name: `RESEND_API_KEY`, Value: Your Resend API key
+   - Name: `RESEND_AUDIENCE_ID`, Value: Your Resend Audience ID (see below)
    - Environment: Production
 
-### 3. Verify Your Domain in Resend
+### 3. Set up Resend Audience (for storing contacts)
+1. In your Resend dashboard, go to **Audiences**.
+2. Create a new audience (e.g., "Main Website List").
+3. Once created, click on the audience and go to **Settings**.
+4. Copy the **Audience ID** and add it to your Vercel environment variables as `RESEND_AUDIENCE_ID`.
+5. Now, every form submission will automatically be added to this list for your future email blasts.
+
+### 4. Verify Your Domain in Resend
 1. In your Resend dashboard, go to Domains
 2. Add your domain (e.g., `carlygagephotography.com`)
 3. Follow the DNS verification steps provided by Resend

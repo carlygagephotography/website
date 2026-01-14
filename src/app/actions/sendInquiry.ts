@@ -22,6 +22,27 @@ export async function sendInquiry(formData: any) {
   }
 
   try {
+    // Add to Resend Audience (Contacts) if AUDIENCE_ID is provided
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (resend && audienceId) {
+      const [firstName, ...lastNameParts] = name.split(' ');
+      const lastName = lastNameParts.join(' ');
+      
+      try {
+        await resend.contacts.create({
+          email: email,
+          firstName: firstName,
+          lastName: lastName || '',
+          unsubscribed: false,
+          audienceId: audienceId,
+        });
+        console.log(`✅ Contact added to Resend: ${email}`);
+      } catch (contactError) {
+        console.error("Error adding contact to Resend:", contactError);
+        // We don't want to fail the whole submission if just the contact creation fails
+      }
+    }
+
     const { data, error } = await resend.emails.send({
       from: 'Carly Gage Photography <hello@carlygage.com>', // Verified domain
       to: ['carlygagephotography@gmail.com'],
