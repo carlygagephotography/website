@@ -5,11 +5,13 @@ import { Resend } from 'resend';
 export async function submitContest(formData: any) {
   const { firstName, lastName, email, phone, location } = formData;
   
+  // Try to get the keys from environment variables
   const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  // We check both standard and common Vercel prefixes just in case
+  const audienceId = process.env.RESEND_AUDIENCE_ID || process.env.NEXT_PUBLIC_RESEND_AUDIENCE_ID;
 
   if (!apiKey) {
-    console.error("❌ RESEND_API_KEY is missing in Vercel environment variables");
+    console.error("❌ RESEND_API_KEY is missing in environment variables");
     return { success: false, error: "Configuration error" };
   }
 
@@ -17,27 +19,27 @@ export async function submitContest(formData: any) {
 
   try {
     // 1. Try to add to Resend Audience (Contacts)
-    if (audienceId) {
+    if (audienceId && audienceId.trim() !== "") {
       try {
-        console.log(`📡 Attempting to add contact to audience ${audienceId}: ${email}`);
+        console.log(`📡 Adding contact to audience: ${audienceId}`);
         await resend.contacts.create({
           email: email,
           firstName: firstName,
           lastName: lastName,
           unsubscribed: false,
-          audienceId: audienceId,
+          audienceId: audienceId.trim(),
         });
         console.log(`✅ Successfully added ${email} to Resend Audience`);
       } catch (contactError: any) {
-        // If the contact already exists, Resend might return an error. 
-        // We log it but continue so the email still sends.
-        console.error("⚠️ Resend Audience Error:", contactError?.message || contactError);
+        // If they are already in the list, Resend might return a 422 or error message
+        console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact might already exist or ID is invalid");
       }
     } else {
-      console.warn("⚠️ RESEND_AUDIENCE_ID is missing. Contact will not be saved to your list.");
+      // This is the warning you are seeing
+      console.warn("⚠️ RESEND_AUDIENCE_ID is not detected in this environment.");
     }
 
-    // 2. Send the notification email to you
+    // 2. Send the notification email
     const { data, error } = await resend.emails.send({
       from: 'Carly Gage Photography <hello@carlygage.com>',
       to: ['carlygagephotography@gmail.com'],
