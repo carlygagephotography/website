@@ -51,8 +51,8 @@ export default function ContestPage() {
                     <div className="w-10 h-10 bg-bone rounded-full flex items-center justify-center text-moss">
                       <Heart className="w-5 h-5" />
                     </div>
-                    <h4 className="font-serif text-xl text-slate">Styling Guide</h4>
-                    <p className="text-sm text-slate/60 font-sans leading-relaxed">Personalized help with choosing the perfect outfits.</p>
+                    <h4 className="font-serif text-xl text-slate">Styling Tips</h4>
+                    <p className="text-sm text-slate/60 font-sans leading-relaxed">Personalized tips to help you choose the perfect outfits.</p>
                   </div>
                   <div className="space-y-4">
                     <div className="w-10 h-10 bg-bone rounded-full flex items-center justify-center text-moss">
