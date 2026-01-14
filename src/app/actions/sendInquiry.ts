@@ -6,7 +6,8 @@ export async function sendInquiry(formData: any) {
   const { name, email, phone, sessionType, location, message } = formData;
   
   const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  // Use the env var, but fallback to your specific ID if it's missing
+  const audienceId = process.env.RESEND_AUDIENCE_ID || "0850988a-a3b1-484b-8a71-0d1aae3f53b9";
 
   if (!apiKey) {
     console.error("❌ RESEND_API_KEY is missing");
@@ -16,27 +17,25 @@ export async function sendInquiry(formData: any) {
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Try to add to Resend Audience
-    if (audienceId) {
-      const nameParts = name.trim().split(' ');
-      const firstName = nameParts[0];
-      const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
+    // 1. Add to Resend Audience
+    const nameParts = name.trim().split(' ');
+    const firstName = nameParts[0];
+    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
 
-      try {
-        await resend.contacts.create({
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          unsubscribed: false,
-          audienceId: audienceId,
-        });
-        console.log(`✅ Added ${email} to Resend Audience`);
-      } catch (contactError: any) {
-        console.error("⚠️ Resend Audience Error:", contactError?.message || contactError);
-      }
+    try {
+      await resend.contacts.create({
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        unsubscribed: false,
+        audienceId: audienceId.trim(),
+      });
+      console.log(`✅ Added ${email} to Resend Audience`);
+    } catch (contactError: any) {
+      console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact likely already exists");
     }
 
-    // 2. Send the notification email to you
+    // 2. Send the notification email
     const { data, error } = await resend.emails.send({
       from: 'Carly Gage Photography <hello@carlygage.com>',
       to: ['carlygagephotography@gmail.com'],
@@ -56,14 +55,10 @@ export async function sendInquiry(formData: any) {
       `,
     });
 
-    if (error) {
-      console.error("❌ Resend Email Error:", error);
-      return { success: false, error };
-    }
-
+    if (error) return { success: false, error };
     return { success: true };
   } catch (error: any) {
-    console.error("❌ Server Action Error:", error?.message || error);
+    console.error("❌ Server Error:", error?.message || error);
     return { success: false, error };
   }
 }

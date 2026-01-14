@@ -5,38 +5,31 @@ import { Resend } from 'resend';
 export async function submitContest(formData: any) {
   const { firstName, lastName, email, phone, location } = formData;
   
-  // Try to get the keys from environment variables
   const apiKey = process.env.RESEND_API_KEY;
-  // We check both standard and common Vercel prefixes just in case
-  const audienceId = process.env.RESEND_AUDIENCE_ID || process.env.NEXT_PUBLIC_RESEND_AUDIENCE_ID;
+  // Use the env var, but fallback to your specific ID if it's missing
+  const audienceId = process.env.RESEND_AUDIENCE_ID || "0850988a-a3b1-484b-8a71-0d1aae3f53b9";
 
   if (!apiKey) {
-    console.error("❌ RESEND_API_KEY is missing in environment variables");
+    console.error("❌ RESEND_API_KEY is missing");
     return { success: false, error: "Configuration error" };
   }
 
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Try to add to Resend Audience (Contacts)
-    if (audienceId && audienceId.trim() !== "") {
-      try {
-        console.log(`📡 Adding contact to audience: ${audienceId}`);
-        await resend.contacts.create({
-          email: email,
-          firstName: firstName,
-          lastName: lastName,
-          unsubscribed: false,
-          audienceId: audienceId.trim(),
-        });
-        console.log(`✅ Successfully added ${email} to Resend Audience`);
-      } catch (contactError: any) {
-        // If they are already in the list, Resend might return a 422 or error message
-        console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact might already exist or ID is invalid");
-      }
-    } else {
-      // This is the warning you are seeing
-      console.warn("⚠️ RESEND_AUDIENCE_ID is not detected in this environment.");
+    // 1. Add to Resend Audience
+    try {
+      console.log(`📡 Adding ${email} to Resend Audience...`);
+      await resend.contacts.create({
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        unsubscribed: false,
+        audienceId: audienceId.trim(),
+      });
+      console.log(`✅ Successfully added to Resend Audience`);
+    } catch (contactError: any) {
+      console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact likely already exists");
     }
 
     // 2. Send the notification email
@@ -57,14 +50,10 @@ export async function submitContest(formData: any) {
       `,
     });
 
-    if (error) {
-      console.error("❌ Resend Email Error:", error);
-      return { success: false, error };
-    }
-
+    if (error) return { success: false, error };
     return { success: true };
   } catch (error: any) {
-    console.error("❌ Server Action Error:", error?.message || error);
+    console.error("❌ Server Error:", error?.message || error);
     return { success: false, error };
   }
 }
