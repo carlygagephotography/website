@@ -17,7 +17,7 @@ export async function sendInquiry(formData: any) {
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Add to Resend Audience (Saves them as a CONTACT)
+    // 1. Add to Resend Audience (Saves them as a CONTACT with custom properties)
     try {
       const nameParts = name.trim().split(' ');
       const firstName = nameParts[0];
@@ -29,8 +29,15 @@ export async function sendInquiry(formData: any) {
         lastName: lastName,
         unsubscribed: false,
         audienceId: audienceId.trim(),
+        // Adding custom properties for Phone, Location, and Session Type
+        properties: {
+          phone: phone,
+          location: location,
+          session_type: sessionType,
+          source: "inquiry_form"
+        }
       });
-      console.log(`✅ Added ${email} to Resend Audience`);
+      console.log(`✅ Added ${email} to Resend Audience with custom properties`);
     } catch (contactError: any) {
       console.warn("⚠️ Resend Audience Error:", contactError?.message || contactError);
     }

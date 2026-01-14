@@ -17,7 +17,7 @@ export async function submitContest(formData: any) {
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Add to Resend Audience (Saves them as a CONTACT)
+    // 1. Add to Resend Audience (Saves them as a CONTACT with custom properties)
     try {
       console.log(`📡 Adding ${email} to Resend Audience...`);
       await resend.contacts.create({
@@ -26,10 +26,15 @@ export async function submitContest(formData: any) {
         lastName: lastName,
         unsubscribed: false,
         audienceId: audienceId.trim(),
+        // Adding custom properties for Phone and Location
+        properties: {
+          phone: phone,
+          location: location,
+          source: "contest_page"
+        }
       });
-      console.log(`✅ Successfully added to Resend Audience`);
+      console.log(`✅ Successfully added to Resend Audience with custom properties`);
     } catch (contactError: any) {
-      // If the contact already exists, Resend returns an error. We log it but don't stop the email.
       console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact likely already exists");
     }
 
