@@ -80,6 +80,14 @@ export function trackFacebookCustomEvent(
 
 /**
  * Track a Lead conversion event (form submission)
+ * 
+ * NOTE: After implementing, you must activate Lead as a conversion event in Facebook Events Manager:
+ * 1. Go to https://business.facebook.com/events_manager2
+ * 2. Select your Pixel
+ * 3. Go to "Aggregated Event Measurement" or "Events" → "Conversions"
+ * 4. Activate "Lead" as a conversion event
+ * 5. Once active, you can use it in ad campaigns as an optimization event
+ * 
  * @param sessionType - Type of session selected (e.g., 'family', 'maternity', 'mini')
  * @param location - Location selected (e.g., 'Flower Mound', 'Frisco')
  */
