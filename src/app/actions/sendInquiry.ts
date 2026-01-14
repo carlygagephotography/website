@@ -6,7 +6,7 @@ export async function sendInquiry(formData: any) {
   const { name, email, phone, sessionType, location, message } = formData;
   
   const apiKey = process.env.RESEND_API_KEY;
-  // Use the env var, but fallback to your specific ID if it's missing
+  // Use the env var, or fallback to your specific ID
   const audienceId = process.env.RESEND_AUDIENCE_ID || "0850988a-a3b1-484b-8a71-0d1aae3f53b9";
 
   if (!apiKey) {
@@ -17,12 +17,12 @@ export async function sendInquiry(formData: any) {
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Add to Resend Audience
-    const nameParts = name.trim().split(' ');
-    const firstName = nameParts[0];
-    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
-
+    // 1. Add to Resend Audience (Saves them as a CONTACT)
     try {
+      const nameParts = name.trim().split(' ');
+      const firstName = nameParts[0];
+      const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
+
       await resend.contacts.create({
         email: email,
         firstName: firstName,
@@ -32,10 +32,10 @@ export async function sendInquiry(formData: any) {
       });
       console.log(`✅ Added ${email} to Resend Audience`);
     } catch (contactError: any) {
-      console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact likely already exists");
+      console.warn("⚠️ Resend Audience Error:", contactError?.message || contactError);
     }
 
-    // 2. Send the notification email
+    // 2. Send the notification email to you
     const { data, error } = await resend.emails.send({
       from: 'Carly Gage Photography <hello@carlygage.com>',
       to: ['carlygagephotography@gmail.com'],

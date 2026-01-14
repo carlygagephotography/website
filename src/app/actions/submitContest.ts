@@ -6,7 +6,7 @@ export async function submitContest(formData: any) {
   const { firstName, lastName, email, phone, location } = formData;
   
   const apiKey = process.env.RESEND_API_KEY;
-  // Use the env var, but fallback to your specific ID if it's missing
+  // We use the Vercel variable if it exists, otherwise we use your specific ID as a hard fallback
   const audienceId = process.env.RESEND_AUDIENCE_ID || "0850988a-a3b1-484b-8a71-0d1aae3f53b9";
 
   if (!apiKey) {
@@ -17,7 +17,7 @@ export async function submitContest(formData: any) {
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Add to Resend Audience
+    // 1. Add to Resend Audience (Saves them as a CONTACT)
     try {
       console.log(`📡 Adding ${email} to Resend Audience...`);
       await resend.contacts.create({
@@ -29,10 +29,11 @@ export async function submitContest(formData: any) {
       });
       console.log(`✅ Successfully added to Resend Audience`);
     } catch (contactError: any) {
+      // If the contact already exists, Resend returns an error. We log it but don't stop the email.
       console.warn("ℹ️ Resend Audience Notice:", contactError?.message || "Contact likely already exists");
     }
 
-    // 2. Send the notification email
+    // 2. Send the notification email to you
     const { data, error } = await resend.emails.send({
       from: 'Carly Gage Photography <hello@carlygage.com>',
       to: ['carlygagephotography@gmail.com'],
