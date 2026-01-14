@@ -94,9 +94,12 @@ export function Footer() {
               <span className="hover:text-slate cursor-pointer transition-colors">Sitemap</span>
             </div>
           </div>
-          <div className="pt-6 border-t border-sand/20">
+          <div className="pt-6 border-t border-sand/20 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[9px] uppercase tracking-[0.4em] text-slate/30 text-center md:text-left">
               © 2026 Carly Gage Photography. Capturing families in Flower Mound, Dallas, and beyond.
+            </p>
+            <p className="text-[9px] uppercase tracking-[0.4em] text-slate/30 text-center md:text-right">
+              Carly Gage Photography | A sister brand of <a href="https://www.anomadiclove.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate transition-colors border-b border-transparent hover:border-slate/20">A Nomadic Love</a>
             </p>
           </div>
         </div>
