@@ -8,7 +8,7 @@ import { ContestForm } from "@/components/v3/ContestForm";
 import { Testimonials } from "@/components/v3/Testimonials";
 import { Footer } from "@/components/v3/Footer";
 import { FAQ } from "@/components/v3/FAQ";
-import { Gift, Camera, Heart, Sparkles } from "lucide-react";
+import { Camera, Heart, Sparkles } from "lucide-react";
 
 export default function ContestPage() {
   return (
@@ -53,13 +53,6 @@ export default function ContestPage() {
                     </div>
                     <h4 className="font-serif text-xl text-slate">Styling Tips</h4>
                     <p className="text-sm text-slate/60 font-sans leading-relaxed">Personalized tips to help you choose the perfect outfits.</p>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="w-10 h-10 bg-bone rounded-full flex items-center justify-center text-moss">
-                      <Gift className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-serif text-xl text-slate">$650 Value</h4>
-                    <p className="text-sm text-slate/60 font-sans leading-relaxed">A complete premium photography experience on me.</p>
                   </div>
                 </div>
               </div>
