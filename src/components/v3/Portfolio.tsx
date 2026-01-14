@@ -64,17 +64,17 @@ export function Portfolio() {
   });
   
   return (
-    <section id="portfolios" className="py-16 md:py-24 lg:py-40 bg-bone overflow-hidden">
+    <section id="portfolios" className="py-16 md:py-24 lg:py-40 bg-slate overflow-hidden">
       <div className="max-w-[1800px] mx-auto px-4 md:px-16 space-y-12 md:space-y-20 lg:space-y-32">
         
         {/* Editorial Header */}
         <div className="max-w-4xl space-y-6 md:space-y-8">
-          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">The Portfolio</span>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[8vw] font-serif leading-[0.85] md:leading-[0.8] text-slate tracking-tighter">
+          <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-bone/40 block">The Portfolio</span>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[8vw] font-serif leading-[0.85] md:leading-[0.8] text-bone tracking-tighter">
             Galleries Full <br />
             <span className="italic font-light opacity-50 text-moss">of Life.</span>
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl text-slate/60 font-sans font-light leading-relaxed max-w-2xl text-left">
+          <p className="text-lg md:text-xl lg:text-2xl text-bone/60 font-sans font-light leading-relaxed max-w-2xl text-left">
             Real families, real moments, real joy. Every session is a celebration of what makes your family uniquely yours.
           </p>
         </div>
@@ -83,7 +83,7 @@ export function Portfolio() {
         <div className="md:hidden mb-6">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-[1px] bg-moss/40" />
-            <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">Swipe to explore</span>
+            <span className="text-[9px] uppercase tracking-[0.4em] text-bone/40">Swipe to explore</span>
           </div>
 
           <div className="overflow-hidden relative">
@@ -94,60 +94,48 @@ export function Portfolio() {
               {works.map((work, i) => (
                 <div
                   key={work.id}
-                  className="flex-shrink-0 w-[82vw] snap-center"
+                  className="flex-shrink-0 w-[85vw] snap-center"
                 >
-                  {work.link ? (
-                    <Link href={work.link} className="cursor-pointer block space-y-6">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-fog shadow-editorial">
-                         <Image 
-                            src={work.src} 
-                            alt={work.alt || work.title} 
-                            fill 
-                            className="object-cover transition-transform duration-[2s]"
-                            style={{ objectPosition: work.pos }}
-                            sizes="82vw"
-                         />
+                  <Link href={work.link || "#"} className="block group">
+                    <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden aspect-[16/10] flex">
+                      {/* Left Side: Content */}
+                      <div className="flex-1 p-6 flex flex-col justify-between z-10">
+                        <div className="space-y-3">
+                          <span className="text-[8px] font-bold tracking-[0.2em] text-moss/80 uppercase">{work.cat}</span>
+                          <div className="space-y-0.5">
+                            <h4 className="text-xl font-bold tracking-tight text-bone uppercase leading-none">{work.title.split(' ')[0]}</h4>
+                            <h4 className="text-2xl font-bold tracking-tighter text-bone uppercase leading-none">{work.title.split(' ').slice(1).join(' ')}</h4>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-2 text-moss">
+                          <span className="text-[9px] font-bold uppercase tracking-widest">View Gallery</span>
+                          <ArrowUpRight className="w-3 h-3" />
+                        </div>
                       </div>
-                      <div className="space-y-3">
-                         <div className="flex justify-between items-baseline">
-                            <h3 className="text-2xl font-serif text-slate tracking-tight">{work.title}</h3>
-                            <span className="text-[9px] uppercase tracking-[0.3em] text-slate/40">{work.cat}</span>
-                         </div>
-                         <p className="text-sm text-slate/50 font-sans font-light leading-relaxed text-left">
-                            {work.desc}
-                         </p>
-                      </div>
-                    </Link>
-                  ) : (
-                    <div className="space-y-6">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-fog shadow-editorial">
-                         <Image 
-                            src={work.src} 
-                            alt={work.alt || work.title} 
-                            fill 
-                            className="object-cover transition-transform duration-[2s]"
-                            style={{ objectPosition: work.pos }}
-                            sizes="82vw"
-                         />
-                      </div>
-                      <div className="space-y-3">
-                         <div className="flex justify-between items-baseline">
-                            <h3 className="text-2xl font-serif text-slate tracking-tight">{work.title}</h3>
-                            <span className="text-[9px] uppercase tracking-[0.3em] text-slate/40">{work.cat}</span>
-                         </div>
-                         <p className="text-sm text-slate/50 font-sans font-light leading-relaxed text-left">
-                            {work.desc}
-                         </p>
+
+                      {/* Right Side: Framed Image */}
+                      <div className="w-[45%] relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-slate via-transparent to-transparent z-10" />
+                        <Image
+                          src={work.src}
+                          alt={work.alt || work.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          style={{ objectPosition: work.pos }}
+                          sizes="40vw"
+                        />
+                        <div className="absolute inset-0 bg-slate/20 mix-blend-multiply" />
                       </div>
                     </div>
-                  )}
+                  </Link>
                 </div>
               ))}
             </div>
 
             {/* Scroll Progress Indicator */}
             <div className="mt-8 flex items-center gap-4">
-              <div className="flex-1 h-[1px] bg-sand relative overflow-hidden">
+              <div className="flex-1 h-[1px] bg-white/10 relative overflow-hidden">
                 <motion.div 
                   style={{ 
                     scaleX: scrollXProgress,
@@ -157,91 +145,74 @@ export function Portfolio() {
                 />
               </div>
               <div className="flex gap-1.5 items-center">
-                 <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">01</span>
-                 <div className="w-4 h-[1px] bg-sand" />
-                 <span className="text-[9px] uppercase tracking-[0.4em] text-slate/40">0{works.length}</span>
+                 <span className="text-[9px] uppercase tracking-[0.4em] text-bone/40">01</span>
+                 <div className="w-4 h-[1px] bg-white/10" />
+                 <span className="text-[9px] uppercase tracking-[0.4em] text-bone/40">0{works.length}</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Desktop: Artistic Grid */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-16 md:gap-y-32">
+        {/* Desktop: Player Card Grid */}
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
            {works.map((work, i) => (
              <motion.div
                 key={work.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true, margin: "-100px" }}
-                className={cn(
-                  "relative group flex flex-col space-y-8",
-                  i % 2 !== 0 ? "md:mt-32" : "" // Staggered masonry effect
-                )}
+                transition={{ duration: 0.8, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
              >
-                {work.link ? (
-                  <Link href={work.link} className="cursor-pointer">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-fog shadow-editorial">
-                       <Image 
-                          src={work.src} 
-                          alt={work.alt || work.title} 
-                          fill 
-                          className="object-cover transition-transform duration-[2s] group-hover:scale-105"
-                          style={{ objectPosition: work.pos }}
-                          sizes="(max-width: 768px) 100vw, 50vw"
-                       />
-                       
-                       <div className="absolute inset-0 bg-slate/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                       
-                       <div className="absolute top-10 right-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:rotate-45 border border-white/20">
-                          <ArrowUpRight className="h-5 w-5" />
-                       </div>
+                <Link href={work.link || "#"} className="block relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden aspect-[16/10] flex hover:border-moss/30 transition-all duration-500 hover:shadow-2xl hover:shadow-moss/5">
+                  {/* Left Side: Content */}
+                  <div className="flex-1 p-8 lg:p-10 flex flex-col justify-between z-10">
+                    <div className="space-y-4">
+                      <span className="text-[10px] font-bold tracking-[0.3em] text-moss/80 uppercase">{work.cat}</span>
+                      <div className="space-y-1">
+                        <h4 className="text-2xl lg:text-3xl font-bold tracking-tight text-bone uppercase leading-none">{work.title.split(' ')[0]}</h4>
+                        <h4 className="text-4xl lg:text-5xl font-bold tracking-tighter text-bone uppercase leading-none">{work.title.split(' ').slice(1).join(' ')}</h4>
+                      </div>
+                      <p className="text-sm text-bone/40 font-sans font-light leading-relaxed max-w-[180px]">
+                        {work.desc}
+                      </p>
                     </div>
-                  </Link>
-                ) : (
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-fog shadow-editorial">
-                     <Image 
-                        src={work.src} 
-                        alt={work.alt || work.title} 
-                        fill 
-                        className="object-cover transition-transform duration-[2s] group-hover:scale-105"
-                        style={{ objectPosition: work.pos }}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                     />
-                     
-                     <div className="absolute inset-0 bg-slate/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                     
-                     <div className="absolute top-10 right-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white opacity-0 transition-all duration-700 group-hover:opacity-100 group-hover:rotate-45 border border-white/20">
-                        <ArrowUpRight className="h-5 w-5" />
-                     </div>
+                    
+                    <div className="flex items-center gap-3 text-moss group-hover:gap-5 transition-all duration-500">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.3em]">View Story</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
                   </div>
-                )}
-                
-                <div className="space-y-4">
-                   <div className="flex justify-between items-baseline">
-                      {work.link ? (
-                        <Link href={work.link}>
-                          <h3 className="text-3xl font-serif text-slate tracking-tight hover:text-moss transition-colors">{work.title}</h3>
-                        </Link>
-                      ) : (
-                        <h3 className="text-3xl font-serif text-slate tracking-tight">{work.title}</h3>
-                      )}
-                      <span className="text-[10px] uppercase tracking-[0.3em] text-slate/40">{work.cat}</span>
-                   </div>
-                   <p className="text-sm text-slate/50 font-sans font-light leading-relaxed max-w-sm text-left">
-                      {work.desc}
-                   </p>
-                </div>
+
+                  {/* Right Side: Framed Image */}
+                  <div className="w-[45%] relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate via-transparent to-transparent z-10" />
+                    <Image
+                      src={work.src}
+                      alt={work.alt || work.title}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                      style={{ objectPosition: work.pos }}
+                      sizes="40vw"
+                    />
+                    <div className="absolute inset-0 bg-slate/20 mix-blend-multiply" />
+                  </div>
+
+                  {/* Top Right Label (Like Player Status) */}
+                  <div className="absolute top-8 right-8 z-20">
+                    <div className="h-2 w-2 rounded-full bg-moss shadow-[0_0_10px_rgba(134,151,121,0.8)] animate-pulse" />
+                  </div>
+                </Link>
              </motion.div>
            ))}
         </div>
 
         {/* Lead Gen Callout */}
         <div className="pt-6 md:pt-20 text-center flex flex-col items-center space-y-4 md:space-y-12">
-           <div className="h-[1px] w-40 bg-sand" />
+           <div className="h-[1px] w-40 bg-white/10" />
            
            <div className="space-y-4 md:space-y-8">
-              <h3 className="text-3xl md:text-4xl font-serif text-slate tracking-tight max-w-xl mx-auto">
+              <h3 className="text-3xl md:text-4xl font-serif text-bone tracking-tight max-w-xl mx-auto">
                 Ready to Preserve Your <span className="italic opacity-60">Family History?</span>
               </h3>
               
@@ -249,14 +220,14 @@ export function Portfolio() {
                 <a 
                   href="#contact"
                   onClick={(e) => handleAnchorClick(e, "#contact")}
-                  className="bg-slate text-bone px-10 py-5 md:px-12 md:py-6 rounded-sm text-[10px] md:text-[11px] uppercase tracking-[0.4em] md:tracking-[0.5em] hover:bg-moss transition-all duration-500 active:scale-[0.98]"
+                  className="bg-bone text-slate px-10 py-5 md:px-12 md:py-6 rounded-sm text-[10px] md:text-[11px] uppercase tracking-[0.4em] md:tracking-[0.5em] hover:bg-moss hover:text-bone transition-all duration-500 active:scale-[0.98]"
                 >
                   Book Your Session
                 </a>
                 
-                <button className="group text-[11px] md:text-[12px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/60 hover:text-slate transition-all duration-500 flex items-center gap-4">
+                <button className="group text-[11px] md:text-[12px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-bone/40 hover:text-moss transition-all duration-500 flex items-center gap-4">
                   Explore All Stories
-                  <span className="h-[1px] w-0 bg-slate transition-all duration-500 group-hover:w-12" />
+                  <span className="h-[1px] w-0 bg-moss transition-all duration-500 group-hover:w-12" />
                 </button>
               </div>
            </div>
