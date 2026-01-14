@@ -8,19 +8,19 @@ import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 const testimonials = [
   {
     quote: "I was worried my toddler wouldn't cooperate, but Carly was magic! She played games with him and got the best smiles. We are obsessed with these photos.",
-    author: "Sarah J.",
+    author: "Jordan J.",
     location: "Flower Mound",
     image: "/images/Jordan-Bryce-and-Jenson021_websize.jpg"
   },
   {
     quote: "We do the Mini Sessions every fall. It's quick, easy, and the photos are always stunning. Highly recommend for busy families!",
-    author: "The Davis Family",
+    author: "Shawna B.",
     location: "Frisco",
-    image: "/images/marquee-2.jpg"
+    image: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini010.jpg"
   },
   {
     quote: "Relaxed, professional, and so kind. We felt comfortable immediately.",
-    author: "Mike & Jessica",
+    author: "Tiffany T.",
     location: "Southlake",
     image: "/images/tiff-holiday-photos017.jpg"
   }
