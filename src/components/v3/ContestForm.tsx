@@ -94,16 +94,8 @@ export function ContestForm() {
         </div>
 
         <div className="space-y-2 group">
-          <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Location</label>
-          <select {...register("location")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl appearance-none cursor-pointer">
-            <option value="">Select your city...</option>
-            <option value="southlake">Southlake</option>
-            <option value="highland-park">Highland Park</option>
-            <option value="frisco">Frisco</option>
-            <option value="flower-mound">Flower Mound</option>
-            <option value="prosper">Prosper</option>
-            <option value="other">Other DFW Area</option>
-          </select>
+          <label className="text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold">Where are you located?</label>
+          <input {...register("location")} className="w-full bg-transparent border-b border-sand py-4 outline-none focus:border-slate transition-all font-serif text-xl" placeholder="e.g. Southlake, Frisco, etc." />
           {errors.location && <span className="text-[10px] text-red-400 uppercase tracking-widest">{errors.location.message as string}</span>}
         </div>
 

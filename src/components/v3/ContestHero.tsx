@@ -34,12 +34,12 @@ export function ContestHero() {
             </div>
 
             <h1 className="text-5xl md:text-7xl lg:text-[7vw] font-serif leading-[0.9] text-white md:text-slate tracking-tighter">
-              Win a One-Hour <br />
-              <span className="italic font-light opacity-60 text-moss md:text-moss">Family Session.</span>
+              Win a Full <br />
+              <span className="italic font-light opacity-60 text-moss md:text-moss">Photo Session.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-white/90 md:text-slate/60 font-sans font-light max-w-lg leading-relaxed">
-              To celebrate the opening of my 2026 Spring Calendar, I’m giving away one full photography session to a DFW family. Enter below for your chance to capture beautiful, real memories.
+              To celebrate the opening of my 2026 Spring Calendar, I’m giving away one full photography session to a DFW family. Whether you want to capture your <strong>Family</strong>, your <strong>Maternity</strong> journey, or a <strong>Baby Announcement</strong>, enter below for your chance to win!
             </p>
 
             <div className="pt-8 flex flex-col sm:flex-row gap-8 items-center">
