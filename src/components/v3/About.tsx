@@ -56,7 +56,7 @@ export function About() {
               </p>
 
               <p className="text-sm md:text-base text-slate/50 font-sans font-light leading-relaxed text-left border-l border-sand pl-6 italic">
-                While this online home for my family work is new, my camera is not. For over a decade, I have traveled the globe capturing love stories as the co-founder of the award-winning wedding studio, <a href="https://www.anomadiclove.com" target="_blank" rel="noopener noreferrer" className="text-moss border-b border-moss/20 hover:border-moss transition-colors">A Nomadic Love</a>.
+                Bringing over a decade of experience traveling the globe capturing weddings for <a href="https://www.anomadiclove.com" target="_blank" rel="noopener noreferrer" className="text-moss border-b border-moss/20 hover:border-moss transition-colors">A Nomadic Love</a>, I apply that same artistic eye to documenting beautiful family moments.
               </p>
 
               <div className="pt-4 md:pt-6 lg:pt-8 flex flex-col gap-4 md:gap-6 lg:gap-8">
