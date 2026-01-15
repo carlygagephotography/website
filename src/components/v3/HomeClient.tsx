@@ -4,18 +4,35 @@ import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import { Navigation } from "@/components/v3/Navigation";
 import { Hero } from "@/components/v3/Hero";
 import { Expertise } from "@/components/v3/Expertise";
-import { Portfolio } from "@/components/v3/Portfolio";
-import { Inquiry } from "@/components/v3/Inquiry";
-import { Testimonials } from "@/components/v3/Testimonials";
-import { FAQ } from "@/components/v3/FAQ";
-import { Footer } from "@/components/v3/Footer";
-import { AreasServed } from "@/components/AreasServed";
 import { About } from "@/components/v3/About";
-import { ObjectionHandlers } from "@/components/v3/ObjectionHandlers";
 import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 import { StickyMobileBar } from "@/components/v3/StickyMobileBar";
 import { FacebookPixelDebug } from "@/components/FacebookPixelDebug";
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
+
+// Lazy load below-the-fold components for better initial performance
+const ObjectionHandlers = dynamic(() => import("@/components/v3/ObjectionHandlers").then(mod => ({ default: mod.ObjectionHandlers })), {
+  ssr: true,
+});
+const Portfolio = dynamic(() => import("@/components/v3/Portfolio").then(mod => ({ default: mod.Portfolio })), {
+  ssr: true,
+});
+const Testimonials = dynamic(() => import("@/components/v3/Testimonials").then(mod => ({ default: mod.Testimonials })), {
+  ssr: true,
+});
+const AreasServed = dynamic(() => import("@/components/AreasServed").then(mod => ({ default: mod.AreasServed })), {
+  ssr: true,
+});
+const Inquiry = dynamic(() => import("@/components/v3/Inquiry").then(mod => ({ default: mod.Inquiry })), {
+  ssr: true,
+});
+const FAQ = dynamic(() => import("@/components/v3/FAQ").then(mod => ({ default: mod.FAQ })), {
+  ssr: true,
+});
+const Footer = dynamic(() => import("@/components/v3/Footer").then(mod => ({ default: mod.Footer })), {
+  ssr: true,
+});
 
 export function HomeClient() {
   const lenis = useLenis();
