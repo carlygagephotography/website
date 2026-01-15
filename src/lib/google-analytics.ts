@@ -53,16 +53,40 @@ export function trackGAEvent(
   eventName: string,
   eventParams?: Record<string, any>
 ) {
-  ensureGtagLoaded(() => {
+  if (typeof window === 'undefined') {
+    console.warn('Google Analytics: Window is not available');
+    return;
+  }
+
+  // Initialize dataLayer if it doesn't exist
+  if (!window.dataLayer) {
+    window.dataLayer = [];
+  }
+
+  const params = eventParams || {};
+  
+  // Try direct gtag call first (if available)
+  if (window.gtag && typeof window.gtag === 'function') {
     try {
-      if (window.gtag) {
-        window.gtag('event', eventName, eventParams || {});
-        console.log(`✅ Google Analytics: Tracked ${eventName}`, eventParams || {});
-      }
+      window.gtag('event', eventName, params);
+      console.log(`✅ Google Analytics: Tracked ${eventName}`, params);
+      return;
     } catch (error) {
       console.error(`❌ Google Analytics: Error tracking ${eventName}`, error);
     }
-  });
+  }
+
+  // Fallback: Push to dataLayer (this works even if gtag isn't loaded yet)
+  // The gtag library will process these when it loads
+  try {
+    window.dataLayer.push({
+      event: eventName,
+      ...params,
+    });
+    console.log(`✅ Google Analytics: Queued ${eventName} in dataLayer`, params);
+  } catch (error) {
+    console.error(`❌ Google Analytics: Error pushing to dataLayer`, error);
+  }
 }
 
 /**
@@ -93,12 +117,18 @@ export function trackFormSubmission(
   };
 
   // Track both custom event and standard GA4 lead event
+  // Note: Call form_submission first, then generate_lead separately
   trackGAEvent('form_submission', params);
+  
+  // Standard GA4 conversion event
   trackGAEvent('generate_lead', {
     currency: 'USD',
     value: 0, // You can set actual lead value if you have pricing tiers
     lead_type: formData?.sessionType || 'general',
-    ...params,
+    form_id: formName,
+    form_name: formName,
+    ...(formData?.sessionType && { session_type: formData.sessionType }),
+    ...(formData?.location && { location: formData.location }),
   });
 }
 
@@ -169,24 +199,49 @@ export function trackOutboundLink(url: string, linkText?: string) {
 }
 
 /**
- * Test function to verify Google Analytics is loaded
+ * Test function to verify Google Analytics is loaded and track test events
  * Call this in browser console: window.testGoogleAnalytics()
  */
 if (typeof window !== 'undefined') {
   (window as any).testGoogleAnalytics = () => {
-    console.log('Testing Google Analytics...');
+    console.log('🧪 Testing Google Analytics...');
     console.log('gtag available:', typeof window.gtag === 'function');
     console.log('dataLayer:', window.dataLayer);
-    if (window.gtag) {
-      try {
-        window.gtag('event', 'test_event', {
-          event_category: 'test',
-          event_label: 'Analytics test',
-        });
-        console.log('✅ Google Analytics test successful - test_event tracked');
-      } catch (error) {
-        console.error('❌ Google Analytics test failed:', error);
-      }
+    console.log('dataLayer length:', window.dataLayer?.length || 0);
+    
+    // Test event tracking
+    try {
+      trackGAEvent('test_event', {
+        event_category: 'test',
+        event_label: 'Manual test from console',
+        test_timestamp: new Date().toISOString(),
+      });
+      
+      // Test generate_lead event specifically
+      trackGAEvent('generate_lead', {
+        currency: 'USD',
+        value: 0,
+        lead_type: 'test',
+        form_id: 'test_form',
+        test: true,
+      });
+      
+      console.log('✅ Test events sent! Check GA4 Realtime reports in 30 seconds.');
+      console.log('📊 View events at: https://analytics.google.com → Reports → Realtime → Events');
+    } catch (error) {
+      console.error('❌ Google Analytics test failed:', error);
     }
+  };
+
+  // Also expose a simpler test function
+  (window as any).testGA = () => {
+    trackGAEvent('generate_lead', {
+      currency: 'USD',
+      value: 0,
+      lead_type: 'test',
+      form_id: 'console_test',
+      test: true,
+    });
+    console.log('✅ generate_lead event sent! Check Realtime in GA4.');
   };
 }
