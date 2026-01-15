@@ -33,7 +33,7 @@ export function Hero() {
               style={{ objectPosition: "50% 25%" }}
               priority
               quality={70}
-              sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 640px"
+              sizes="(max-width: 412px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, 640px"
               fetchPriority="high"
             />
             {/* Dark overlay for text readability */}
