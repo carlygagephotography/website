@@ -17,7 +17,7 @@ export function ContestHero() {
             className="relative w-full h-full"
           >
             <Image
-              src="/images/hero-stephanie-new.jpg"
+              src="/images/hero-stephanie-new.webp"
               alt="Dallas family photography giveaway"
               fill
               className="object-cover"
@@ -130,7 +130,7 @@ export function ContestHero() {
             className="relative w-full h-full rounded-[1rem] overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/hero-stephanie-new.jpg"
+              src="/images/hero-stephanie-new.webp"
               alt="Carly Gage Photography giveaway"
               fill
               className="object-cover"

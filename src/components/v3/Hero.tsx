@@ -26,7 +26,7 @@ export function Hero() {
             className="relative w-full h-full"
           >
             <Image
-              src="/images/hero-stephanie-new.jpg"
+              src="/images/hero-stephanie-new.webp"
               alt="Dallas family photographer capturing joyful family moments"
               fill
               className="object-cover"
@@ -150,7 +150,7 @@ export function Hero() {
             className="relative w-full h-full rounded-[1rem] overflow-hidden shadow-2xl"
           >
             <Image
-              src="/images/hero-stephanie-new.jpg"
+              src="/images/hero-stephanie-new.webp"
               alt="Dallas family photographer capturing heirloom portraits in natural light, showcasing timeless editorial photography style for DFW families."
               fill
               className="object-cover"
