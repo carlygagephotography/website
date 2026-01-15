@@ -32,8 +32,9 @@ export function Hero() {
               className="object-cover"
               style={{ objectPosition: "50% 25%" }}
               priority
-              quality={85}
+              quality={75}
               sizes="100vw"
+              fetchPriority="high"
             />
             {/* Dark overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate/60 via-slate/20 to-transparent" />
@@ -155,8 +156,9 @@ export function Hero() {
               className="object-cover"
               style={{ objectPosition: "50% 25%" }}
               priority
-              quality={85}
+              quality={75}
               sizes="(max-width: 768px) 100vw, 50vw"
+              fetchPriority="high"
             />
             {/* Subtle Texture/Filter Overlay */}
             <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />

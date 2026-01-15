@@ -145,8 +145,8 @@ export function Inquiry() {
                 </div>
 
                 <div className="space-y-1 md:space-y-2 group">
-                  <label className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">Session Type *</label>
-                  <select {...register("sessionType")} className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl appearance-none cursor-pointer" required>
+                  <label htmlFor="sessionType" className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">Session Type *</label>
+                  <select {...register("sessionType")} id="sessionType" name="sessionType" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl appearance-none cursor-pointer" required>
                     <option value="">Select a session type...</option>
                     <option value="family">Family Session</option>
                     <option value="maternity">Maternity</option>

@@ -71,6 +71,7 @@ export function ObjectionHandlers() {
                 <button 
                   onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
                   disabled={activeIndex === 0}
+                  aria-label="Previous concern"
                   className="w-10 h-10 rounded-full border border-sand flex items-center justify-center text-slate/40 hover:text-moss hover:border-moss transition-all disabled:opacity-20 disabled:hover:border-sand disabled:hover:text-slate/40"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -78,6 +79,7 @@ export function ObjectionHandlers() {
                 <button 
                   onClick={() => scrollToIndex(Math.min(allConcerns.length - 1, activeIndex + 1))}
                   disabled={activeIndex === allConcerns.length - 1}
+                  aria-label="Next concern"
                   className="w-10 h-10 rounded-full border border-sand flex items-center justify-center text-slate/40 hover:text-moss hover:border-moss transition-all disabled:opacity-20 disabled:hover:border-sand disabled:hover:text-slate/40"
                 >
                   <ArrowRight className="w-5 h-5 rotate-0" />
