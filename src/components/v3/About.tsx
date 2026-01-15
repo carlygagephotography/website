@@ -28,8 +28,8 @@ export function About() {
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 style={{ objectPosition: "50% 20%" }}
-                quality={75}
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                quality={70}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 512px"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-slate/5 mix-blend-multiply opacity-20" />

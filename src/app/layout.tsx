@@ -146,10 +146,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Preconnect to third-party domains for faster loading */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://connect.facebook.net" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        {/* Preload LCP image */}
+        <link 
+          rel="preload" 
+          as="image" 
+          href="/images/hero-stephanie-new.jpg" 
+          fetchPriority="high"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${playfair.variable} antialiased bg-grain`}

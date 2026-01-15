@@ -32,8 +32,8 @@ export function Hero() {
               className="object-cover"
               style={{ objectPosition: "50% 25%" }}
               priority
-              quality={75}
-              sizes="100vw"
+              quality={70}
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 640px"
               fetchPriority="high"
             />
             {/* Dark overlay for text readability */}
@@ -156,8 +156,8 @@ export function Hero() {
               className="object-cover"
               style={{ objectPosition: "50% 25%" }}
               priority
-              quality={75}
-              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={70}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               fetchPriority="high"
             />
             {/* Subtle Texture/Filter Overlay */}
