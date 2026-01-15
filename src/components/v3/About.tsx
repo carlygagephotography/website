@@ -48,15 +48,15 @@ export function About() {
 
             <div className="space-y-4 md:space-y-6 lg:space-y-8 max-w-2xl">
               <p className="text-base md:text-lg lg:text-xl text-slate/60 font-sans font-light leading-relaxed text-left">
-                I know that getting the whole family ready for photos can feel like a lot of work—but I promise, once you arrive, I take care of the rest. For over 10 years, I've been helping DFW families relax, laugh, and actually enjoy their session.
+                I know that getting the whole family ready for photos can feel like a lot of work—the wardrobe stress, the worry about whether your toddler will cooperate, the fear of awkward posing. But I promise, once you arrive, I take care of all of that. For over 10 years, I've been helping DFW families relax, laugh, and actually enjoy their session.
               </p>
               
               <p className="text-sm md:text-base text-slate/50 font-sans font-light leading-relaxed text-left">
-                I don't expect your kids to be perfect; I expect them to be kids! Whether I'm shooting in Flower Mound, Frisco, or Southlake, my approach is patient and playful. I'm here to capture the chaos, the cuddles, and the love that makes your family yours.
+                I don't expect your kids to be perfect; in fact, I prefer when they're not. Whether I'm shooting in Flower Mound, Frisco, or Southlake, my approach is patient and playful. I work with the chaos rather than against it, capturing the genuine belly laughs and curious expressions that happen when children are simply allowed to be themselves. Those are the moments you'll treasure twenty years from now.
               </p>
 
               <p className="text-sm md:text-base text-slate/50 font-sans font-light leading-relaxed text-left border-l border-sand pl-6 italic">
-                Bringing over a decade of experience traveling the globe capturing weddings for <a href="https://www.anomadiclove.com" target="_blank" rel="noopener noreferrer" className="text-moss border-b border-moss/20 hover:border-moss transition-colors">A Nomadic Love</a>, I apply that same artistic eye to documenting beautiful family moments.
+                Bringing over a decade of experience traveling the globe capturing weddings for <a href="https://www.anomadiclove.com" target="_blank" rel="noopener noreferrer" className="text-moss border-b border-moss/20 hover:border-moss transition-colors">A Nomadic Love</a>, I apply that same artistic eye and storytelling approach to documenting beautiful family moments here in North Texas.
               </p>
 
               <div className="pt-4 md:pt-6 lg:pt-8 flex flex-col gap-4 md:gap-6 lg:gap-8">

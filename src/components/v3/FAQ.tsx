@@ -3,24 +3,31 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
+import { ICP_CONTENT } from "@/data/icp-content";
 
-const faqs = [
-  {
-    question: "My kids are super energetic/shy. Is that okay?",
-    answer: "Absolutely! I have years of experience working with all personality types. I follow their lead, play games, and take breaks. The best photos often happen when kids are just being themselves."
-  },
+// Convert ICP objections to FAQ format + add logistics questions
+const icpFaqs = ICP_CONTENT.flatMap(persona => 
+  persona.objections.map(obj => ({
+    question: obj.objection,
+    answer: obj.solutionNarrative
+  }))
+);
+
+const logisticsFaqs = [
   {
     question: "Do you offer Mini Sessions year-round?",
-    answer: "I offer Mini Sessions on specific dates each season (Spring and Fall). Contact me to grab a spot before they sell out!"
+    answer: "I offer Mini Sessions on specific dates each season, typically in Spring and Fall when the Texas weather and natural light are at their most beautiful. These limited sessions fill up quickly, so I recommend reaching out as soon as dates are announced to secure your preferred time slot."
   },
   {
-    question: "What should we wear?",
-    answer: "I recommend comfortable, coordinating outfits that make you feel like your best self. I can discuss styling options during your consultation."
-  },
-  {
-    question: "Do you serve other areas like Frisco or Southlake?",
-    answer: "Yes! While I'm based in Flower Mound, I serve the entire DFW metroplex including Southlake, Plano, Highland Park, and McKinney. Sessions are available throughout these areas."
+    question: "Do you serve other areas like Frisco, Southlake, or Highland Park?",
+    answer: "Yes! While I'm based in Flower Mound, I serve the entire DFW metroplex including Southlake, Frisco, Plano, Highland Park, McKinney, Prosper, Coppell, Colleyville, and Grapevine. I carefully select locations in each area that provide the best backdrops for your family's unique style and vision."
   }
+];
+
+// Combine ICP-driven FAQs with logistics, prioritizing the most common objections
+const faqs = [
+  ...icpFaqs.slice(0, 5), // First 5 ICP objections
+  ...logisticsFaqs
 ];
 
 export function FAQ() {

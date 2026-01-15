@@ -11,6 +11,7 @@ import { FAQ } from "@/components/v3/FAQ";
 import { Footer } from "@/components/v3/Footer";
 import { AreasServed } from "@/components/AreasServed";
 import { About } from "@/components/v3/About";
+import { ObjectionHandlers } from "@/components/v3/ObjectionHandlers";
 import { FloatingInquiryForm } from "@/components/v3/FloatingInquiryForm";
 import { StickyMobileBar } from "@/components/v3/StickyMobileBar";
 import { FacebookPixelDebug } from "@/components/FacebookPixelDebug";
@@ -53,6 +54,8 @@ export function HomeClient() {
         <Expertise />
 
         <About />
+
+        <ObjectionHandlers />
 
         <Portfolio />
 
