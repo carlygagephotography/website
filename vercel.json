@@ -8,13 +8,6 @@
       "maxDuration": 10
     }
   },
-  "redirects": [
-    {
-      "source": "https://www.carlygage.com/:path*",
-      "destination": "https://carlygage.com/:path*",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
