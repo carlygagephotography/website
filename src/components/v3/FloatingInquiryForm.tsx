@@ -9,6 +9,7 @@ import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, C
 import { sendInquiry } from "@/app/actions/sendInquiry";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { trackLead } from "@/lib/facebook-pixel";
+import { trackFormSubmission } from "@/lib/google-analytics";
 
 const schema = z.object({
   name: z.string().min(2, "Please share your name").nonempty("Name is required"),
@@ -49,6 +50,11 @@ export function FloatingInquiryForm() {
         // Track Facebook Pixel Lead event (only once per submission)
         if (!hasTrackedLead) {
           trackLead(data.sessionType, data.location);
+          // Track Google Analytics form submission
+          trackFormSubmission('floating_inquiry_form', {
+            sessionType: data.sessionType,
+            location: data.location,
+          });
           setHasTrackedLead(true);
         }
         setIsSuccess(true);

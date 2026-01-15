@@ -8,6 +8,7 @@ import * as z from "zod";
 import { Loader2, ArrowRight, CheckCircle, Gift } from "lucide-react";
 import { submitContest } from "@/app/actions/submitContest";
 import { trackLead } from "@/lib/facebook-pixel";
+import { trackContestEntry } from "@/lib/google-analytics";
 
 const schema = z.object({
   firstName: z.string().min(2, "First name is required"),
@@ -37,6 +38,8 @@ export function ContestForm() {
         // Track Facebook Pixel Lead event
         if (!hasTrackedLead) {
           trackLead('Giveaway Entry', data.location);
+          // Track Google Analytics contest entry
+          trackContestEntry(data.location);
           setHasTrackedLead(true);
         }
         setIsSuccess(true);
