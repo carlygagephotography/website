@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Heart, ShieldCheck, Sun, PenTool, SmilePlus, ChevronLeft, ArrowRight } from "lucide-react";
 import { ICP_CONTENT } from "@/data/icp-content";
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const iconMap: Record<string, any> = {
   "overwhelmed-mom": Heart,
@@ -13,115 +13,129 @@ const iconMap: Record<string, any> = {
   "toddler-meltdown-mom": SmilePlus
 };
 
+// Flatten all objections into a single list for the carousel
+const allConcerns = ICP_CONTENT.flatMap(persona => 
+  persona.objections.map(obj => ({
+    ...obj,
+    personaId: persona.id,
+    personaName: persona.name
+  }))
+);
+
 export function ObjectionHandlers() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollLeft = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -400, behavior: "smooth" });
-    }
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const itemWidth = container.offsetWidth;
+    container.scrollTo({
+      left: index * itemWidth,
+      behavior: "smooth"
+    });
+    setActiveIndex(index);
   };
 
-  const scrollRight = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: 400, behavior: "smooth" });
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const index = Math.round(container.scrollLeft / container.offsetWidth);
+    if (index !== activeIndex) {
+      setActiveIndex(index);
     }
   };
-
-  // Flatten all objections into a single list
-  const allObjections = ICP_CONTENT.flatMap(persona => 
-    persona.objections.map(obj => ({
-      ...obj,
-      personaId: persona.id,
-      personaName: persona.name
-    }))
-  );
 
   return (
-    <section id="approach" className="py-12 md:py-20 lg:py-32 bg-white overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-4 md:px-16">
+    <section id="approach" className="py-12 md:py-24 lg:py-32 px-4 md:px-16 bg-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto">
         
-        {/* Header with Navigation */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16 gap-8">
-          <div className="space-y-4 md:space-y-6 max-w-2xl">
-            <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">Your Experience</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-slate leading-[0.9] tracking-tighter">
-              The Concerns I Hear Most <br />
-              <span className="italic font-light opacity-50 text-moss">(And My Solutions)</span>
-            </h2>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           
-          {/* Navigation Arrows - Desktop Only */}
-          <div className="hidden md:flex gap-4 mb-2">
-            <button 
-              onClick={scrollLeft}
-              className="w-12 h-12 rounded-full border border-sand/50 flex items-center justify-center hover:border-moss hover:text-moss transition-all"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={scrollRight}
-              className="w-12 h-12 rounded-full border border-sand/50 flex items-center justify-center hover:border-moss hover:text-moss transition-all"
-              aria-label="Next"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
+          {/* Header Block - Left Side */}
+          <div className="lg:col-span-5 space-y-6 md:space-y-8">
+            <div className="space-y-4">
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/40 block">Your Peace of Mind</span>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-slate leading-[0.9]">
+                Concerns, <br />
+                <span className="italic font-light opacity-50 text-moss">Addressed.</span>
+              </h2>
+            </div>
+            <p className="text-base md:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-sm">
+              I've heard every worry. Here is how I handle the most common objections to ensure your session is effortless.
+            </p>
 
-        {/* Carousel Container */}
-        <div className="relative -mx-4 md:-mx-16 px-4 md:px-16">
-          <div 
-            ref={containerRef}
-            className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6 md:gap-8 pb-8"
-          >
-            {allObjections.map((item, i) => {
-              const Icon = iconMap[item.personaId] || Heart;
-              return (
-                <motion.article
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: i * 0.05 }}
-                  viewport={{ once: true }}
-                  className="flex-shrink-0 w-[85vw] md:w-[450px] snap-start group relative p-8 md:p-12 bg-bone/30 border border-sand/30 rounded-sm hover:border-moss/30 transition-all duration-500 flex flex-col justify-between"
+            {/* Navigation Controls */}
+            <div className="flex items-center gap-6 pt-4">
+              <div className="flex gap-2">
+                <button 
+                  onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
+                  disabled={activeIndex === 0}
+                  className="w-10 h-10 rounded-full border border-sand flex items-center justify-center text-slate/40 hover:text-moss hover:border-moss transition-all disabled:opacity-20 disabled:hover:border-sand disabled:hover:text-slate/40"
                 >
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-white border border-sand/30 flex items-center justify-center group-hover:border-moss/50 transition-colors duration-500">
-                        <Icon className="w-4 h-4 text-moss" />
-                      </div>
-                      <span className="text-[10px] uppercase tracking-widest text-slate/40">{item.personaName}</span>
-                    </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-xl md:text-2xl font-serif text-slate/90 italic leading-snug">
-                        "{item.objection}"
-                      </h3>
-                      <div className="w-12 h-[1px] bg-sand" />
-                      <p className="text-sm md:text-base text-slate/60 font-sans font-light leading-relaxed">
-                        {item.solutionNarrative}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Aesthetic Accent */}
-                  <div className="mt-8 pt-8 border-t border-sand/20 flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-widest text-slate/20 font-bold">0{i + 1}</span>
-                    <div className="w-2 h-2 rounded-full bg-sand/30" />
-                  </div>
-                </motion.article>
-              );
-            })}
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button 
+                  onClick={() => scrollToIndex(Math.min(allConcerns.length - 1, activeIndex + 1))}
+                  disabled={activeIndex === allConcerns.length - 1}
+                  className="w-10 h-10 rounded-full border border-sand flex items-center justify-center text-slate/40 hover:text-moss hover:border-moss transition-all disabled:opacity-20 disabled:hover:border-sand disabled:hover:text-slate/40"
+                >
+                  <ArrowRight className="w-5 h-5 rotate-0" />
+                </button>
+              </div>
+              <div className="flex-1 h-[1px] bg-sand/30 relative">
+                <motion.div 
+                  className="absolute top-0 left-0 h-full bg-moss"
+                  initial={false}
+                  animate={{ width: `${((activeIndex + 1) / allConcerns.length) * 100}%` }}
+                />
+              </div>
+              <span className="text-[10px] font-sans text-slate/30 tracking-widest uppercase">
+                {activeIndex + 1} / {allConcerns.length}
+              </span>
+            </div>
           </div>
-        </div>
 
-        {/* Mobile Indicator */}
-        <div className="flex justify-center items-center gap-3 mt-8 md:hidden">
-          <div className="w-16 h-[1px] bg-sand" />
-          <span className="text-[8px] uppercase tracking-[0.4em] text-slate/30">Drag to explore</span>
-          <div className="w-16 h-[1px] bg-sand" />
+          {/* Carousel Block - Right Side */}
+          <div className="lg:col-span-7 relative">
+            <div 
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0"
+            >
+              {allConcerns.map((concern, i) => {
+                const Icon = iconMap[concern.personaId] || Heart;
+                return (
+                  <div key={i} className="flex-shrink-0 w-full snap-center md:pr-8">
+                    <motion.article 
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8 }}
+                      viewport={{ once: true }}
+                      className="bg-bone/40 border border-sand/30 p-8 md:p-12 rounded-sm relative min-h-[320px] flex flex-col justify-center"
+                    >
+                      <div className="absolute top-8 left-8 flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-white border border-sand/30 flex items-center justify-center">
+                          <Icon className="w-4 h-4 text-moss" />
+                        </div>
+                        <span className="text-[9px] uppercase tracking-[0.3em] text-slate/40">{concern.personaName}</span>
+                      </div>
+
+                      <div className="space-y-6 pt-8">
+                        <h3 className="text-xl md:text-2xl font-serif text-slate leading-tight italic">
+                          "{concern.objection}"
+                        </h3>
+                        <p className="text-sm md:text-base text-slate/60 font-sans font-light leading-relaxed">
+                          {concern.solutionNarrative}
+                        </p>
+                      </div>
+                    </motion.article>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
         </div>
 
       </div>
