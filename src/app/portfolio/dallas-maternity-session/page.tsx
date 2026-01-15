@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/portfolio/dallas-maternity-session",
   },
+  openGraph: {
+    title: "Dallas Maternity Photography Portfolio | Carly Gage Photography",
+    description: "Celebrate your pregnancy with beautiful, timeless maternity portraits. View maternity sessions in Dallas-Fort Worth.",
+    url: "https://carlygage.com/portfolio/dallas-maternity-session",
+    images: [
+      {
+        url: "/images/portfolio/davion-maternity/Davion-Maternity-033.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Dallas maternity photography session",
+      },
+    ],
+  },
 };
 
 const imageNumbers = [

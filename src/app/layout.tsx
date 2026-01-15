@@ -102,6 +102,28 @@ export const metadata: Metadata = {
   },
   title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
   description: "Carly Gage is a Dallas family photographer based in Flower Mound. I specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://carlygage.com",
+    siteName: "Carly Gage Photography",
+    title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
+    description: "Authentic, joyful family photography in Dallas-Fort Worth. Stress-free sessions that capture your family's real joy. Based in Flower Mound, serving all of DFW.",
+    images: [
+      {
+        url: "/images/hero-stephanie-new.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dallas family photographer capturing joyful family moments",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dallas Family Photographer | Carly Gage Photography",
+    description: "Authentic, joyful family photography in Dallas-Fort Worth. Stress-free sessions that capture your family's real joy.",
+    images: ["/images/hero-stephanie-new.jpg"],
+  },
   icons: {
     icon: [
       { url: "/icon.svg?v=2", type: "image/svg+xml" },

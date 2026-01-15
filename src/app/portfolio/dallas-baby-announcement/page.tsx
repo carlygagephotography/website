@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/portfolio/dallas-baby-announcement",
   },
+  openGraph: {
+    title: "Baby Announcement Photography Portfolio | Carly Gage Photography",
+    description: "Share your exciting news! Creative baby announcement sessions captured in Dallas-Fort Worth.",
+    url: "https://carlygage.com/portfolio/dallas-baby-announcement",
+    images: [
+      {
+        url: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement016.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Dallas baby announcement photography session",
+      },
+    ],
+  },
 };
 
 const imageNumbers = [

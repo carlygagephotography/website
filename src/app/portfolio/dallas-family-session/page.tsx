@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/portfolio/dallas-family-session",
   },
+  openGraph: {
+    title: "Dallas Family Photography Portfolio | Carly Gage Photography",
+    description: "Real families, real moments, real joy. View authentic family portraits captured in the Dallas-Fort Worth area.",
+    url: "https://carlygage.com/portfolio/dallas-family-session",
+    images: [
+      {
+        url: "/images/portfolio/dallas-family-session/Sidney-and-Sam-Family052.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Dallas family photography session",
+      },
+    ],
+  },
 };
 
 const imageNumbers = [

@@ -7,6 +7,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/portfolio/dallas-mini-session",
   },
+  openGraph: {
+    title: "Mini Session Photography Portfolio | Carly Gage Photography",
+    description: "Quick, beautiful 20-minute family sessions. Perfect for busy families in Dallas-Fort Worth.",
+    url: "https://carlygage.com/portfolio/dallas-mini-session",
+    images: [
+      {
+        url: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini021.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Dallas mini session photography",
+      },
+    ],
+  },
 };
 
 const imageNumbers = [
