@@ -24,25 +24,27 @@ export async function sendInquiry(formData: any) {
   const resend = new Resend(apiKey);
 
   try {
-    // 1. Add to Resend Audience (Saves them as a CONTACT)
-    // Note: Custom properties (phone, location, etc.) must be defined in Resend Dashboard first:
-    // Go to Resend Dashboard > Audiences > Your Audience > Custom Properties > Add Property
-    // Then you can uncomment the properties object below
+    // 1. Add to Resend Audience (Saves them as a CONTACT with custom properties)
     try {
       const nameParts = name.trim().split(' ');
       const firstName = nameParts[0];
       const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
 
-      // Try to create contact (without custom properties - they must be defined in Resend Audience first)
-      // Note: To add custom properties later, define them in Resend Dashboard > Audience > Custom Properties
+      // Try to create contact (Resend will handle duplicates automatically)
       const contactResult = await resend.contacts.create({
         email: email.trim().toLowerCase(),
         firstName: firstName,
         lastName: lastName,
         unsubscribed: false,
-        audienceId: audienceId.trim()
-        // Custom properties removed - add them in Resend Dashboard first if needed
-        // properties: { phone, location, session_type, etc. }
+        audienceId: audienceId.trim(),
+        // Adding custom properties for Phone, Location, and Session Type
+        properties: {
+          phone: phone || '',
+          location: location || '',
+          session_type: sessionType || '',
+          source: "inquiry_form",
+          inquiry_date: new Date().toISOString()
+        }
       });
 
       if (contactResult.data) {
@@ -57,8 +59,14 @@ export async function sendInquiry(formData: any) {
             email: email.trim().toLowerCase(),
             audienceId: audienceId.trim(),
             firstName: firstName,
-            lastName: lastName
-            // Custom properties removed - add them in Resend Dashboard first if needed
+            lastName: lastName,
+            properties: {
+              phone: phone || '',
+              location: location || '',
+              session_type: sessionType || '',
+              source: "inquiry_form",
+              last_inquiry: new Date().toISOString()
+            }
           });
           
           if (updateResult.data) {
