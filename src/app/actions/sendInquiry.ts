@@ -14,6 +14,13 @@ export async function sendInquiry(formData: any) {
     return { success: false, error: "Configuration error" };
   }
 
+  if (!audienceId) {
+    console.error("❌ RESEND_AUDIENCE_ID is missing");
+    return { success: false, error: "Audience ID configuration error" };
+  }
+
+  console.log(`📧 Processing inquiry for ${email} - Audience ID: ${audienceId}`);
+
   const resend = new Resend(apiKey);
 
   try {
@@ -23,23 +30,65 @@ export async function sendInquiry(formData: any) {
       const firstName = nameParts[0];
       const lastName = nameParts.length > 1 ? nameParts.slice(1).join(' ') : '';
 
-      await resend.contacts.create({
-        email: email,
+      // Try to create contact (Resend will handle duplicates automatically)
+      const contactResult = await resend.contacts.create({
+        email: email.trim().toLowerCase(),
         firstName: firstName,
         lastName: lastName,
         unsubscribed: false,
         audienceId: audienceId.trim(),
         // Adding custom properties for Phone, Location, and Session Type
         properties: {
-          phone: phone,
-          location: location,
-          session_type: sessionType,
-          source: "inquiry_form"
+          phone: phone || '',
+          location: location || '',
+          session_type: sessionType || '',
+          source: "inquiry_form",
+          inquiry_date: new Date().toISOString()
         }
       });
-      console.log(`✅ Added ${email} to Resend Audience with custom properties`);
+
+      if (contactResult.data) {
+        console.log(`✅ Successfully added/updated ${email} in Resend Audience:`, contactResult.data);
+      } else if (contactResult.error) {
+        // If contact already exists, try to update it
+        if (contactResult.error.message?.toLowerCase().includes('already exists') || 
+            contactResult.error.message?.toLowerCase().includes('duplicate')) {
+          console.log(`ℹ️ Contact ${email} already exists, updating properties...`);
+          
+          const updateResult = await resend.contacts.update({
+            email: email.trim().toLowerCase(),
+            audienceId: audienceId.trim(),
+            firstName: firstName,
+            lastName: lastName,
+            properties: {
+              phone: phone || '',
+              location: location || '',
+              session_type: sessionType || '',
+              source: "inquiry_form",
+              last_inquiry: new Date().toISOString()
+            }
+          });
+          
+          if (updateResult.data) {
+            console.log(`✅ Updated existing contact ${email} in Resend Audience`);
+          } else {
+            console.warn(`⚠️ Could not update contact ${email}:`, updateResult.error);
+          }
+        } else {
+          console.error(`❌ Failed to add contact ${email}:`, contactResult.error);
+        }
+      }
     } catch (contactError: any) {
-      console.warn("⚠️ Resend Audience Error:", contactError?.message || contactError);
+      // Log detailed error for debugging
+      console.error("❌ Resend Audience Error:", {
+        message: contactError?.message,
+        statusCode: contactError?.statusCode,
+        name: contactError?.name,
+        error: JSON.stringify(contactError, null, 2),
+        audienceId: audienceId
+      });
+      // Don't fail the entire form submission if contact creation fails
+      // The email will still be sent
     }
 
     // 2. Send the notification email to you
