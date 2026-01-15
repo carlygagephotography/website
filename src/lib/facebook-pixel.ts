@@ -9,32 +9,43 @@ declare global {
 
 /**
  * Helper function to ensure fbq is loaded before tracking
+ * Silently queues events if fbq isn't ready yet
  */
 function ensureFbqLoaded(callback: () => void, maxAttempts = 20, attempt = 0) {
   if (typeof window === 'undefined') {
-    console.warn('Facebook Pixel: Window is not available');
-    return;
+    return; // Silent fail on server
+  }
+
+  // Initialize fbq queue if it doesn't exist
+  if (!window._fbq) {
+    window._fbq = [];
   }
 
   // Check if fbq exists and is a function
   if (window.fbq && typeof window.fbq === 'function') {
-    // Double check that fbq is actually initialized (not just defined)
     try {
-      // Try a test call to see if it's actually working
       callback();
     } catch (error) {
       console.error('Facebook Pixel: Error in callback', error);
     }
   } else if (attempt < maxAttempts) {
+    // Silently wait - only log after several attempts
+    if (attempt === 0) {
+      // Queue the callback for when fbq loads
+      if (window._fbq && Array.isArray(window._fbq)) {
+        window._fbq.push(callback);
+      }
+    }
     // Wait longer on first few attempts, then shorter intervals
-    const delay = attempt < 5 ? 300 : 200;
+    const delay = attempt < 5 ? 300 : 150;
     setTimeout(() => {
       ensureFbqLoaded(callback, maxAttempts, attempt + 1);
     }, delay);
   } else {
-    console.error('Facebook Pixel: fbq failed to load after multiple attempts');
-    console.error('Current window.fbq:', window.fbq);
-    console.error('Attempted to track event but Pixel not loaded');
+    // Only log error in development or if we've exhausted retries
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Facebook Pixel: fbq not loaded after retries (this is normal with lazyOnload)');
+    }
   }
 }
 

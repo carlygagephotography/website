@@ -150,13 +150,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://connect.facebook.net" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
-        {/* Preload LCP image */}
-        <link 
-          rel="preload" 
-          as="image" 
-          href="/images/hero-stephanie-new.webp" 
-          fetchPriority="high"
-        />
+        {/* Note: Image preload is handled automatically by Next.js Image component with priority prop */}
       </head>
       <body
         className={`${geistSans.variable} ${playfair.variable} antialiased bg-grain`}
