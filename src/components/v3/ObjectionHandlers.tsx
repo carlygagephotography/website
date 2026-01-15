@@ -49,40 +49,54 @@ export function ObjectionHandlers() {
           </motion.p>
         </div>
 
-        {/* Objection Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {ICP_CONTENT.map((persona, personaIndex) => {
-            const Icon = iconMap[persona.id] || Heart;
-            return persona.objections.map((objection, objIndex) => (
-              <motion.article
-                key={`${persona.id}-${objIndex}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: (personaIndex + objIndex) * 0.1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="group relative p-8 md:p-10 bg-bone/50 border border-sand/30 rounded-sm hover:border-moss/30 transition-all duration-500 hover:shadow-lg"
-              >
-                {/* Icon */}
-                <div className="absolute -top-4 left-8 w-12 h-12 bg-white border border-sand/30 rounded-full flex items-center justify-center group-hover:border-moss/50 transition-colors duration-500">
-                  <Icon className="w-5 h-5 text-moss" />
-                </div>
+        {/* Objection Cards - Horizontal Scroll */}
+        <div className="relative">
+          <div className="flex overflow-x-auto pb-12 snap-x snap-mandatory hide-scrollbar gap-6 md:gap-8 px-4 md:px-0 -mx-4 md:mx-0">
+            {ICP_CONTENT.map((persona, personaIndex) => {
+              const Icon = iconMap[persona.id] || Heart;
+              return persona.objections.map((objection, objIndex) => (
+                <motion.article
+                  key={`${persona.id}-${objIndex}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: (personaIndex + objIndex) * 0.05 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="flex-shrink-0 w-[85vw] md:w-[450px] snap-center group relative p-8 md:p-10 bg-bone/50 border border-sand/30 rounded-sm hover:border-moss/30 transition-all duration-500 hover:shadow-lg flex flex-col justify-between"
+                >
+                  {/* Icon */}
+                  <div className="absolute -top-4 left-8 w-12 h-12 bg-white border border-sand/30 rounded-full flex items-center justify-center group-hover:border-moss/50 transition-colors duration-500">
+                    <Icon className="w-5 h-5 text-moss" />
+                  </div>
 
-                {/* Content */}
-                <div className="pt-6 space-y-4 md:space-y-5">
-                  <h3 className="text-lg md:text-xl font-serif text-slate/90 italic leading-snug">
-                    "{objection.objection}"
-                  </h3>
-                  <div className="w-12 h-[1px] bg-sand" />
-                  <p className="text-sm md:text-base text-slate/70 font-sans font-light leading-relaxed">
-                    {objection.solutionNarrative}
-                  </p>
-                </div>
+                  {/* Content */}
+                  <div className="pt-6 space-y-4 md:space-y-5">
+                    <h3 className="text-lg md:text-xl font-serif text-slate/90 italic leading-snug">
+                      "{objection.objection}"
+                    </h3>
+                    <div className="w-12 h-[1px] bg-sand" />
+                    <p className="text-sm md:text-base text-slate/70 font-sans font-light leading-relaxed">
+                      {objection.solutionNarrative}
+                    </p>
+                  </div>
 
-                {/* Decorative Corner */}
-                <div className="absolute bottom-0 right-0 w-16 h-16 border-r border-b border-sand/20 rounded-br-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </motion.article>
-            ));
-          })}
+                  {/* Decorative Corner */}
+                  <div className="absolute bottom-0 right-0 w-16 h-16 border-r border-b border-sand/20 rounded-br-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </motion.article>
+              ));
+            })}
+          </div>
+          
+          {/* Scroll Hint */}
+          <div className="flex justify-center gap-2 mt-4 lg:hidden">
+            <div className="w-12 h-[2px] bg-sand relative overflow-hidden">
+              <motion.div 
+                animate={{ x: [-48, 48] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 bg-moss w-full"
+              />
+            </div>
+            <span className="text-[8px] uppercase tracking-widest text-slate/30">Swipe to view all concerns</span>
+          </div>
         </div>
 
         {/* Bottom CTA */}

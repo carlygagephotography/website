@@ -49,8 +49,8 @@ export function FAQ() {
           </p>
         </div>
 
-        {/* FAQ Items - Accordion on mobile, expanded on desktop */}
-        <div className="lg:col-span-7 space-y-3 md:space-y-8 lg:space-y-12 lg:space-y-20">
+        {/* FAQ Items - Accordion for both mobile and desktop */}
+        <div className="lg:col-span-7 space-y-4 md:space-y-6">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
@@ -58,61 +58,47 @@ export function FAQ() {
                 key={i}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1, duration: 1 }}
+                transition={{ delay: i * 0.05, duration: 0.8 }}
                 viewport={{ once: true }}
-                className="border-b border-sand/30 md:border-0 pb-4 md:pb-0"
+                className="border-b border-sand/30"
               >
-                {/* Mobile: Accordion */}
-                <div className="md:hidden">
-                  <button
-                    onClick={() => setOpenIndex(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 py-4 text-left group"
-                  >
-                    <div className="flex items-start gap-3 flex-1">
-                      <span className="text-lg font-serif italic text-sand mt-1 flex-shrink-0">0{i + 1}</span>
-                      <h3 className="text-lg font-serif text-slate group-hover:text-clay transition-colors duration-500 text-left flex-1">
-                        {faq.question}
-                      </h3>
-                    </div>
-                    <div className="flex-shrink-0 p-1">
+                <button
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 py-6 md:py-8 text-left group"
+                >
+                  <div className="flex items-start gap-4 md:gap-6 flex-1">
+                    <span className="text-sm md:text-base font-serif italic text-sand mt-1 flex-shrink-0">0{i + 1}</span>
+                    <h3 className="text-lg md:text-2xl font-serif text-slate group-hover:text-clay transition-colors duration-500 text-left flex-1">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <div className="flex-shrink-0 p-1">
+                    <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-sand/50 rounded-full group-hover:border-clay/50 transition-colors">
                       {isOpen ? (
-                        <Minus className="w-5 h-5 text-slate/40" />
+                        <Minus className="w-4 h-4 md:w-5 md:h-5 text-slate/40" />
                       ) : (
-                        <Plus className="w-5 h-5 text-slate/40" />
+                        <Plus className="w-4 h-4 md:w-5 md:h-5 text-slate/40" />
                       )}
                     </div>
-                  </button>
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-sm text-slate/60 font-sans font-light leading-relaxed pl-8 pb-4 text-left">
+                  </div>
+                </button>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-10 md:pl-16 pb-8 md:pb-12">
+                        <p className="text-base md:text-lg text-slate/60 font-sans font-light leading-relaxed max-w-2xl text-left">
                           {faq.answer}
                         </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Desktop: Expanded List */}
-                <div className="hidden md:block space-y-4 md:space-y-6 group">
-                  <div className="flex items-start gap-4 md:gap-6 lg:gap-8">
-                    <span className="text-xs md:text-sm font-serif italic text-sand mt-1 flex-shrink-0">0{i + 1}</span>
-                    <div className="space-y-3 md:space-y-4">
-                      <h3 className="text-xl md:text-2xl font-serif text-slate group-hover:text-clay transition-colors duration-500 text-left">
-                        {faq.question}
-                      </h3>
-                      <p className="text-sm md:text-base text-slate/60 font-sans font-light leading-relaxed text-left">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.article>
             );
           })}
