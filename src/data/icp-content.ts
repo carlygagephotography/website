@@ -21,7 +21,7 @@ export const ICP_CONTENT: ICPPersona[] = [
       },
       {
         objection: "I have no idea what we should all wear.",
-        solutionNarrative: "Wardrobe stress is the primary reason many moms delay booking, which is why I provide a comprehensive, personalized styling guide for every family. From color palette recommendations to 'what to avoid' tips, I'll walk you through exactly how to coordinate your family's look so it feels cohesive and timeless. You don't need a professional stylist; you just need the right roadmap to help everyone feel confident and look their best in the Texas light."
+        solutionNarrative: "Wardrobe stress is the primary reason many moms delay booking, which is why I provide personalized wardrobe advice for every family I work with. From color palette recommendations to specific 'what to avoid' tips, I'll walk you through exactly how to coordinate your family's look so it feels cohesive and timeless. You don't need a professional stylist; you just need some direct guidance to help everyone feel confident and look their best in the Texas light."
       }
     ],
     keywords: ["relaxed family photos Dallas", "candid photographer for toddlers", "stress-free family portraits DFW"]

@@ -77,7 +77,7 @@ const jsonLd = {
           "name": "Do you provide styling for the whole family?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Every session includes a personalized styling consultation where I provide professional wardrobe tips and a comprehensive guide to help you coordinate colors and textures that photograph beautifully."
+            "text": "Yes. Every session includes a personalized styling consultation where I provide professional wardrobe tips and expert advice to help you coordinate colors and textures that photograph beautifully."
           }
         }
       ]

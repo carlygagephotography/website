@@ -280,7 +280,7 @@
 
 **FAQ 3**
 - Question: "Do you provide styling for the whole family?"
-- Answer: "Yes. Every session includes a personalized styling consultation and a professional guide to help you coordinate colors and textures that photograph beautifully in our signature organic style."
+- Answer: "Yes. Every session includes a personalized styling consultation and professional advice to help you coordinate colors and textures that photograph beautifully in our signature organic style."
 
 **FAQ 4**
 - Question: "When should we reserve our session date?"

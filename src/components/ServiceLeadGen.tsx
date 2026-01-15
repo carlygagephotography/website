@@ -7,7 +7,7 @@ import Link from "next/link";
 const services = [
   {
     title: "The Signature Milestone",
-    description: "In-home or studio sessions focusing on the first delicate year or significant milestones. Includes professional styling consultation.",
+    description: "In-home or studio sessions focusing on the first delicate year or significant milestones. Includes personalized wardrobe guidance.",
     price: "From $850",
     image: "/images/hero-2.jpg"
   },

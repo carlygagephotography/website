@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "What should we wear to our family photoshoot?",
-    answer: "We recommend 'Earthy Luxury' tones—deep moss greens, warm sands, terracottas, and soft creams. Avoid neon colors or large logos. Upon booking, you will receive a personalized styling guide and professional tips to help you coordinate your family's look effortlessly."
+    answer: "We recommend 'Earthy Luxury' tones—deep moss greens, warm sands, terracottas, and soft creams. Avoid neon colors or large logos. Upon booking, you will receive personalized wardrobe tips and professional advice to help you coordinate your family's look effortlessly."
   },
   {
     question: "Do you offer digital files or printed albums?",

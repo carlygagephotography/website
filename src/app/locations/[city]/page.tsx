@@ -439,7 +439,7 @@ export default async function LocationPage({ params }: Props) {
           <div className="max-w-3xl mx-auto space-y-8">
             <h2 className="text-3xl md:text-4xl font-serif leading-tight">Nothing to wear? No problem.</h2>
             <p className="text-lg text-bone/60 font-sans font-light">
-              Stop stressing about coordinating outfits. Every session includes my personalized styling guide, full of professional tips to help you choose the perfect textures and tones for your {cityName} session.
+              Stop stressing about coordinating outfits. Every session includes my personalized wardrobe advice, full of professional tips to help you choose the perfect textures and tones for your {cityName} session.
             </p>
             <ContextualCTA intent="wardrobe" cityName={cityName} className="!text-bone" />
           </div>
