@@ -14,9 +14,9 @@ export const ContextualCTA = ({ intent, cityName, className = "" }: ContextualCT
     switch (intent) {
       case "wardrobe":
         return {
-          text: "Explore My Client Closet",
+          text: "Get My Styling Guide",
           href: "/#wardrobe",
-          subtext: "Stress-free styling for moms and kids"
+          subtext: "Personalized wardrobe tips for your family"
         };
       case "pricing":
         return {

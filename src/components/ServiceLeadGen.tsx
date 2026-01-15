@@ -7,7 +7,7 @@ import Link from "next/link";
 const services = [
   {
     title: "The Signature Milestone",
-    description: "In-home or studio sessions focusing on the first delicate year or significant milestones. Includes full access to my curated wardrobe.",
+    description: "In-home or studio sessions focusing on the first delicate year or significant milestones. Includes professional styling consultation.",
     price: "From $850",
     image: "/images/hero-2.jpg"
   },
@@ -35,7 +35,7 @@ export function ServiceLeadGen() {
             <h2 className="text-6xl md:text-8xl font-serif">Tailored <br /><span className="italic text-white/40">Experiences.</span></h2>
           </div>
           <p className="max-w-md text-stone-400 font-sans text-lg font-light leading-relaxed">
-            Investment in high-end photography is an investment in your family's future legacy. Every session is fully curated from styling to print.
+            Investment in high-end photography is an investment in your family's future legacy. Every session includes personalized styling tips and professional guidance.
           </p>
         </div>
 

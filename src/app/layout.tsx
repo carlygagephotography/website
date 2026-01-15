@@ -77,7 +77,7 @@ const jsonLd = {
           "name": "Do you provide styling for the whole family?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. My boutique experience includes full styling consultation and access to my curated client wardrobe, featuring high-end pieces for mothers and children."
+            "text": "Yes. Every session includes a personalized styling consultation where I provide professional wardrobe tips and a comprehensive guide to help you coordinate colors and textures that photograph beautifully."
           }
         }
       ]
