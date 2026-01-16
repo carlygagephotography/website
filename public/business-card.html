@@ -65,46 +65,36 @@
             height: 100%;
         }
 
-        .header {
-            margin-bottom: 50px;
-            border-bottom: 1px solid rgba(61, 64, 67, 0.1);
-            padding-bottom: 32px;
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 0;
         }
 
-        .logo-text {
+        .name {
             font-family: 'Playfair Display', serif;
-            font-size: 78px;
+            font-size: 80px;
             font-weight: 400;
             color: #3D4043;
-            letter-spacing: -2.5px;
+            letter-spacing: -2px;
             line-height: 1;
-            margin-bottom: 14px;
+            margin-bottom: 20px;
         }
 
-        .tagline {
-            font-size: 11px;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            color: #3D4043;
-            opacity: 0.5;
+        .name-italic {
+            font-style: italic;
+            opacity: 0.65;
             font-weight: 300;
         }
 
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 30px 0;
-        }
-
         .title {
-            font-size: 17px;
-            letter-spacing: 0.45em;
+            font-size: 16px;
+            letter-spacing: 0.4em;
             text-transform: uppercase;
             color: #4A5D4E;
             font-weight: 400;
-            margin-bottom: 64px;
+            margin-bottom: 56px;
             position: relative;
             padding-left: 2px;
         }
@@ -244,12 +234,10 @@
         <div class="accent-dot"></div>
         <div class="card-content">
             <div class="left-section">
-                <div class="header">
-                    <div class="logo-text">CARLY GAGE</div>
-                    <div class="tagline">PHOTOGRAPHY</div>
-                </div>
-
                 <div class="main-content">
+                    <div class="name">
+                        Carly <span class="name-italic">Gage</span>
+                    </div>
                     <div class="title">Dallas Family Photographer</div>
 
                     <div class="contact-info">
@@ -259,7 +247,7 @@
                         </div>
                         <div class="contact-item">
                             <span class="contact-label">PHONE</span>
-                            <span class="contact-value">(555) 123-4567</span>
+                            <span class="contact-value">(214) 422-8050</span>
                         </div>
                         <div class="contact-item">
                             <span class="contact-label">WEBSITE</span>
