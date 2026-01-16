@@ -73,11 +73,11 @@
 
         .name {
             font-family: 'Playfair Display', serif;
-            font-size: 88px;
+            font-size: 78px;
             font-weight: 400;
             color: #3D4043;
-            letter-spacing: -2.5px;
-            line-height: 1;
+            letter-spacing: -2px;
+            line-height: 1.05;
             margin-bottom: 24px;
         }
 
@@ -85,6 +85,12 @@
             font-style: italic;
             opacity: 0.65;
             font-weight: 300;
+        }
+
+        .name-photography {
+            font-size: 64px;
+            font-weight: 300;
+            opacity: 0.85;
         }
 
         .title {
@@ -182,16 +188,24 @@
             z-index: 0;
         }
 
-        /* Decorative elements */
-        .accent-dot {
+        /* QR Code */
+        .qr-code {
             position: absolute;
-            width: 6px;
-            height: 6px;
-            background: #DCD7CF;
-            border-radius: 50%;
             bottom: 60px;
             right: 90px;
+            width: 100px;
+            height: 100px;
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(61, 64, 67, 0.1);
             z-index: 3;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
         /* Print styles */
@@ -219,12 +233,15 @@
 </head>
 <body>
     <div class="card-container">
-        <div class="accent-dot"></div>
+        <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://carlygage.com&bgcolor=F5F2EE&color=3D4043" alt="QR Code to carlygage.com" />
+        </div>
         <div class="card-content">
             <div class="left-section">
                 <div class="main-content">
                     <div class="name">
-                        Carly <span class="name-italic">Gage</span>
+                        Carly <span class="name-italic">Gage</span><br />
+                        <span class="name-photography">Photography</span>
                     </div>
                     <div class="title">Dallas Family Photographer</div>
 
