@@ -53,28 +53,38 @@
             z-index: 2;
             height: 100%;
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .left-section {
+            flex: 1;
+            display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 100%;
         }
 
         .header {
             border-bottom: 1px solid rgba(61, 64, 67, 0.15);
-            padding-bottom: 24px;
+            padding-bottom: 28px;
             margin-bottom: 32px;
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 48px;
+            font-size: 58px;
             font-weight: 400;
             color: #3D4043;
             letter-spacing: -1px;
             line-height: 1.1;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .tagline {
-            font-size: 10px;
+            font-size: 11px;
             letter-spacing: 0.4em;
             text-transform: uppercase;
             color: #3D4043;
@@ -91,12 +101,12 @@
 
         .name {
             font-family: 'Playfair Display', serif;
-            font-size: 56px;
+            font-size: 72px;
             font-weight: 400;
             color: #3D4043;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
             line-height: 1.1;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .name-italic {
@@ -105,30 +115,30 @@
         }
 
         .title {
-            font-size: 13px;
-            letter-spacing: 0.3em;
+            font-size: 15px;
+            letter-spacing: 0.35em;
             text-transform: uppercase;
             color: #4A5D4E;
             font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 48px;
         }
 
         .contact-info {
-            font-size: 13px;
+            font-size: 15px;
             color: #3D4043;
-            line-height: 2;
-            letter-spacing: 0.05em;
+            line-height: 2.2;
+            letter-spacing: 0.06em;
         }
 
         .contact-item {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .contact-label {
             opacity: 0.5;
             font-weight: 300;
             display: inline-block;
-            min-width: 80px;
+            min-width: 95px;
         }
 
         .contact-value {
@@ -137,24 +147,59 @@
 
         .footer {
             margin-top: 32px;
-            padding-top: 24px;
+            padding-top: 28px;
             border-top: 1px solid rgba(61, 64, 67, 0.15);
-            font-size: 9px;
-            letter-spacing: 0.2em;
+            font-size: 10px;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
             color: #3D4043;
             opacity: 0.5;
         }
 
-        /* Decorative accent */
-        .accent-line {
+        /* Photo section - right side */
+        .photo-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            width: 280px;
+            height: 280px;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #DCD7CF;
+            box-shadow: 0 4px 24px rgba(61, 64, 67, 0.15);
+            background: #F5F2EE;
+        }
+
+        .photo-frame::before {
+            content: "";
             position: absolute;
-            bottom: 80px;
-            right: 80px;
-            width: 120px;
-            height: 1px;
-            background: #DCD7CF;
-            z-index: 2;
+            inset: -4px;
+            border-radius: 50%;
+            border: 1px solid rgba(61, 64, 67, 0.1);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .photo-frame::after {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border-radius: 50%;
+            border: 1px solid rgba(61, 64, 67, 0.08);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 20%;
         }
 
         /* Print styles */
@@ -175,37 +220,48 @@
 </head>
 <body>
     <div class="card-container">
-        <div class="accent-line"></div>
         <div class="card-content">
-            <div class="header">
-                <div class="logo-text">CARLY GAGE</div>
-                <div class="tagline">PHOTOGRAPHY</div>
+            <div class="left-section">
+                <div class="header">
+                    <div class="logo-text">CARLY GAGE</div>
+                    <div class="tagline">PHOTOGRAPHY</div>
+                </div>
+
+                <div class="main-content">
+                    <div class="name">
+                        Carly <span class="name-italic">Gage</span>
+                    </div>
+                    <div class="title">Dallas Family Photographer</div>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">EMAIL</span>
+                            <span class="contact-value">carlygagephotography@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">PHONE</span>
+                            <span class="contact-value">(555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">WEBSITE</span>
+                            <span class="contact-value">carlygage.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">LOCATION</span>
+                            <span class="contact-value">Flower Mound, Texas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    Serving DFW Families
+                </div>
             </div>
 
-            <div class="main-content">
-                <div class="name">
-                    Carly <span class="name-italic">Gage</span>
+            <div class="photo-section">
+                <div class="photo-frame">
+                    <img src="/images/planetblue038.jpg" alt="Carly Gage" class="photo" />
                 </div>
-                <div class="title">Dallas Family Photographer</div>
-
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-label">EMAIL</span>
-                        <span class="contact-value">carlygagephotography@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">WEBSITE</span>
-                        <span class="contact-value">carlygage.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-label">LOCATION</span>
-                        <span class="contact-value">Flower Mound, Texas</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer">
-                Serving DFW Families
             </div>
         </div>
     </div>
