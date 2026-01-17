@@ -87,33 +87,43 @@
             max-width: 40px;
         }
 
-        /* Name section - editorial style */
+        /* Name section - editorial style matching website */
         .name-section {
-            margin-bottom: 48px;
+            margin-bottom: 52px;
         }
 
-        .name {
+        .name-main {
             font-family: 'Playfair Display', serif;
-            font-size: 76px;
+            font-size: 84px;
             font-weight: 400;
             color: #3D4043;
-            letter-spacing: -1.5px;
-            line-height: 1.05;
-            margin-bottom: 12px;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 8px;
         }
 
-        .name-italic {
-            font-style: italic;
-            opacity: 0.7;
-            font-weight: 400;
+        .name-photography-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .name-photography-line {
+            height: 1px;
+            background: rgba(61, 64, 67, 0.15);
+            flex: 1;
+            max-width: 35px;
         }
 
         .name-photography {
-            font-size: 62px;
-            font-weight: 300;
-            opacity: 0.8;
-            font-style: normal;
-            letter-spacing: -0.5px;
+            font-size: 9px;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: #3D4043;
+            opacity: 0.45;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
         }
 
         .title {
@@ -122,7 +132,7 @@
             text-transform: uppercase;
             color: #4A5D4E;
             font-weight: 400;
-            margin-top: 20px;
+            margin-top: 8px;
         }
 
         /* Contact section - editorial style with border-l */
@@ -258,8 +268,13 @@
         <div class="card-content">
             <div class="left-section">
                 <div class="name-section">
-                    <div class="name">
-                        Carly <span class="name-italic">Gage</span> <span class="name-photography">Photography</span>
+                    <div class="name-main">
+                        Carly Gage
+                    </div>
+                    <div class="name-photography-wrapper">
+                        <div class="name-photography-line"></div>
+                        <span class="name-photography">Photography</span>
+                        <div class="name-photography-line"></div>
                     </div>
                     <div class="title">Dallas Family Photographer</div>
                 </div>
