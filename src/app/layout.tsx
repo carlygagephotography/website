@@ -130,10 +130,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.svg?v=2", type: "image/svg+xml" },
+      { url: "/icon.svg?v=4", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: ["/icon.svg?v=2"],
-    apple: ["/icon.svg?v=2"],
+    shortcut: ["/icon.svg?v=4"],
+    apple: ["/icon.svg?v=4"],
   },
 };
 
