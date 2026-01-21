@@ -17,7 +17,15 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(newUrl, { status: 301 });
   }
 
-  // 3. Handle location page URL format
+  // 3. Redirect /portfolio to homepage portfolios section
+  if (pathname === '/portfolio') {
+    const newUrl = new URL(request.url);
+    newUrl.pathname = '/';
+    newUrl.hash = '#portfolios';
+    return NextResponse.redirect(newUrl, { status: 301 });
+  }
+
+  // 4. Handle location page URL format
   // Redirect /locations/[city] to /locations/[city]-family-photographer
   if (pathname.startsWith('/locations/') && !pathname.endsWith('-family-photographer')) {
     const citySlug = pathname.split('/locations/')[1];
