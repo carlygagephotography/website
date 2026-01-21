@@ -8,6 +8,19 @@
       "maxDuration": 10
     }
   },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.carlygage.com"
+        }
+      ],
+      "destination": "https://carlygage.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

@@ -1,0 +1,34 @@
+Fix canonical issues and add missing middleware for SEO
+
+Addresses Google Search Console indexing problems:
+- "Duplicate, Google chose different canonical than user"
+- "Page with redirect" issues
+- Inconsistent canonical URL handling
+
+Changes:
+1. Created src/middleware.ts with edge-level redirects:
+   - WWW to non-WWW (301 permanent)
+   - Trailing slash removal (301 permanent)
+   - Location URL normalization
+
+2. Updated vercel.json:
+   - Added edge-level www redirect configuration
+   - Provides double insurance for canonical domain
+
+3. Fixed canonical URL consistency:
+   - Changed homepage canonical to relative URL
+   - Removed duplicate canonical from layout.tsx
+   - Ensures all pages use consistent relative canonicals
+
+4. Added comprehensive documentation:
+   - CANONICAL_FIX_JAN_2026.md (full technical docs)
+   - DEPLOYMENT_CHECKLIST.md (step-by-step guide)
+   - QUICK_FIX_SUMMARY.md (executive summary)
+
+Expected impact:
+- Resolves duplicate canonical errors within 3-7 days
+- Improves page indexing in Google
+- Consolidates link equity to single canonical domain
+- Provides consistent URL structure site-wide
+
+Related: SEO_FIX_INSTRUCTIONS.md (Jan 14, 2026)
