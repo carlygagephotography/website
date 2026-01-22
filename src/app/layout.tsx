@@ -127,12 +127,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.svg?v=5", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=5", sizes: "any" },
+      { url: "/icon.svg?v=7", type: "image/svg+xml" },
     ],
-    shortcut: ["/icon.svg?v=5"],
+    shortcut: ["/icon.svg?v=7"],
     apple: [
-      { url: "/icon.svg?v=5", type: "image/svg+xml" },
+      { url: "/icon.svg?v=7", sizes: "180x180", type: "image/svg+xml" },
     ],
   },
 };
