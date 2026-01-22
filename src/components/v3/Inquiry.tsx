@@ -177,14 +177,8 @@ export function Inquiry() {
                 </div>
 
                 <div className="space-y-1 md:space-y-2 group">
-                  <label htmlFor="budget" className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">Budget Range *</label>
-                  <select {...register("budget")} id="budget" name="budget" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl appearance-none cursor-pointer" required>
-                    <option value="">Select your budget range...</option>
-                    <option value="under-500">Under $500</option>
-                    <option value="500-1000">$500 - $1,000</option>
-                    <option value="1000-2000">$1,000 - $2,000</option>
-                    <option value="2000-plus">$2,000+</option>
-                  </select>
+                  <label htmlFor="budget" className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">What is your budget? *</label>
+                  <input {...register("budget")} id="budget" name="budget" type="text" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl placeholder:text-slate/30" placeholder="e.g. $1,500 or $1,000-$2,000" required />
                   {errors.budget && <span className="text-[8px] md:text-[10px] text-red-400 uppercase tracking-widest block mt-1">{errors.budget.message as string}</span>}
                 </div>
 

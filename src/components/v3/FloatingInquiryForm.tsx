@@ -280,19 +280,15 @@ export function FloatingInquiryForm() {
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-[0.3em] text-slate/60 font-bold flex items-center gap-2">
                         <DollarSign className="w-3 h-3" />
-                        Budget Range *
+                        What is your budget? *
                       </label>
-                      <select 
+                      <input 
                         {...register("budget")} 
-                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm appearance-none cursor-pointer shadow-sm"
+                        type="text"
+                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm shadow-sm" 
+                        placeholder="e.g. $1,500 or $1,000-$2,000"
                         required
-                      >
-                        <option value="">Select your budget...</option>
-                        <option value="under-500">Under $500</option>
-                        <option value="500-1000">$500 - $1,000</option>
-                        <option value="1000-2000">$1,000 - $2,000</option>
-                        <option value="2000-plus">$2,000+</option>
-                      </select>
+                      />
                       {errors.budget && <span className="text-[10px] text-red-400">{errors.budget.message as string}</span>}
                     </div>
 
