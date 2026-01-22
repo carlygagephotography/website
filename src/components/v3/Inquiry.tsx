@@ -171,14 +171,14 @@ export function Inquiry() {
                   </div>
                   <div className="space-y-1 md:space-y-2 group">
                     <label className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">Location *</label>
-                    <input {...register("location")} type="text" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl placeholder:text-slate/30" placeholder="e.g. Flower Mound..." required />
+                    <input {...register("location")} type="text" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl placeholder:text-slate/30" placeholder="Flower Mound..." required />
                     {errors.location && <span className="text-[8px] md:text-[10px] text-red-400 uppercase tracking-widest block mt-1">{errors.location.message as string}</span>}
                   </div>
                 </div>
 
                 <div className="space-y-1 md:space-y-2 group">
                   <label htmlFor="budget" className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">What is your budget? *</label>
-                  <input {...register("budget")} id="budget" name="budget" type="text" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl placeholder:text-slate/30" placeholder="e.g. $1,500 or $1,000-$2,000" required />
+                  <input {...register("budget")} id="budget" name="budget" type="text" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl placeholder:text-slate/30" placeholder="Your budget" required />
                   {errors.budget && <span className="text-[8px] md:text-[10px] text-red-400 uppercase tracking-widest block mt-1">{errors.budget.message as string}</span>}
                 </div>
 

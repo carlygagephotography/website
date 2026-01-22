@@ -271,7 +271,7 @@ export function FloatingInquiryForm() {
                         {...register("location")} 
                         type="text"
                         className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm shadow-sm" 
-                        placeholder="e.g. Flower Mound, Frisco..."
+                        placeholder="Flower Mound, Frisco..."
                         required
                       />
                       {errors.location && <span className="text-[10px] text-red-400">{errors.location.message as string}</span>}
@@ -286,7 +286,7 @@ export function FloatingInquiryForm() {
                         {...register("budget")} 
                         type="text"
                         className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm shadow-sm" 
-                        placeholder="e.g. $1,500 or $1,000-$2,000"
+                        placeholder="Your budget"
                         required
                       />
                       {errors.budget && <span className="text-[10px] text-red-400">{errors.budget.message as string}</span>}
