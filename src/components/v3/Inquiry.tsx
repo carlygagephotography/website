@@ -16,6 +16,7 @@ const schema = z.object({
   phone: z.string().min(10, "A valid phone is required").nonempty("Phone number is required"),
   sessionType: z.string().min(1, "Please select a session type"),
   location: z.string().min(1, "Please enter your location"),
+  budget: z.string().min(1, "Please select your budget range"),
   message: z.string().min(10, "Please share a bit more about your vision"),
 });
 
@@ -173,6 +174,18 @@ export function Inquiry() {
                     <input {...register("location")} type="text" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl placeholder:text-slate/30" placeholder="e.g. Flower Mound..." required />
                     {errors.location && <span className="text-[8px] md:text-[10px] text-red-400 uppercase tracking-widest block mt-1">{errors.location.message as string}</span>}
                   </div>
+                </div>
+
+                <div className="space-y-1 md:space-y-2 group">
+                  <label htmlFor="budget" className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 group-focus-within:text-slate transition-colors font-bold block">Budget Range *</label>
+                  <select {...register("budget")} id="budget" name="budget" className="w-full bg-transparent border-b border-sand py-2 md:py-4 outline-none focus:border-slate transition-all font-serif text-sm md:text-lg lg:text-xl appearance-none cursor-pointer" required>
+                    <option value="">Select your budget range...</option>
+                    <option value="under-500">Under $500</option>
+                    <option value="500-1000">$500 - $1,000</option>
+                    <option value="1000-2000">$1,000 - $2,000</option>
+                    <option value="2000-plus">$2,000+</option>
+                  </select>
+                  {errors.budget && <span className="text-[8px] md:text-[10px] text-red-400 uppercase tracking-widest block mt-1">{errors.budget.message as string}</span>}
                 </div>
 
                 <div className="space-y-1 md:space-y-2 group">

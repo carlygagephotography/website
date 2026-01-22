@@ -3,7 +3,7 @@
 import { Resend } from 'resend';
 
 export async function sendInquiry(formData: any) {
-  const { name, email, phone, sessionType, location, message } = formData;
+  const { name, email, phone, sessionType, location, budget, message } = formData;
   
   const apiKey = process.env.RESEND_API_KEY;
   // Use the env var, or fallback to your specific ID
@@ -37,11 +37,12 @@ export async function sendInquiry(formData: any) {
         lastName: lastName,
         unsubscribed: false,
         audienceId: audienceId.trim(),
-        // Adding custom properties for Phone, Location, and Session Type
+        // Adding custom properties for Phone, Location, Session Type, and Budget
         properties: {
           phone: phone || '',
           location: location || '',
           session_type: sessionType || '',
+          budget: budget || '',
           source: "inquiry_form",
           inquiry_date: new Date().toISOString()
         }
@@ -64,6 +65,7 @@ export async function sendInquiry(formData: any) {
               phone: phone || '',
               location: location || '',
               session_type: sessionType || '',
+              budget: budget || '',
               source: "inquiry_form",
               last_inquiry: new Date().toISOString()
             }
@@ -105,6 +107,7 @@ export async function sendInquiry(formData: any) {
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Session Type:</strong> ${sessionType}</p>
           <p><strong>Location:</strong> ${location}</p>
+          <p><strong>Budget:</strong> ${budget}</p>
           <p><strong>Vision:</strong></p>
           <p style="background: #f9f9f9; padding: 15px; border-radius: 5px;">${message}</p>
         </div>

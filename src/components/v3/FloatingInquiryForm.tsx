@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, Clock, Gift } from "lucide-react";
+import { X, Mail, Phone, User, MapPin, Camera, Loader2, CheckCircle, Sparkles, Clock, Gift, DollarSign } from "lucide-react";
 import { sendInquiry } from "@/app/actions/sendInquiry";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { trackLead } from "@/lib/facebook-pixel";
@@ -17,6 +17,7 @@ const schema = z.object({
   phone: z.string().min(10, "A valid phone is required").nonempty("Phone number is required"),
   sessionType: z.string().min(1, "Please select a session type"),
   location: z.string().min(1, "Please enter your location"),
+  budget: z.string().min(1, "Please select your budget range"),
   message: z.string().min(10, "Please share a bit more").optional(),
 });
 
@@ -274,6 +275,25 @@ export function FloatingInquiryForm() {
                         required
                       />
                       {errors.location && <span className="text-[10px] text-red-400">{errors.location.message as string}</span>}
+                    </div>
+
+                    <div className="space-y-2">
+                      <label className="text-[10px] uppercase tracking-[0.3em] text-slate/60 font-bold flex items-center gap-2">
+                        <DollarSign className="w-3 h-3" />
+                        Budget Range *
+                      </label>
+                      <select 
+                        {...register("budget")} 
+                        className="w-full bg-white border border-sand py-3 px-4 rounded-sm outline-none focus:border-moss transition-all font-serif text-sm appearance-none cursor-pointer shadow-sm"
+                        required
+                      >
+                        <option value="">Select your budget...</option>
+                        <option value="under-500">Under $500</option>
+                        <option value="500-1000">$500 - $1,000</option>
+                        <option value="1000-2000">$1,000 - $2,000</option>
+                        <option value="2000-plus">$2,000+</option>
+                      </select>
+                      {errors.budget && <span className="text-[10px] text-red-400">{errors.budget.message as string}</span>}
                     </div>
 
                     <div className="space-y-2">
