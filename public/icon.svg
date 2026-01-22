@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Carly Gage Photography">
+  <!-- Background (site: bone) -->
+  <rect x="0" y="0" width="512" height="512" rx="128" fill="#F5F0E6"/>
+
+  <!-- Subtle border (site: sand) -->
+  <rect x="20" y="20" width="472" height="472" rx="116" fill="none" stroke="#E6DDCF" stroke-width="18"/>
+
+  <!-- Soft top highlight -->
+  <path d="M72 136C72 99.4903 101.49 70 138 70H374C410.51 70 440 99.4903 440 136V152C440 115.49 410.51 86 374 86H138C101.49 86 72 115.49 72 152V136Z" fill="#0F172A" fill-opacity="0.045"/>
+
+  <!-- Monogram -->
+  <g>
+    <text
+      x="256"
+      y="304"
+      text-anchor="middle"
+      fill="#0F172A"
+      font-size="208"
+      font-weight="600"
+      font-family="Playfair Display, Georgia, 'Times New Roman', serif"
+      letter-spacing="-10"
+    >CG</text>
+  </g>
+
+  <!-- Accent dot -->
+  <circle cx="376" cy="348" r="10" fill="#7A8F7A"/>
+</svg>
+
+
