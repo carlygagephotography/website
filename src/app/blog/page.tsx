@@ -24,7 +24,7 @@ const blogPosts = [
     title: "CarlyGage.com Announces Spring 2026 Booking Season for Flower Mound and Dallas Families",
     excerpt: "Spring 2026 booking calendar is now open! Discover our updated 'Stress-Free' session guides and capture authentic family moments this season.",
     date: "January 23, 2026",
-    image: "/images/bento-1.jpg",
+    image: "/images/blog/spring-2026-hero.jpg",
     category: "Studio Updates"
   }
 ];

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-01-23T00:00:00Z",
     images: [
       {
-        url: "https://carlygage.com/images/bento-1.jpg",
+        url: "https://carlygage.com/images/blog/spring-2026-hero.jpg",
         width: 1200,
         height: 800,
         alt: "Flower Mound family photographer capturing authentic moments",
@@ -35,7 +35,7 @@ export default function Spring2026BookingPost() {
     "@type": "BlogPosting",
     "headline": "Spring 2026 Booking Season Now Open for Flower Mound and Dallas Families",
     "description": "CarlyGage.com announces Spring 2026 booking season with updated Stress-Free session guides for authentic family photography across North Texas.",
-    "image": "https://carlygage.com/images/bento-1.jpg",
+    "image": "https://carlygage.com/images/blog/spring-2026-hero.jpg",
     "datePublished": "2026-01-23T00:00:00Z",
     "dateModified": "2026-01-23T00:00:00Z",
     "author": {
@@ -110,7 +110,7 @@ export default function Spring2026BookingPost() {
         <div className="max-w-6xl mx-auto px-4 md:px-8 mb-12">
           <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-lg">
             <Image
-              src="/images/bento-1.jpg"
+              src="/images/blog/spring-2026-hero.jpg"
               alt="Authentic family moment captured by Flower Mound family photographer Carly Gage"
               fill
               className="object-cover"
