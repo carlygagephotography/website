@@ -59,6 +59,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...locationPages];
+  // Blog pages
+  const blogPages = [
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/blog/spring-2026-booking-announcement`,
+      lastModified: new Date('2026-01-23'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+  ];
+
+  return [...routes, ...locationPages, ...blogPages];
 }
 

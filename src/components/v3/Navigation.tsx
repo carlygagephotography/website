@@ -59,12 +59,17 @@ export function Navigation() {
             { label: "Services", href: "#services" },
             { label: "About", href: "#about" },
             { label: "Portfolio", href: "#portfolios" },
+            { label: "Blog", href: "/blog", isExternal: true },
             { label: "Contact", href: "#contact" }
           ].map((item) => (
             <Link 
               key={item.label} 
-              href={isHomePage ? item.href : `/${item.href}`}
+              href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
               onClick={(e) => {
+                if (item.isExternal) {
+                  // Allow normal navigation for external links
+                  return;
+                }
                 if (isHomePage) {
                   handleAnchorClick(e, item.href);
                 } else {
