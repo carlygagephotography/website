@@ -31,9 +31,19 @@ export function EmailSignup({
     setStatus("loading");
 
     try {
-      // For now, we'll just simulate success
-      // TODO: Connect to email service (ConvertKit, Mailchimp, etc.)
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setStatus("error");
+        setMessage(data.error || "Something went wrong. Please try again.");
+        return;
+      }
       
       setStatus("success");
       setMessage("You're on the list! Watch your inbox for exclusive session announcements.");
