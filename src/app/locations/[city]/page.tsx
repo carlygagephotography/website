@@ -178,6 +178,25 @@ const cityData: Record<string, {
       { q: "How do we prepare for our Prosper session?", a: "I'll send you helpful preparation tips after booking, including outfit suggestions and what to expect. The main thing is to come ready to relax and have fun!" },
     ],
   },
+  "dallas": {
+    name: "Dallas",
+    displayName: "Dallas",
+    description: "Serving Dallas families with authentic, joyful photography that captures your family's unique story. From the iconic skyline to lush parks like Turtle Creek and White Rock Lake, Dallas offers stunning backdrops for editorial-quality family portraits.",
+    locations: [
+      { name: "Turtle Creek Park", description: "Lush, manicured lawns with mature trees and elegant landscaping perfect for sophisticated family portraits." },
+      { name: "White Rock Lake", description: "Scenic lakeside trails with stunning water views and natural beauty ideal for golden hour sessions." },
+      { name: "Dallas Arts District", description: "Modern architecture and sleek urban lines for families who want an editorial, magazine-worthy feel." },
+      { name: "Klyde Warren Park", description: "Vibrant urban park bridging Uptown and Downtown, offering diverse backdrops from green lawns to city views." },
+      { name: "Trinity Groves Area", description: "Industrial-chic settings with skyline views for a unique, contemporary family session." },
+      { name: "Highland Park/University Park", description: "Tree-lined streets and elegant architecture for a classic, timeless aesthetic." },
+    ],
+    faqs: [
+      { q: "What makes Dallas photography sessions unique?", a: "Dallas offers an incredible range of backdrops—from iconic skyline views to serene lakeside settings. Whether you want editorial sophistication or natural park vibes, we can find the perfect location for your family's style." },
+      { q: "Which Dallas location is best for families with young kids?", a: "White Rock Lake and Turtle Creek are both great for active families. They have open spaces where kids can run and explore, plus beautiful natural light for stunning portraits." },
+      { q: "Do you photograph in downtown Dallas?", a: "Absolutely! The Arts District and Klyde Warren Park offer beautiful urban backdrops. I recommend weekday sessions for fewer crowds and better parking access." },
+      { q: "How far in advance should we book a Dallas session?", a: "I recommend booking 4-6 weeks in advance, especially during fall when schedules fill up quickly. Weekend golden hour slots in popular Dallas locations go fast!" },
+    ],
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

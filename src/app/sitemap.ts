@@ -14,7 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'coppell',
     'colleyville',
     'highland-park',
-    'prosper'
+    'prosper',
+    'dallas'
   ];
 
   // Main pages
