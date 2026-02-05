@@ -204,10 +204,14 @@ export default function MurrellParkGuidePost() {
 
         {/* Featured Image */}
         <div className="max-w-6xl mx-auto px-4 md:px-8 mb-12">
-          <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-lg bg-sand/20">
-            <div className="absolute inset-0 flex items-center justify-center text-slate/40">
-              <Camera className="w-16 h-16" />
-            </div>
+          <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-lg">
+            <Image
+              src="/images/blog/murrell-park-hero.jpg"
+              alt="Family walking through tall grass field at Murrell Park in Flower Mound during golden hour"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <p className="text-center text-sm text-slate/50 mt-4 italic">
             The famous tall grass meadow at Murrell Park during golden hour

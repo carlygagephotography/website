@@ -161,10 +161,14 @@ export default function DallasLocationsPost() {
         </header>
 
         <div className="max-w-6xl mx-auto px-4 md:px-8 mb-12">
-          <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-lg bg-sand/20">
-            <div className="absolute inset-0 flex items-center justify-center text-slate/40">
-              <Camera className="w-16 h-16" />
-            </div>
+          <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-lg">
+            <Image
+              src="/images/blog/dallas-locations-hero.jpg"
+              alt="Couple with ultrasound photo announcing pregnancy - lifestyle photography session in Dallas"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
 
