@@ -20,8 +20,32 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: "murrell-park-photography-guide",
+    title: "Murrell Park Photography Guide: A Local Photographer's Deep Dive",
+    excerpt: "Everything you need to know about photographing at Flower Mound's most photogenic park—from the best spots to insider tips I've learned over hundreds of sessions.",
+    date: "February 5, 2026",
+    image: "/images/blog/murrell-park-guide-hero.jpg",
+    category: "Location Guides"
+  },
+  {
+    slug: "spring-family-portrait-tips-dfw",
+    title: "Spring Family Portrait Tips for DFW: Your Complete Guide",
+    excerpt: "From what to wear to when to book, here's everything you need to know about capturing gorgeous spring family photos in North Texas.",
+    date: "February 5, 2026",
+    image: "/images/blog/spring-tips-hero.jpg",
+    category: "Photography Tips"
+  },
+  {
+    slug: "best-photo-locations-flower-mound",
+    title: "Best Photo Locations in Flower Mound, TX: A Local Photographer's Guide",
+    excerpt: "After 10+ years photographing families in Flower Mound, these are my favorite spots for capturing authentic moments against stunning North Texas backdrops.",
+    date: "February 5, 2026",
+    image: "/images/blog/flower-mound-locations-hero.jpg",
+    category: "Location Guides"
+  },
+  {
     slug: "spring-2026-booking-announcement",
-    title: "CarlyGage.com Announces Spring 2026 Booking Season for Flower Mound and Dallas Families",
+    title: "Spring 2026 Booking Season Now Open for Flower Mound and Dallas Families",
     excerpt: "Spring 2026 booking calendar is now open! Discover our updated 'Stress-Free' session guides and capture authentic family moments this season.",
     date: "January 23, 2026",
     image: "/images/blog/spring-2026-hero.jpg",

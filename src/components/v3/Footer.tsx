@@ -5,7 +5,19 @@ import { motion } from "framer-motion";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { Logo } from "./Logo";
 
-const cities = ["Southlake", "Highland Park", "Frisco", "Prosper", "Flower Mound", "Colleyville", "Grapevine", "McKinney", "Coppell", "Plano"];
+const cities = [
+  { name: "Dallas", slug: "dallas" },
+  { name: "Flower Mound", slug: "flower-mound" },
+  { name: "Southlake", slug: "southlake" },
+  { name: "Frisco", slug: "frisco" },
+  { name: "Highland Park", slug: "highland-park" },
+  { name: "Prosper", slug: "prosper" },
+  { name: "Colleyville", slug: "colleyville" },
+  { name: "Grapevine", slug: "grapevine" },
+  { name: "McKinney", slug: "mckinney" },
+  { name: "Coppell", slug: "coppell" },
+  { name: "Plano", slug: "plano" },
+];
 
 export function Footer() {
   const { handleAnchorClick, scrollToSection } = useSmoothScroll();
@@ -60,9 +72,13 @@ export function Footer() {
               <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/30 font-bold min-w-fit">Serving North Texas</span>
               <div className="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-3">
                  {cities.map(city => (
-                   <span key={city} className="text-[10px] md:text-[11px] font-serif italic text-slate/50 hover:text-slate transition-colors cursor-default">
-                      {city}
-                   </span>
+                   <Link 
+                     key={city.slug} 
+                     href={`/locations/${city.slug}-family-photographer`}
+                     className="text-[10px] md:text-[11px] font-serif italic text-slate/50 hover:text-moss transition-colors"
+                   >
+                      {city.name}
+                   </Link>
                  ))}
               </div>
            </div>

@@ -69,6 +69,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog/murrell-park-photography-guide`,
+      lastModified: new Date('2026-02-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/spring-family-portrait-tips-dfw`,
+      lastModified: new Date('2026-02-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/best-photo-locations-flower-mound`,
+      lastModified: new Date('2026-02-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/blog/spring-2026-booking-announcement`,
       lastModified: new Date('2026-01-23'),
       changeFrequency: 'monthly' as const,
