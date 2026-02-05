@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-02-05T00:00:00Z",
     images: [
       {
-        url: "https://carlygage.com/images/blog/murrell-park-guide-hero.jpg",
+        url: "https://carlygage.com/images/blog/murrell-park-hero.jpg",
         width: 1200,
         height: 800,
         alt: "Golden hour family portrait at Murrell Park overlooking Grapevine Lake",
@@ -34,7 +34,7 @@ export default function MurrellParkGuidePost() {
     "@type": "BlogPosting",
     "headline": "Murrell Park Photography Guide: Best Spots for Family Photos in Flower Mound",
     "description": "Complete guide to photographing families at Murrell Park in Flower Mound, Texas. Best spots, timing tips, and insider secrets from a local photographer.",
-    "image": "https://carlygage.com/images/blog/murrell-park-guide-hero.jpg",
+    "image": "https://carlygage.com/images/blog/murrell-park-hero.jpg",
     "datePublished": "2026-02-05T00:00:00Z",
     "dateModified": "2026-02-05T00:00:00Z",
     "author": {

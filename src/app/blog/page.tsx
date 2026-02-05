@@ -40,7 +40,7 @@ const blogPosts = [
     title: "Murrell Park Photography Guide: A Local Photographer's Deep Dive",
     excerpt: "Everything you need to know about photographing at Flower Mound's most photogenic park—from the best spots to insider tips I've learned over hundreds of sessions.",
     date: "February 5, 2026",
-    image: "/images/blog/murrell-park-guide-hero.jpg",
+    image: "/images/blog/murrell-park-hero.jpg",
     category: "Location Guides"
   },
   {
