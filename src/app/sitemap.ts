@@ -69,6 +69,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog/best-photo-locations-southlake`,
+      lastModified: new Date('2026-02-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/best-photo-locations-dallas`,
+      lastModified: new Date('2026-02-05'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/blog/murrell-park-photography-guide`,
       lastModified: new Date('2026-02-05'),
       changeFrequency: 'monthly' as const,

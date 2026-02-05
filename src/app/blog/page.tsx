@@ -20,6 +20,22 @@ export const metadata: Metadata = {
 
 const blogPosts = [
   {
+    slug: "best-photo-locations-southlake",
+    title: "Best Photo Locations in Southlake, TX: Where Elegance Meets Nature",
+    excerpt: "Southlake offers a unique blend of upscale town center charm and beautiful natural spaces. Here are my favorite spots for capturing families.",
+    date: "February 5, 2026",
+    image: "/images/blog/southlake-locations-hero.jpg",
+    category: "Location Guides"
+  },
+  {
+    slug: "best-photo-locations-dallas",
+    title: "Best Photo Locations in Dallas for Family Portraits",
+    excerpt: "From White Rock Lake to Deep Ellum murals, here are my favorite spots for capturing Dallas families in their element.",
+    date: "February 5, 2026",
+    image: "/images/blog/dallas-locations-hero.jpg",
+    category: "Location Guides"
+  },
+  {
     slug: "murrell-park-photography-guide",
     title: "Murrell Park Photography Guide: A Local Photographer's Deep Dive",
     excerpt: "Everything you need to know about photographing at Flower Mound's most photogenic park—from the best spots to insider tips I've learned over hundreds of sessions.",

@@ -30,6 +30,9 @@ const Inquiry = dynamic(() => import("@/components/v3/Inquiry").then(mod => ({ d
 const FAQ = dynamic(() => import("@/components/v3/FAQ").then(mod => ({ default: mod.FAQ })), {
   ssr: true,
 });
+const EmailSignup = dynamic(() => import("@/components/v3/EmailSignup").then(mod => ({ default: mod.EmailSignup })), {
+  ssr: true,
+});
 const Footer = dynamic(() => import("@/components/v3/Footer").then(mod => ({ default: mod.Footer })), {
   ssr: true,
 });
@@ -81,6 +84,12 @@ export function HomeClient() {
         <AreasServed />
 
         <Inquiry />
+
+        <section className="py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-bone">
+          <div className="max-w-4xl mx-auto">
+            <EmailSignup />
+          </div>
+        </section>
 
         <FAQ />
 
