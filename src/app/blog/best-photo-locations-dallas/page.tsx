@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar, MapPin, Camera } from "lucide-react";
 import { Navigation } from "@/components/v3/Navigation";
 import { Footer } from "@/components/v3/Footer";
