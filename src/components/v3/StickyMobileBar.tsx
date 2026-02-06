@@ -75,16 +75,20 @@ export function StickyMobileBar() {
               {/* Navigation Links */}
               <nav className="space-y-6">
                 {[
-                  { label: "Services", href: "#services" },
-                  { label: "About", href: "#about" },
-                  { label: "Portfolio", href: "#portfolios" },
-                  { label: "Contact", href: "#contact" },
+                  { label: "Services", href: "#services", isExternal: false },
+                  { label: "About", href: "#about", isExternal: false },
+                  { label: "Portfolio", href: "#portfolios", isExternal: false },
+                  { label: "Blog", href: "/blog", isExternal: true },
+                  { label: "Contact", href: "#contact", isExternal: false },
                 ].map((item) => (
                   <Link
                     key={item.label}
-                    href={isHomePage ? item.href : `/${item.href}`}
+                    href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
                     onClick={(e) => {
                       setIsMenuOpen(false);
+                      if (item.isExternal) {
+                        return; // Let normal navigation happen
+                      }
                       if (isHomePage) {
                         handleAnchorClick(e, item.href);
                       } else {
