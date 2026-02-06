@@ -1,31 +1,21 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useScroll } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
-import { Menu, X } from "lucide-react";
 
 import { Logo } from "./Logo";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const { handleAnchorClick } = useSmoothScroll();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-  
-  const navItems = [
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Portfolio", href: "#portfolios" },
-    { label: "Blog", href: "/blog", isExternal: true },
-    { label: "Contact", href: "#contact" }
-  ];
   
   // Transition background and padding on scroll
   useEffect(() => {
@@ -35,143 +25,82 @@ export function Navigation() {
     return () => unsubscribe();
   }, [scrollY]);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
-
   return (
-    <>
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className={cn(
-          "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
-          isScrolled 
-            ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
-            : "py-6 md:py-10 bg-transparent"
-        )}
-      >
-        <div className="max-w-[1800px] mx-auto flex items-center justify-between">
-          {/* Brand */}
-          <Link 
-            href="/" 
-            onClick={(e) => {
-              if (isHomePage) {
-                e.preventDefault();
-                if (window.scrollY > 0) {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={cn(
+        "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
+        isScrolled 
+          ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
+          : "py-6 md:py-10 bg-transparent"
+      )}
+    >
+      <div className="max-w-[1800px] mx-auto flex items-center justify-between">
+        {/* Brand */}
+        <Link 
+          href="/" 
+          onClick={(e) => {
+            if (isHomePage) {
+              e.preventDefault();
+              if (window.scrollY > 0) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }
-            }}
-            className="group cursor-pointer"
-          >
-            <Logo variant="dark" />
-          </Link>
+            }
+          }}
+          className="group cursor-pointer"
+        >
+          <Logo variant="dark" />
+        </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-16">
-            {navItems.map((item) => (
-              <Link 
-                key={item.label} 
-                href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
-                onClick={(e) => {
-                  if (item.isExternal) {
-                    return;
-                  }
-                  if (isHomePage) {
-                    handleAnchorClick(e, item.href);
-                  } else {
-                    window.location.href = `/${item.href}`;
-                  }
-                }}
-                className="text-[10px] uppercase tracking-[0.3em] font-sans text-slate/60 hover:text-slate transition-colors relative group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-slate transition-all duration-500 group-hover:w-full" />
-              </Link>
-            ))}
-          </div>
-
-          {/* Action + Mobile Menu Button */}
-          <div className="flex items-center gap-4 md:gap-8">
-            {/* Mobile Menu Button - hidden on small mobile where StickyMobileBar handles nav */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="hidden md:block lg:hidden p-2 text-slate"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-            
-            <Link
-              href={isHomePage ? "#contact" : "/#contact"}
+        {/* Menu - Hidden on mobile, shown on desktop */}
+        <div className="hidden lg:flex items-center gap-16">
+          {[
+            { label: "Services", href: "#services" },
+            { label: "About", href: "#about" },
+            { label: "Portfolio", href: "#portfolios" },
+            { label: "Blog", href: "/blog", isExternal: true },
+            { label: "Contact", href: "#contact" }
+          ].map((item) => (
+            <Link 
+              key={item.label} 
+              href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
               onClick={(e) => {
+                if (item.isExternal) {
+                  return;
+                }
                 if (isHomePage) {
-                  handleAnchorClick(e, "#contact");
+                  handleAnchorClick(e, item.href);
                 } else {
-                  window.location.href = "/#contact";
+                  window.location.href = `/${item.href}`;
                 }
               }}
-              className="bg-slate text-bone px-4 py-2.5 md:px-8 md:py-4 rounded-sm text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-slate/90 transition-all shadow-lg shadow-slate/5 active:scale-95 inline-block whitespace-nowrap"
+              className="text-[10px] uppercase tracking-[0.3em] font-sans text-slate/60 hover:text-slate transition-colors relative group"
             >
-              <span className="hidden sm:inline">Book Your Session</span>
-              <span className="sm:hidden">Book</span>
+              {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-slate transition-all duration-500 group-hover:w-full" />
             </Link>
-          </div>
+          ))}
         </div>
-      </motion.nav>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999] lg:hidden"
+        {/* Action */}
+        <div className="flex items-center gap-4 md:gap-8">
+          <Link
+            href={isHomePage ? "#contact" : "/#contact"}
+            onClick={(e) => {
+              if (isHomePage) {
+                handleAnchorClick(e, "#contact");
+              } else {
+                window.location.href = "/#contact";
+              }
+            }}
+            className="bg-slate text-bone px-4 py-2.5 md:px-8 md:py-4 rounded-sm text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-slate/90 transition-all shadow-lg shadow-slate/5 active:scale-95 inline-block whitespace-nowrap"
           >
-            {/* Backdrop */}
-            <div 
-              className="absolute inset-0 bg-slate/20 backdrop-blur-sm"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-            
-            {/* Menu Panel */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-[280px] bg-bone shadow-2xl pt-24 px-8"
-            >
-              <nav className="flex flex-col gap-6">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.isExternal ? item.href : (isHomePage ? item.href : `/${item.href}`)}
-                    onClick={(e) => {
-                      setIsMobileMenuOpen(false);
-                      if (item.isExternal) {
-                        return;
-                      }
-                      if (isHomePage) {
-                        handleAnchorClick(e, item.href);
-                      } else {
-                        window.location.href = `/${item.href}`;
-                      }
-                    }}
-                    className="text-lg font-display text-slate hover:text-moss transition-colors py-2 border-b border-sand/50"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+            <span className="hidden sm:inline">Book Your Session</span>
+            <span className="sm:hidden">Book</span>
+          </Link>
+        </div>
+      </div>
+    </motion.nav>
   );
 }
-
