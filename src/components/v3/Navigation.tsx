@@ -95,10 +95,10 @@ export function Navigation() {
 
           {/* Action + Mobile Menu Button */}
           <div className="flex items-center gap-4 md:gap-8">
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - hidden on small mobile where StickyMobileBar handles nav */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-slate"
+              className="hidden md:block lg:hidden p-2 text-slate"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
