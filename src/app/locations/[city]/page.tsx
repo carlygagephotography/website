@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Navigation } from "@/components/v3/Navigation";
 import { Footer } from "@/components/v3/Footer";
 import { ArrowRight, Camera, Clock, MapPin, Users, Heart, Sparkles, ShieldCheck } from "lucide-react";
@@ -375,9 +376,16 @@ export default async function LocationPage({ params }: Props) {
                   </div>
                 </div>
                 <div className="relative aspect-[4/5] bg-sand/20 rounded-sm overflow-hidden group">
-                  <div className="absolute inset-0 flex items-center justify-center text-slate/10 italic font-serif text-2xl px-12 text-center">
-                    "Why {cityName} is the perfect backdrop for your family story"
-                  </div>
+                  {vibeInfo.heroImage && (
+                    <Image 
+                      src={vibeInfo.heroImage} 
+                      alt={`${cityName} Photography Vibe`}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+                  
                   {/* Decorative element */}
                   <div className="absolute bottom-8 left-8 right-8 p-8 bg-white/90 backdrop-blur-sm border border-sand/30 space-y-4">
                     <Sparkles className="w-5 h-5 text-moss" />
@@ -443,7 +451,15 @@ export default async function LocationPage({ params }: Props) {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {cityInfo.locations.map((location, i) => (
-                  <div key={i} className="space-y-2 p-6 border border-sand/30 rounded-sm bg-bone/30 hover:border-moss transition-colors group">
+                  <div key={i} className="space-y-4 p-6 border border-sand/30 rounded-sm bg-bone/30 hover:border-moss transition-colors group">
+                    <div className="relative aspect-video rounded-sm overflow-hidden mb-4">
+                      <Image 
+                        src={`/images/bento-${(i % 7) + 1}.jpg`}
+                        alt={location.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                     <h3 className="font-serif text-xl text-slate group-hover:text-moss transition-colors">{location.name}</h3>
                     <p className="text-slate/60 font-sans font-light leading-relaxed">{location.description}</p>
                   </div>
