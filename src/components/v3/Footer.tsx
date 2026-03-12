@@ -35,7 +35,7 @@ export function Footer() {
               <Logo variant="dark" align="left" className="scale-100 md:scale-110 origin-left" />
             </Link>
             <p className="text-slate/50 font-sans font-light max-w-md text-sm md:text-base leading-relaxed">
-              Friendly Dallas family photographer capturing real moments and genuine joy. Based in Flower Mound, serving families across the entire DFW metroplex.
+              Friendly Flower Mound family photographer capturing real moments and genuine joy. Based in Flower Mound, serving families in Southlake, Highland Park, Coppell, and across DFW.
             </p>
             <div className="flex gap-6 md:gap-8 pt-2 md:pt-4">
                {["Instagram", "Pinterest", "Facebook"].map(social => (
@@ -74,7 +74,7 @@ export function Footer() {
                  {cities.map(city => (
                    <Link 
                      key={city.slug} 
-                     href={`/locations/${city.slug}-family-photographer`}
+                     href={city.slug === "flower-mound" ? "/" : `/locations/${city.slug}-family-photographer`}
                      className="text-[10px] md:text-[11px] font-serif italic text-slate/50 hover:text-moss transition-colors"
                    >
                       {city.name}

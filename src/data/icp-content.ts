@@ -96,7 +96,7 @@ export const CITY_VIBES: Record<string, {
   },
   "flower-mound": {
     vibe: "Wild & Natural",
-    narrative: "As my home base, Flower Mound holds a special place in my heart for its rugged, organic beauty. The rolling hills of the Cross Timbers and the golden-hour glow across the tall grasses near Grapevine Lake offer a rustic, 'unfiltered' Texas vibe. It's the perfect choice for families who want to embrace a more adventurous spirit, where wildflowers and lakeside trails provide a canvas for raw, authentic connection.",
+    narrative: "As my home base, Flower Mound holds a special place in my heart for its rugged, organic beauty. The golden-hour glow across native grasses, oak groves, and the shoreline near Grapevine Lake gives this area a rustic, unfiltered Texas vibe. It's the perfect choice for families who want to embrace a more adventurous spirit, where open fields, wildflowers, and lakeside trails provide a canvas for raw, authentic connection.",
     wikipedia: "https://en.wikipedia.org/wiki/Flower_Mound,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q949437",
     heroImage: "/images/blog/flower-mound-locations-hero.jpg"
@@ -113,7 +113,7 @@ export const CITY_VIBES: Record<string, {
     narrative: "Plano offers a remarkable variety of textures, from the sprawling, ancient oaks of Oak Point Park to the charming, historic character of its downtown corridors. This city allows for a 'chameleon' approach to photography, where we can find a secluded natural escape or a textured urban setting within the same ten-mile radius. It's perfect for families who appreciate depth and history in their surroundings while still wanting a polished finish.",
     wikipedia: "https://en.wikipedia.org/wiki/Plano,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q492552",
-    heroImage: "/images/hero-2.jpg"
+    heroImage: "/images/optimized/hero-2.webp"
   },
   "dallas": {
     vibe: "Iconic & Editorial",
@@ -127,7 +127,7 @@ export const CITY_VIBES: Record<string, {
     narrative: "McKinney is where Texas history meets small-town warmth, offering a photographer's dream of character-rich backdrops. The brick-lined streets and vintage storefronts of downtown McKinney create an intimate, nostalgic atmosphere, while Towne Lake's bridges and natural trails provide serene waterfront moments. It's ideal for families who want their portraits to tell a story that feels rooted in place and tradition, with a touch of Southern charm that never goes out of style.",
     wikipedia: "https://en.wikipedia.org/wiki/McKinney,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q51885",
-    heroImage: "/images/bento-3.jpg"
+    heroImage: "/images/optimized/bento-3.webp"
   },
   "grapevine": {
     vibe: "Lakeside & Romantic",
@@ -141,21 +141,21 @@ export const CITY_VIBES: Record<string, {
     narrative: "Coppell embodies the heart of suburban family life, with its sprawling community parks and tree-lined trails that feel welcoming and unpretentious. Andy Brown Park and the nature preserves offer wide-open spaces where kids can run freely, creating the kind of candid, joyful moments that define authentic family photography. It's the perfect setting for families who value connection over perfection, where the focus is on laughter, movement, and the real personalities of your children shining through in every frame.",
     wikipedia: "https://en.wikipedia.org/wiki/Coppell,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q128269",
-    heroImage: "/images/bento-1.jpg"
+    heroImage: "/images/optimized/bento-1.webp"
   },
   "colleyville": {
     vibe: "Tranquil & Intimate",
     narrative: "Colleyville offers a quieter, more secluded alternative to the busier DFW suburbs, with hidden greenbelts and neighborhood parks that provide peaceful, uninterrupted backdrops. The natural creek settings and wooded trails create an organic, earthy aesthetic that feels private and intentional. For families seeking a more low-key session without sacrificing beauty, Colleyville delivers an intimate experience where we can focus entirely on your family's dynamics without the distraction of crowds or overly staged environments.",
     wikipedia: "https://en.wikipedia.org/wiki/Colleyville,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q975320",
-    heroImage: "/images/bento-4.jpg"
+    heroImage: "/images/optimized/bento-4.webp"
   },
   "highland-park": {
     vibe: "Elegant & Prestigious",
     narrative: "Highland Park represents the pinnacle of Dallas elegance, with its tree-canopied streets, architectural masterpieces, and the iconic Katy Trail weaving through the neighborhood. This is where old-money sophistication meets modern family life, creating a refined aesthetic that feels both timeless and aspirational. For families who want their portraits to reflect a polished, magazine-worthy lifestyle while still capturing genuine warmth, Highland Park provides a backdrop that speaks to achievement, taste, and the beauty of a well-curated life.",
     wikipedia: "https://en.wikipedia.org/wiki/Highland_Park,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q128267",
-    heroImage: "/images/bento-2.jpg"
+    heroImage: "/images/optimized/bento-2.webp"
   },
   "prosper": {
     vibe: "Open & Optimistic",

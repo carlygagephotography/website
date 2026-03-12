@@ -53,10 +53,10 @@ const relatedSessions = [
     alt: "Dallas mini session photography"
   },
   { 
-    href: "/#portfolios", 
-    title: "View All", 
+    href: "/flower-mound-baby-announcement-photographer", 
+    title: "Flower Mound Baby Announcement",
     image: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement016.jpg",
-    alt: "View all portfolio galleries"
+    alt: "Flower Mound baby announcement photographer page"
   },
 ];
 

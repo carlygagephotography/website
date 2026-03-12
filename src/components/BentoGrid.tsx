@@ -10,7 +10,7 @@ const items = [
     id: 1,
     title: "The Golden Hour",
     category: "Family",
-    src: "/images/bento-1.jpg", // Kellee Family
+    src: "/images/optimized/bento-1.webp", // Kellee Family
     aspect: "aspect-[4/5]", // Portrait
     position: "50% 30%", // Face focus
   },
@@ -18,7 +18,7 @@ const items = [
     id: 2,
     title: "Quiet Moments",
     category: "Maternity",
-    src: "/images/bento-2.jpg",
+    src: "/images/optimized/bento-2.webp",
     aspect: "aspect-[3/2]", // Landscape
     position: "50% 20%",
   },
@@ -26,7 +26,7 @@ const items = [
     id: 3,
     title: "Holiday Traditions",
     category: "Seasonal",
-    src: "/images/bento-3.jpg",
+    src: "/images/optimized/bento-3.webp",
     aspect: "aspect-[3/4]",
     position: "50% 25%",
   },
@@ -34,7 +34,7 @@ const items = [
     id: 5,
     title: "Generations",
     category: "Extended Family",
-    src: "/images/bento-5.jpg",
+    src: "/images/optimized/bento-5.webp",
     aspect: "aspect-square",
     position: "50% 20%",
   },
@@ -42,7 +42,7 @@ const items = [
     id: 4,
     title: "New Beginnings",
     category: "Newborn",
-    src: "/images/bento-4.jpg",
+    src: "/images/optimized/bento-4.webp",
     aspect: "aspect-[4/5]",
     position: "50% 40%", // Baby is usually lower
   },

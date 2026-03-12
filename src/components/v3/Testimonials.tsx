@@ -22,7 +22,7 @@ const testimonials = [
     quote: "Relaxed, professional, and so kind. We felt comfortable immediately.",
     author: "Tiffany T.",
     location: "Southlake",
-    image: "/images/tiff-holiday-photos017.jpg"
+    image: "/images/optimized/tiff-holiday-photos017.webp"
   }
 ];
 

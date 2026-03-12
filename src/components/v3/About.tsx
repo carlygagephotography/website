@@ -23,7 +23,7 @@ export function About() {
               className="relative aspect-[3/4] md:aspect-[4/5] rounded-sm overflow-hidden shadow-editorial group max-w-sm mx-auto md:max-w-none"
             >
               <Image
-                src="/images/planetblue038.jpg"
+                src="/images/optimized/planetblue038.webp"
                 alt="Carly Gage - Flower Mound based Dallas family photographer specializing in heirloom portraiture"
                 fill
                 className="object-cover transition-transform duration-1000 group-hover:scale-105"

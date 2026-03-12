@@ -125,7 +125,7 @@ export default function Spring2026BookingPost() {
             {/* Introduction */}
             <div className="font-serif text-slate/80 leading-relaxed space-y-6 text-base md:text-lg">
               <p className="text-xl md:text-2xl font-display text-slate leading-relaxed first-letter:text-5xl first-letter:font-display first-letter:text-moss first-letter:mr-1">
-                CarlyGage.com, a boutique portrait studio specializing in emotive and lifestyle imagery, is pleased to announce the official opening of its Spring 2026 booking calendar. As the demand for authentic, unposed photography continues to rise across North Texas, the studio is expanding availability to better serve clients seeking a <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link> or sessions within the greater Dallas metroplex.
+                CarlyGage.com, a boutique portrait studio specializing in emotive and lifestyle imagery, is pleased to announce the official opening of its Spring 2026 booking calendar. As the demand for authentic, unposed photography continues to rise across North Texas, the studio is expanding availability to better serve clients seeking a <Link href="/" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link>, a <Link href="/flower-mound-maternity-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound maternity photographer</Link>, or sessions within the greater Dallas metroplex.
               </p>
 
               <h2 className="font-display text-3xl md:text-4xl text-slate mt-12 mb-6">
@@ -164,11 +164,11 @@ export default function Spring2026BookingPost() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-moss mt-1">✓</span>
-                  <span><strong>Maternity portraits</strong> – Honoring the beauty of this fleeting chapter</span>
+                  <span><strong><Link href="/flower-mound-maternity-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4">Maternity portraits</Link></strong> – Honoring the beauty of this fleeting chapter</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-moss mt-1">✓</span>
-                  <span><strong>Baby announcement lifestyle photography</strong> – Capturing the excitement of growing families</span>
+                  <span><strong><Link href="/flower-mound-baby-announcement-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4">Baby announcement lifestyle photography</Link></strong> – Capturing the excitement of growing families</span>
                 </li>
               </ul>
 

@@ -168,6 +168,14 @@ export default function SouthlakeLocationsPost() {
                   key={index}
                   className="bg-white rounded-sm p-8 my-8 shadow-sm border border-sand/50"
                 >
+                  <div className="relative aspect-video rounded-sm overflow-hidden mb-8">
+                    <Image 
+                      src={`/images/bento-${(index % 7) + 1}.jpg`}
+                      alt={location.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <span className="text-moss font-bold text-sm">#{index + 1}</span>

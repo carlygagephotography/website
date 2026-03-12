@@ -64,13 +64,13 @@ export default function SpringTipsPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      
+
       <Navigation />
-      
+
       <article className="min-h-screen bg-bone pt-32 pb-20">
         {/* Back Button */}
         <div className="max-w-4xl mx-auto px-4 md:px-8 mb-8">
-          <Link 
+          <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.3em] text-slate/60 hover:text-slate transition-colors group"
           >
@@ -98,7 +98,7 @@ export default function SpringTipsPost() {
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-slate mb-6 leading-tight">
             Spring Family Portrait Tips for DFW: Your Complete Guide
           </h1>
-          
+
           <p className="font-serif text-xl md:text-2xl text-slate/70 leading-relaxed">
             From what to wear to when to book, here's everything you need to know about capturing gorgeous spring family photos in North Texas.
           </p>
@@ -122,7 +122,7 @@ export default function SpringTipsPost() {
           <div className="prose prose-lg max-w-none">
             <div className="font-serif text-slate/80 leading-relaxed space-y-6 text-base md:text-lg">
               <p className="text-xl md:text-2xl font-display text-slate leading-relaxed first-letter:text-5xl first-letter:font-display first-letter:text-moss first-letter:mr-1">
-                Spring in Dallas-Fort Worth is magical—bluebonnets blooming, perfect temperatures, and that gorgeous golden light that makes everything look like a magazine cover. It's also the busiest season for family photography, which means you need to plan ahead. As a <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link> who's shot hundreds of spring sessions, I'm sharing my insider tips to help you nail your family portraits this year.
+                Spring in Dallas-Fort Worth is magical-bluebonnets blooming, perfect temperatures, and that gorgeous golden light that makes everything look like a magazine cover. It's also the busiest season for family photography, which means you need to plan ahead. As a <Link href="/" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link> who's shot hundreds of spring sessions, I'm sharing my insider tips to help you nail your family portraits this year.
               </p>
 
               {/* When to Book Section */}
@@ -131,7 +131,7 @@ export default function SpringTipsPost() {
                   <Clock className="w-8 h-8 text-moss" />
                   <h2 className="font-display text-2xl md:text-3xl text-slate m-0">When to Book Your Spring Session</h2>
                 </div>
-                
+
                 <p>
                   <strong>The short answer:</strong> Book in January or February for the best selection of dates.
                 </p>
@@ -147,7 +147,7 @@ export default function SpringTipsPost() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-moss mt-1 font-bold">April</span>
-                    <span>Peak bluebonnet season (usually first two weeks). The most requested month—book early or miss out.</span>
+                    <span>Peak bluebonnet season (usually first two weeks). The most requested month-book early or miss out.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-moss mt-1 font-bold">May</span>
@@ -174,7 +174,7 @@ export default function SpringTipsPost() {
                 </p>
 
                 <h3 className="font-display text-xl text-slate mt-8 mb-4">Colors That Work Beautifully</h3>
-                
+
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
                   <div className="text-center">
                     <div className="w-16 h-16 rounded-full mx-auto mb-2" style={{backgroundColor: '#C4A484'}}></div>
@@ -203,7 +203,7 @@ export default function SpringTipsPost() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-moss mt-1">✓</span>
-                    <span><strong>Add texture.</strong> Linen, cotton, light knits—texture photographs beautifully and adds visual interest.</span>
+                    <span><strong>Add texture.</strong> Linen, cotton, light knits-texture photographs beautifully and adds visual interest.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-moss mt-1">✓</span>
@@ -220,19 +220,19 @@ export default function SpringTipsPost() {
                 <ul className="space-y-3 my-6 list-none">
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span><strong>Neon colors</strong> – They cast unflattering reflections on skin</span>
+                    <span><strong>Neon colors</strong> - They cast unflattering reflections on skin</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span><strong>All black everything</strong> – Loses detail in outdoor light</span>
+                    <span><strong>All black everything</strong> - Loses detail in outdoor light</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span><strong>Large logos or graphics</strong> – Distracting and dates photos quickly</span>
+                    <span><strong>Large logos or graphics</strong> - Distracting and dates photos quickly</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-red-500 mt-1">✗</span>
-                    <span><strong>Brand new shoes</strong> – Especially for kids. Blisters = meltdowns</span>
+                    <span><strong>Brand new shoes</strong> - Especially for kids. Blisters = meltdowns</span>
                   </li>
                 </ul>
               </div>
@@ -258,7 +258,7 @@ export default function SpringTipsPost() {
               </div>
 
               <p>
-                During the session, I handle the rest. My approach is play-based—we explore, we run, we look for bugs. The camera just happens to be there. Kids forget it exists within five minutes.
+                During the session, I handle the rest. My approach is play-based-we explore, we run, we look for bugs. The camera just happens to be there. Kids forget it exists within five minutes.
               </p>
 
               {/* Location Section */}
@@ -295,7 +295,7 @@ export default function SpringTipsPost() {
               </h2>
 
               <p>
-                If you've lived in Texas for more than a week, you know our weather has a mind of its own. Spring is especially unpredictable—we might have a gorgeous 75° day followed by a thunderstorm, followed by a cold front.
+                If you've lived in Texas for more than a week, you know our weather has a mind of its own. Spring is especially unpredictable-we might have a gorgeous 75° day followed by a thunderstorm, followed by a cold front.
               </p>
 
               <p>
@@ -310,7 +310,7 @@ export default function SpringTipsPost() {
                 <p className="mb-6 text-slate/70">
                   Spring dates fill quickly, especially for April bluebonnet sessions. Let's chat about your vision and find the perfect time for your family.
                 </p>
-                <Link 
+                <Link
                   href="/#contact"
                   className="inline-flex items-center gap-2 bg-moss text-bone px-8 py-4 rounded-sm text-[10px] uppercase tracking-[0.3em] hover:bg-moss/90 transition-all font-bold"
                 >
@@ -357,7 +357,7 @@ export default function SpringTipsPost() {
               Related Articles
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link 
+              <Link
                 href="/blog/best-photo-locations-flower-mound"
                 className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
               >
@@ -368,7 +368,7 @@ export default function SpringTipsPost() {
                   A local photographer's guide to the top spots
                 </p>
               </Link>
-              <Link 
+              <Link
                 href="/locations/flower-mound-family-photographer"
                 className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
               >
@@ -379,7 +379,7 @@ export default function SpringTipsPost() {
                   Learn about my local session offerings
                 </p>
               </Link>
-              <Link 
+              <Link
                 href="/#contact"
                 className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
               >

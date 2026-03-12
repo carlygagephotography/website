@@ -25,7 +25,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(newUrl, { status: 301 });
   }
 
-  // 4. Handle location page URL format
+  // 4. Consolidate Flower Mound authority onto homepage
+  if (pathname === '/locations/flower-mound-family-photographer') {
+    const newUrl = new URL(request.url);
+    newUrl.pathname = '/';
+    return NextResponse.redirect(newUrl, { status: 301 });
+  }
+
+  // 5. Handle location page URL format
   // Redirect /locations/[city] to /locations/[city]-family-photographer
   if (pathname.startsWith('/locations/') && !pathname.endsWith('-family-photographer')) {
     const citySlug = pathname.split('/locations/')[1];

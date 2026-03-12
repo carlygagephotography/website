@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  { src: "/images/bento-5.jpg", size: "col-span-12 md:col-span-8", pos: "50% 20%" },
-  { src: "/images/bento-3.jpg", size: "col-span-12 md:col-span-4", pos: "50% 25%" },
+  { src: "/images/optimized/bento-5.webp", size: "col-span-12 md:col-span-8", pos: "50% 20%" },
+  { src: "/images/optimized/bento-3.webp", size: "col-span-12 md:col-span-4", pos: "50% 25%" },
   { src: "/images/marquee-3.jpg", size: "col-span-12 md:col-span-4", pos: "50% 15%" },
   { src: "/images/bento-7.jpg", size: "col-span-12 md:col-span-8", pos: "50% 20%" },
 ];

@@ -13,9 +13,9 @@ export function Hero() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    "/images/hero-3.jpg", // The holiday/warm one usually has good composition
+    "/images/optimized/hero-3.webp", // The holiday/warm one usually has good composition
     "/images/hero-1.jpg", 
-    "/images/hero-2.jpg", 
+    "/images/optimized/hero-2.webp", 
   ];
 
   useEffect(() => {

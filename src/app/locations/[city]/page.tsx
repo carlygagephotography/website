@@ -22,7 +22,7 @@ const cityData: Record<string, {
   "flower-mound": {
     name: "Flower Mound",
     displayName: "Flower Mound",
-    description: "Based right here in Flower Mound, I love capturing families in our beautiful local parks and natural spaces. From the rolling hills of the Cross Timbers to serene lake settings, Flower Mound offers stunning backdrops for authentic family moments.",
+    description: "Based right here in Flower Mound, I love capturing families in our beautiful local parks and natural spaces. From native grasses and oak groves to serene lake settings near Grapevine Lake, Flower Mound offers beautiful backdrops for authentic family moments.",
     locations: [
       { name: "Grapevine Lake Parks", description: "Beautiful waterfront settings with tall grasses and natural light perfect for golden hour sessions." },
       { name: "Murrell Park", description: "Spacious park with open fields, trees, and trails ideal for active families and children." },
@@ -214,16 +214,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const cityName = cityInfo.displayName;
+  const nearbyBase = citySlug === "dallas" ? "Based in Flower Mound, serving Dallas families" : `Based in nearby Flower Mound, serving ${cityName} families`;
 
   return {
-    title: `${cityName} Family Photographer | Candid, Fun & Timeless Portraits`,
-    description: `Carly Gage is a ${cityName} family photographer specializing in stress-free sessions that capture your family's real joy. Serving ${cityName} with a ${vibeInfo?.vibe.toLowerCase() || "natural"} approach.`,
+    title: `${cityName} Family Photographer | Carly Gage Photography`,
+    description: `${nearbyBase} with joyful, stress-free family portraits, maternity sessions, and natural storytelling photography.`,
     alternates: {
       canonical: `/locations/${citySlug}-family-photographer`,
     },
     openGraph: {
       title: `${cityName} Family Photographer | Carly Gage Photography`,
-      description: `Authentic, joyful family photography in ${cityName}, Texas. Capturing real moments and genuine connections.`,
+      description: `${nearbyBase} with authentic, joyful family photography and a relaxed session experience.`,
     },
     other: {
       "geo.region": "US-TX",
@@ -255,6 +256,7 @@ export default async function LocationPage({ params }: Props) {
   }
 
   const cityName = cityInfo.displayName;
+  const homepageLabel = citySlug === "flower-mound" ? "homepage" : "Flower Mound family photographer homepage";
 
   // JSON-LD Schema 2.0
   const jsonLd = {
@@ -352,6 +354,9 @@ export default async function LocationPage({ params }: Props) {
               <p className="text-lg md:text-xl text-slate/60 font-sans font-light leading-relaxed max-w-3xl mx-auto md:mx-0">
                 {cityInfo.description}
               </p>
+              <p className="text-sm md:text-base text-slate/45 font-sans font-light leading-relaxed max-w-2xl mx-auto md:mx-0">
+                Based in Flower Mound, I photograph families throughout {cityName} and surrounding DFW communities with a relaxed, connection-first approach.
+              </p>
             </div>
           </div>
         </section>
@@ -371,8 +376,11 @@ export default async function LocationPage({ params }: Props) {
                   <p className="text-lg text-slate/70 font-sans font-light leading-relaxed">
                     {vibeInfo.narrative}
                   </p>
-                  <div className="pt-4">
+                  <div className="pt-4 space-y-3">
                     <ContextualCTA intent="portfolio" cityName={cityName} />
+                    <p className="text-sm text-slate/50 font-sans leading-relaxed">
+                      Want to see how this fits into the bigger picture? Visit the <Link href="/" className="text-moss hover:text-moss/80 underline underline-offset-4">{homepageLabel}</Link> for Carly's Flower Mound-based approach and availability.
+                    </p>
                   </div>
                 </div>
                 <div className="relative aspect-[4/5] bg-sand/20 rounded-sm overflow-hidden group">
@@ -503,25 +511,25 @@ export default async function LocationPage({ params }: Props) {
                   </span>
                 </Link>
 
-                <Link href="/portfolio/dallas-maternity-session" className="group p-8 bg-white border border-sand/30 rounded-sm hover:border-moss transition-colors">
+                <Link href="/flower-mound-maternity-photographer" className="group p-8 bg-white border border-sand/30 rounded-sm hover:border-moss transition-colors">
                   <Camera className="w-8 h-8 text-moss mb-4" />
                   <h3 className="text-2xl font-serif text-slate mb-3 group-hover:text-moss transition-colors">Maternity Sessions</h3>
                   <p className="text-slate/60 font-sans font-light leading-relaxed mb-4">
                     Celebrate your journey with a relaxed one-hour session. Two outfit changes allowed to showcase your glow. Partners are always welcome.
                   </p>
                   <span className="text-sm text-moss flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Gallery <ArrowRight className="w-4 h-4" />
+                    See Flower Mound Maternity <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
 
-                <Link href="/portfolio/dallas-baby-announcement" className="group p-8 bg-white border border-sand/30 rounded-sm hover:border-moss transition-colors">
+                <Link href="/flower-mound-baby-announcement-photographer" className="group p-8 bg-white border border-sand/30 rounded-sm hover:border-moss transition-colors">
                   <Camera className="w-8 h-8 text-moss mb-4" />
-                  <h3 className="text-2xl font-serif text-slate mb-3 group-hover:text-moss transition-colors">Baby Announcement</h3>
+                  <h3 className="text-2xl font-serif text-slate mb-3 group-hover:text-moss transition-colors">Baby Announcements</h3>
                   <p className="text-slate/60 font-sans font-light leading-relaxed mb-4">
-                    Share your big news! A one-hour creative session to capture the excitement of your growing family. Perfect for social media and keepsakes.
+                    Celebrate your growing family with a relaxed session that documents the anticipation, excitement, and early joy of sharing the news.
                   </p>
                   <span className="text-sm text-moss flex items-center gap-2 group-hover:gap-4 transition-all">
-                    View Gallery <ArrowRight className="w-4 h-4" />
+                    See Flower Mound Baby Announcement <ArrowRight className="w-4 h-4" />
                   </span>
                 </Link>
 

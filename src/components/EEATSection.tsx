@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Award, Camera, Heart, ShieldCheck } from "lucide-react";
 
 const features = [
@@ -60,12 +61,14 @@ export function EEATSection() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-float">
-            <img 
-              src="/images/bento-4.jpg" 
+          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-float relative">
+            <Image
+              src="/images/optimized/bento-4.webp"
               alt="Professional Family Photography"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
               style={{ objectPosition: "50% 40%" }}
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
           {/* Accent block */}

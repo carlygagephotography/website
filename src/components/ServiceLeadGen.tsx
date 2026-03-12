@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
@@ -9,19 +10,19 @@ const services = [
     title: "The Signature Milestone",
     description: "In-home or studio sessions focusing on the first delicate year or significant milestones. Includes personalized wardrobe guidance.",
     price: "From $850",
-    image: "/images/hero-2.jpg"
+    image: "/images/optimized/hero-2.webp"
   },
   {
     title: "Family Heirloom Session",
     description: "Sunset field sessions designed for laughter, movement, and genuine family connection. Best for Southlake and Frisco outdoor light.",
     price: "From $700",
-    image: "/images/bento-1.jpg"
+    image: "/images/optimized/bento-1.webp"
   },
   {
     title: "Maternity Story",
     description: "Celebrating the divine strength of motherhood. A dedicated session capturing the beauty of your pregnancy journey.",
     price: "From $650",
-    image: "/images/bento-2.jpg"
+    image: "/images/optimized/bento-2.webp"
   }
 ];
 
@@ -50,11 +51,13 @@ export function ServiceLeadGen() {
               className="group cursor-pointer"
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl mb-8">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   style={{ objectPosition: "50% 20%" }}
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-8 left-8 right-8 flex justify-between items-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">

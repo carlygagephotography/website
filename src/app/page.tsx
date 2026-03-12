@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { HomeClient } from "@/components/v3/HomeClient";
 
 export const metadata: Metadata = {
-  title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
-  description: "Carly Gage is a Dallas family photographer based in Flower Mound. I specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
+  title: "Flower Mound Family Photographer | Carly Gage Photography",
+  description: "Carly Gage is a Flower Mound family photographer creating joyful, stress-free family & newborn portraits. Serving Southlake, Highland Park, Coppell & DFW.",
   alternates: {
     canonical: "/",
   },
@@ -12,3 +12,4 @@ export const metadata: Metadata = {
 export default function Home() {
   return <HomeClient />;
 }
+

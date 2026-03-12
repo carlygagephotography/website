@@ -223,11 +223,11 @@ export default function MurrellParkGuidePost() {
           <div className="prose prose-lg max-w-none">
             <div className="font-serif text-slate/80 leading-relaxed space-y-6 text-base md:text-lg">
               <p className="text-xl md:text-2xl font-display text-slate leading-relaxed first-letter:text-5xl first-letter:font-display first-letter:text-moss first-letter:mr-1">
-                Ask any <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link> about their favorite location, and Murrell Park will almost certainly come up. Situated on the western shore of Grapevine Lake, this 48-acre park offers the kind of natural beauty that makes North Texas special—rolling prairies, native grasses, waterfront views, and that golden-hour glow that photographers dream about.
+                Ask any <Link href="/" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link> about their favorite location, and Murrell Park will almost certainly come up. Situated on the western shore of Grapevine Lake, this 48-acre park offers the kind of natural beauty that makes North Texas special—rolling prairies, native grasses, waterfront views, and that golden-hour glow that photographers dream about.
               </p>
 
               <p>
-                I've photographed at Murrell Park literally hundreds of times over the past decade. I know which spots get crowded, which areas have the best light at different times of year, and where to find those hidden gems that give my clients unique, magazine-worthy images. Today, I'm sharing everything I've learned.
+                I've photographed at Murrell Park literally hundreds of times over the past decade. I know which spots get crowded, which areas have the best light at different times of year, and where to find those hidden gems that give my clients unique, magazine-worthy images. Today, I'm sharing everything I've learned. If you're planning a pregnancy or growing-family session here, my <Link href="/flower-mound-maternity-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound maternity photographer</Link> page is a great next stop too.
               </p>
 
               {/* Why Murrell Park Section */}
@@ -380,7 +380,7 @@ export default function MurrellParkGuidePost() {
               <div className="border-t border-sand pt-8 mt-12">
                 <h3 className="font-display text-xl text-slate mb-4">About the Author</h3>
                 <p className="text-sm">
-                  <strong>Carly Gage</strong> is a <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline">Flower Mound family photographer</Link> who has photographed hundreds of sessions at Murrell Park over the past decade. Based in Flower Mound, she serves families throughout the Dallas-Fort Worth area including <Link href="/locations/dallas-family-photographer" className="text-moss hover:text-moss/80 underline">Dallas</Link>, <Link href="/locations/southlake-family-photographer" className="text-moss hover:text-moss/80 underline">Southlake</Link>, and <Link href="/locations/frisco-family-photographer" className="text-moss hover:text-moss/80 underline">Frisco</Link>.
+                  <strong>Carly Gage</strong> is a <Link href="/" className="text-moss hover:text-moss/80 underline">Flower Mound family photographer</Link> who has photographed hundreds of sessions at Murrell Park over the past decade. Based in Flower Mound, she serves families throughout the Dallas-Fort Worth area including <Link href="/locations/dallas-family-photographer" className="text-moss hover:text-moss/80 underline">Dallas</Link>, <Link href="/locations/southlake-family-photographer" className="text-moss hover:text-moss/80 underline">Southlake</Link>, and <Link href="/locations/frisco-family-photographer" className="text-moss hover:text-moss/80 underline">Frisco</Link>.
                 </p>
               </div>
             </div>

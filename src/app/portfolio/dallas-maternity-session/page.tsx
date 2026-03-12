@@ -48,16 +48,16 @@ const relatedSessions = [
     alt: "Dallas mini session photography"
   },
   { 
-    href: "/portfolio/dallas-baby-announcement", 
-    title: "Baby Announcements", 
+    href: "/flower-mound-baby-announcement-photographer", 
+    title: "Flower Mound Baby Announcement", 
     image: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement016.jpg",
-    alt: "Dallas baby announcement photography"
+    alt: "Flower Mound baby announcement photographer page"
   },
   { 
-    href: "/#portfolios", 
-    title: "View All", 
+    href: "/flower-mound-maternity-photographer", 
+    title: "Flower Mound Maternity", 
     image: "/images/portfolio/davion-maternity/Davion-Maternity-033.jpg",
-    alt: "View all portfolio galleries"
+    alt: "Flower Mound maternity photographer page"
   },
 ];
 

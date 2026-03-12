@@ -23,12 +23,12 @@ const jsonLd = {
     {
   "@type": "PhotographyBusiness",
   "name": "Carly Gage Photography",
-  "image": "https://carlygage.com/images/dallas-family-photographer-hero.jpg",
+  "image": "https://carlygage.com/images/hero-stephanie-new.webp",
   "@id": "https://carlygage.com",
   "url": "https://carlygage.com",
-  "telephone": "+1-555-555-5555",
+  "telephone": "+1-214-422-8050",
   "priceRange": "$$",
-  "description": "Friendly and talented Dallas family photographer based in Flower Mound. Specializing in authentic family sessions, maternity photos, and seasonal mini sessions. Serving all families in Southlake, Frisco, and DFW.",
+  "description": "Flower Mound family photographer creating joyful, stress-free family and newborn portraits for families in Flower Mound, Southlake, Highland Park, Coppell, and across DFW.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "",
@@ -90,39 +90,39 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://carlygage.com/#webpage",
       "url": "https://carlygage.com/",
-      "name": "Dallas Family Photographer | Carly Gage Photography",
+      "name": "Flower Mound Family Photographer | Carly Gage Photography",
       "datePublished": "2024-01-01T00:00:00+00:00",
       "dateModified": new Date().toISOString(),
       "publisher": { "@id": "https://carlygage.com" },
-      "description": "Premier Dallas family photographer capturing organic, timeless moments in DFW. Serving Southlake, Highland Park, Frisco & more."
+      "description": "Flower Mound family photographer creating joyful, stress-free family and newborn portraits for families across Flower Mound, Southlake, Highland Park, Coppell, and DFW."
     }
   ]
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://carlygage.com"),
-  title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
-  description: "Carly Gage is a Dallas family photographer based in Flower Mound. I specialize in stress-free family sessions, maternity photos, and mini sessions that capture your family's real joy. Serving Frisco, Southlake, and all of DFW.",
+  title: "Flower Mound Family Photographer | Carly Gage Photography",
+  description: "Carly Gage is a Flower Mound family photographer creating joyful, stress-free family & newborn portraits. Serving Southlake, Highland Park, Coppell & DFW.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://carlygage.com",
     siteName: "Carly Gage Photography",
-    title: "Dallas Family Photographer | Candid, Fun & Timeless Portraits",
-    description: "Authentic, joyful family photography in Dallas-Fort Worth. Stress-free sessions that capture your family's real joy. Based in Flower Mound, serving all of DFW.",
+    title: "Flower Mound Family Photographer | Carly Gage Photography",
+    description: "Joyful, stress-free family and newborn portraits from a Flower Mound family photographer serving Southlake, Highland Park, Coppell, and DFW.",
     images: [
       {
         url: "/images/hero-stephanie-new.webp",
         width: 1200,
         height: 630,
-        alt: "Dallas family photographer capturing joyful family moments",
+        alt: "Flower Mound family photographer capturing joyful family moments",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dallas Family Photographer | Carly Gage Photography",
-    description: "Authentic, joyful family photography in Dallas-Fort Worth. Stress-free sessions that capture your family's real joy.",
+    title: "Flower Mound Family Photographer | Carly Gage Photography",
+    description: "Joyful, stress-free family and newborn portraits from a Flower Mound family photographer serving Southlake, Highland Park, Coppell, and DFW.",
     images: ["/images/hero-stephanie-new.webp"],
   },
   icons: {

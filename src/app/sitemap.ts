@@ -5,7 +5,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // City slugs for location pages
   const cities = [
-    'flower-mound',
     'frisco',
     'southlake',
     'plano',
@@ -37,6 +36,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/flower-mound-maternity-photographer`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/flower-mound-baby-announcement-photographer`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/portfolio/dallas-baby-announcement`,

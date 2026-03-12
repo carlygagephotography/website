@@ -95,7 +95,7 @@ export default function FlowerMoundLocationsPost() {
       vibe: "Wooded & Intimate",
       bestFor: "Lifestyle sessions, Maternity, Intimate portraits",
       bestTime: "Overcast days or filtered afternoon light",
-      description: "The Cross Timbers region gives Flower Mound its unique character—rolling hills covered in native post oak and blackjack oak trees. These trails offer dappled light, textured bark backgrounds, and an earthy, organic feel that's distinctly North Texas.",
+      description: "The Cross Timbers region gives Flower Mound its unique character—native post oak and blackjack oak trees, textured trails, and open natural spaces. These areas offer dappled light, textured bark backgrounds, and an earthy, organic feel that's distinctly North Texas.",
       tips: "Overcast days are actually ideal here—the cloud cover acts like a giant softbox, eliminating harsh shadows.",
       mapUrl: "https://maps.google.com/?q=Cross+Timbers+Trail+Flower+Mound"
     },
@@ -208,11 +208,11 @@ export default function FlowerMoundLocationsPost() {
           <div className="prose prose-lg max-w-none">
             <div className="font-serif text-slate/80 leading-relaxed space-y-6 text-base md:text-lg">
               <p className="text-xl md:text-2xl font-display text-slate leading-relaxed first-letter:text-5xl first-letter:font-display first-letter:text-moss first-letter:mr-1">
-                If you're searching for a <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link>, you're probably also wondering: where should we take our photos? After photographing hundreds of families across Flower Mound over the past decade, I've developed a deep appreciation for this town's natural beauty—and some strong opinions about the best spots.
+                If you're searching for a <Link href="/" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound family photographer</Link>, you're probably also wondering: where should we take our photos? After photographing hundreds of families across Flower Mound over the past decade, I've developed a deep appreciation for this town's natural beauty—and some strong opinions about the best spots.
               </p>
 
               <p>
-                Flower Mound is uniquely positioned in the Cross Timbers region of Texas, giving us access to rolling hills, native prairies, and stunning Grapevine Lake shoreline—all within a few miles of each other. It's a photographer's paradise, and I want to share my insider knowledge with you.
+                Flower Mound is uniquely positioned in the Cross Timbers region of Texas, giving us access to native prairies, oak groves, and stunning Grapevine Lake shoreline—all within a few miles of each other. It's a photographer's paradise, and I want to share my insider knowledge with you. If you're planning a growing-family session too, you can also explore my <Link href="/flower-mound-maternity-photographer" className="text-moss hover:text-moss/80 underline underline-offset-4 transition-colors">Flower Mound maternity photographer</Link> page for a more session-focused look at that season.
               </p>
 
               <div className="bg-sand/20 rounded-sm p-6 my-8 border-l-4 border-moss">
@@ -235,6 +235,14 @@ export default function FlowerMoundLocationsPost() {
                   id={location.name.toLowerCase().replace(/\s+/g, '-')}
                   className="bg-white rounded-sm p-8 my-12 shadow-sm border border-sand/50"
                 >
+                  <div className="relative aspect-video rounded-sm overflow-hidden mb-8">
+                    <Image 
+                      src={location.name === "Murrell Park" ? "/images/blog/murrell-park-hero.jpg" : `/images/bento-${(index % 7) + 1}.jpg`}
+                      alt={location.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <span className="text-moss font-bold text-sm">#{index + 1}</span>
@@ -334,7 +342,7 @@ export default function FlowerMoundLocationsPost() {
               <div className="border-t border-sand pt-8 mt-12">
                 <h3 className="font-display text-xl text-slate mb-4">About the Author</h3>
                 <p className="text-sm">
-                  <strong>Carly Gage</strong> is a <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline">Flower Mound family photographer</Link> specializing in authentic, unposed portraits. Based in Flower Mound since 2015, she photographs families throughout the Dallas-Fort Worth metroplex including <Link href="/locations/dallas-family-photographer" className="text-moss hover:text-moss/80 underline">Dallas</Link>, <Link href="/locations/frisco-family-photographer" className="text-moss hover:text-moss/80 underline">Frisco</Link>, and <Link href="/locations/southlake-family-photographer" className="text-moss hover:text-moss/80 underline">Southlake</Link>.
+                  <strong>Carly Gage</strong> is a <Link href="/" className="text-moss hover:text-moss/80 underline">Flower Mound family photographer</Link> specializing in authentic, unposed portraits. Based in Flower Mound since 2015, she photographs families throughout the Dallas-Fort Worth metroplex including <Link href="/locations/dallas-family-photographer" className="text-moss hover:text-moss/80 underline">Dallas</Link>, <Link href="/locations/frisco-family-photographer" className="text-moss hover:text-moss/80 underline">Frisco</Link>, and <Link href="/locations/southlake-family-photographer" className="text-moss hover:text-moss/80 underline">Southlake</Link>.
                 </p>
               </div>
             </div>
@@ -345,16 +353,27 @@ export default function FlowerMoundLocationsPost() {
             <h3 className="font-display text-2xl text-slate mb-6">
               Explore More
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               <Link 
-                href="/locations/flower-mound-family-photographer"
+                href="/"
                 className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
               >
                 <h4 className="font-display text-lg text-slate mb-2 group-hover:text-moss transition-colors">
-                  Flower Mound Sessions
+                  Flower Mound Family
                 </h4>
                 <p className="text-sm text-slate/60">
-                  Learn about my approach to local sessions
+                  Learn about my approach to local family sessions
+                </p>
+              </Link>
+              <Link 
+                href="/flower-mound-maternity-photographer"
+                className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
+              >
+                <h4 className="font-display text-lg text-slate mb-2 group-hover:text-moss transition-colors">
+                  Flower Mound Maternity
+                </h4>
+                <p className="text-sm text-slate/60">
+                  See maternity sessions for growing families
                 </p>
               </Link>
               <Link 

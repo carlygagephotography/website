@@ -27,7 +27,7 @@ export function Hero() {
           >
             <Image
               src="/images/hero-stephanie-new.webp"
-              alt="Dallas family photographer capturing joyful family moments"
+              alt="Flower Mound family photographer capturing joyful family moments"
               fill
               className="object-cover"
               style={{ objectPosition: "50% 25%" }}
@@ -47,15 +47,15 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="space-y-3"
             >
-              <div className="flex items-center gap-2 text-white/90 mb-2">
-                <span className="text-[8px] uppercase tracking-[0.4em]">DFW FAMILY & MATERNITY PHOTOGRAPHY</span>
-              </div>
-              <h1 className="text-4xl sm:text-5xl font-serif leading-[0.9] text-white tracking-tighter drop-shadow-lg">
+              <h1 className="text-[10px] uppercase tracking-[0.4em] text-white/90 mb-2">
+                Flower Mound Family Photographer
+              </h1>
+              <h2 className="text-4xl sm:text-5xl font-serif leading-[0.9] text-white tracking-tighter drop-shadow-lg">
                 Real Moments. <br />
                 <span className="italic font-light opacity-90">Beautifully Kept.</span>
-              </h1>
+              </h2>
               <p className="text-sm text-white/90 font-sans font-light leading-relaxed max-w-md pt-2">
-                Authentic, joyful photography that captures your family's real moments.
+                Authentic, joyful photography from a Flower Mound family photographer serving Southlake, Highland Park, Coppell, and families across DFW.
               </p>
             </motion.div>
           </div>
@@ -81,7 +81,7 @@ export function Hero() {
           </div>
           
           <p className="text-sm text-slate/60 font-sans font-light leading-relaxed text-left">
-            Based in Flower Mound, serving families across the entire Dallas-Fort Worth metroplex.
+            Based in Flower Mound, serving families in Southlake, Highland Park, Coppell, and across the Dallas-Fort Worth metroplex.
           </p>
         </div>
       </div>
@@ -98,23 +98,26 @@ export function Hero() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-6"
           >
-            <div className="flex items-center gap-4 text-slate/40">
-              <span className="text-[10px] uppercase tracking-[0.6em]">DFW FAMILY & MATERNITY PHOTOGRAPHY</span>
-              <div className="h-[1px] w-12 bg-sand" />
+            <div className="space-y-3">
+              <h1 className="text-[10px] uppercase tracking-[0.6em] text-slate/50">Flower Mound Family Photographer</h1>
+              <div className="flex items-center gap-4 text-slate/40">
+                <span className="text-[10px] uppercase tracking-[0.6em]">DFW FAMILY & MATERNITY PHOTOGRAPHY</span>
+                <div className="h-[1px] w-12 bg-sand" />
+              </div>
             </div>
 
-            <h1 className="text-6xl lg:text-7xl xl:text-[6.5vw] font-serif leading-[0.9] lg:leading-[0.85] text-slate tracking-tighter">
+            <h2 className="text-6xl lg:text-7xl xl:text-[6.5vw] font-serif leading-[0.9] lg:leading-[0.85] text-slate tracking-tighter">
               Real Moments. <br />
               <span className="italic font-light opacity-60 text-moss">Beautifully Kept.</span>
-            </h1>
+            </h2>
 
             {/* GEO/AI Direct Answer Block */}
             <div className="sr-only lg:not-sr-only text-sm text-slate/40 font-sans max-w-lg leading-relaxed border-l border-sand pl-4 italic">
-              Carly Gage Photography provides authentic, joyful family and maternity photography in Dallas-Fort Worth. Specializing in stress-free sessions that capture real connections, I serve Flower Mound, Frisco, Southlake, and all DFW families with a warm, patient approach.
+              Carly Gage Photography is a Flower Mound family photographer offering joyful, stress-free family, maternity, and newborn photography for families in Flower Mound, Southlake, Highland Park, Coppell, and across DFW.
             </div>
 
             <p className="text-lg lg:text-xl text-slate/60 font-sans font-light max-w-lg leading-relaxed">
-              Authentic, joyful photography that captures your family's real moments. Based in Flower Mound, serving families across the entire Dallas-Fort Worth metroplex.
+              Authentic, joyful photography from a Flower Mound family photographer serving Southlake, Highland Park, Coppell, and families across DFW.
             </p>
           </motion.div>
 
@@ -151,7 +154,7 @@ export function Hero() {
           >
             <Image
               src="/images/hero-stephanie-new.webp"
-              alt="Dallas family photographer capturing heirloom portraits in natural light, showcasing timeless editorial photography style for DFW families."
+              alt="Flower Mound family photographer capturing heirloom portraits in natural light for families across DFW."
               fill
               className="object-cover"
               style={{ objectPosition: "50% 25%" }}
