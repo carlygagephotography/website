@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://carlygage.com/flower-mound-mini-sessions",
     images: [
       {
-        url: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-Mini-Session-018.jpg",
+        url: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
         width: 1200,
         height: 800,
         alt: "Family mini session in Flower Mound",
@@ -23,13 +23,11 @@ export const metadata: Metadata = {
 };
 
 const imageNumbers = [
-  "001", "002", "003", "006", "007", "008", "009", "011", "012", "013",
-  "014", "015", "018", "019", "020", "021", "022", "023", "024", "025",
-  "026", "028", "029", "030", "032", "034"
+  "003", "006", "007", "010", "012", "013", "014", "017", "019", "021"
 ];
 
 const images = imageNumbers.map(num => ({
-  src: `/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-Mini-Session-${num}.jpg`,
+  src: `/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini${num}.jpg`,
   alt: `Flower Mound mini session family photography - Image ${num}`
 }));
 

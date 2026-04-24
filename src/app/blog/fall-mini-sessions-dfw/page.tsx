@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-08-01T00:00:00Z",
     images: [
       {
-        url: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-Mini-Session-018.jpg",
+        url: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
         width: 1200,
         height: 800,
         alt: "Family during a fall mini session in DFW",
@@ -34,7 +34,7 @@ export default function FallMiniSessionsDfwPost() {
     "@type": "BlogPosting",
     "headline": "Fall Mini Sessions DFW: The Ultimate Family Guide",
     "description": "Everything you need to know about booking Fall mini photo sessions in Dallas-Fort Worth. Outfit ideas, tips, and location insights.",
-    "image": "https://carlygage.com/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-Mini-Session-018.jpg",
+    "image": "https://carlygage.com/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
     "datePublished": "2026-08-01T00:00:00Z",
     "dateModified": "2026-08-01T00:00:00Z",
     "author": {
@@ -124,7 +124,7 @@ export default function FallMiniSessionsDfwPost() {
         <div className="max-w-6xl mx-auto px-4 md:px-8 mb-12">
           <div className="relative aspect-[16/9] rounded-sm overflow-hidden shadow-lg">
             <Image
-              src="/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-Mini-Session-018.jpg"
+              src="/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg"
               alt="Family laughing together during a fall mini session in DFW"
               fill
               className="object-cover"

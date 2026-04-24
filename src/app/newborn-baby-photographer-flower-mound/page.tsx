@@ -29,9 +29,9 @@ const images = [
   { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement009.jpg", alt: "Lifestyle baby photographer near me" },
   { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement016.jpg", alt: "Natural light baby photography Flower Mound" },
   { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement021.jpg", alt: "First birthday photographer Flower Mound ideas" },
-  { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement025.jpg", alt: "Cake smash photographer DFW inspiration" },
-  { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement036.jpg", alt: "Fresh 48 photographer DFW" },
-  { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement039.jpg", alt: "Mini newborn session photographer" }
+  { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement006.jpg", alt: "Cake smash photographer DFW inspiration" },
+  { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement010.jpg", alt: "Fresh 48 photographer DFW" },
+  { src: "/images/portfolio/haley-trent-baby-announcement/Haley-and-Trent-Baby-Announcement018.jpg", alt: "Mini newborn session photographer" }
 ];
 
 const relatedSessions = [
@@ -56,7 +56,7 @@ const relatedSessions = [
   {
     href: "/flower-mound-mini-sessions",
     title: "Mini Sessions",
-    image: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-Mini-Session-018.jpg",
+    image: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
     alt: "Flower Mound mini sessions"
   },
 ];
