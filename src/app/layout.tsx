@@ -83,6 +83,22 @@ const jsonLd = {
             "@type": "Answer",
             "text": "Yes. Every session includes a personalized styling consultation where I provide professional wardrobe tips and expert advice to help you coordinate colors and textures that photograph beautifully."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you a family photographer near me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based in Flower Mound, TX, I serve families all across the Dallas-Fort Worth metroplex. If you live in DFW, I am likely a photographer near you and would love to travel to your area or meet at one of my favorite local spots."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer newborn and family photography?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! I love continuing the journey with my clients. I offer maternity, newborn, and family photography to capture your family through all its seasons."
+          }
         }
       ]
     },

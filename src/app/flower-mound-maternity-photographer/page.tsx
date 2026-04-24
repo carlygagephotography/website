@@ -3,13 +3,13 @@ import { PortfolioGallery } from "@/components/v3/PortfolioGallery";
 
 export const metadata: Metadata = {
   title: "Flower Mound Maternity Photographer | Carly Gage Photography",
-  description: "Flower Mound maternity photographer Carly Gage creates relaxed, natural maternity portraits for growing families in Flower Mound, Southlake, Highland Park, Coppell, and across DFW.",
+  description: "Flower Mound maternity photographer Carly Gage creates relaxed, natural maternity portraits for growing families in Flower Mound, Southlake, Highland Park, Coppell, Argyle, and across DFW.",
   alternates: {
     canonical: "/flower-mound-maternity-photographer",
   },
   openGraph: {
     title: "Flower Mound Maternity Photographer | Carly Gage Photography",
-    description: "Relaxed, natural maternity portraits in Flower Mound and across DFW. Thoughtful sessions for growing families who want timeless, joyful images.",
+    description: "Relaxed, natural motherhood and maternity portraits in Flower Mound and across DFW. Thoughtful sessions for growing families who want timeless, joyful images.",
     url: "https://carlygage.com/flower-mound-maternity-photographer",
     images: [
       {
@@ -48,10 +48,10 @@ const relatedSessions = [
     alt: "Maternity photography portfolio"
   },
   {
-    href: "/locations/southlake-family-photographer",
-    title: "Southlake Sessions",
-    image: "/images/blog/southlake-locations-hero.jpg",
-    alt: "Southlake family photographer sessions"
+    href: "/newborn-baby-photographer-flower-mound",
+    title: "Newborn & Baby",
+    image: "/images/bento-4.jpg",
+    alt: "Flower Mound newborn and baby photographer sessions"
   },
   {
     href: "/flower-mound-baby-announcement-photographer",
@@ -64,9 +64,9 @@ const relatedSessions = [
 export default function FlowerMoundMaternityPhotographerPage() {
   return (
     <PortfolioGallery
-      title="Flower Mound Maternity Photography"
+      title="Flower Mound & DFW Maternity Photography"
       subtitle="Flower Mound Maternity Photographer"
-      description="Relaxed, natural maternity portraits for growing families in Flower Mound and across DFW. These sessions are designed to feel calm, beautiful, and easy—capturing the anticipation, connection, and quiet joy of this season without stiff posing or pressure."
+      description="Relaxed, natural motherhood and maternity portraits for growing families in Flower Mound, Argyle, and across DFW. These sessions are designed to feel calm, beautiful, and easy—capturing the anticipation, connection, and quiet joy of this season without stiff posing or pressure. When your little one arrives, we continue the journey with in-home lifestyle newborn photography to document those fleeting early days."
       images={images}
       category="Flower Mound Maternity Photographer"
       relatedSessions={relatedSessions}

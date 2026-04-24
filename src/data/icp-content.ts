@@ -21,7 +21,7 @@ export const ICP_CONTENT: ICPPersona[] = [
       },
       {
         objection: "I have no idea what we should all wear.",
-        solutionNarrative: "Wardrobe stress is the primary reason many moms delay booking, which is why I provide personalized wardrobe advice for every family I work with. From color palette recommendations to specific 'what to avoid' tips, I'll walk you through exactly how to coordinate your family's look so it feels cohesive and timeless. You don't need a professional stylist; you just need some direct guidance to help everyone feel confident and look their best in the Texas light."
+        solutionNarrative: "Wardrobe stress is the primary reason many moms delay booking, which is why I provide client wardrobe guidance for every family I work with. From color palette recommendations to specific 'what to avoid' tips, I'll walk you through exactly how to coordinate your family's look so it feels cohesive and timeless. You don't need a professional stylist; you just need some direct guidance to help everyone feel confident and look their best in the Texas light."
       }
     ],
     keywords: ["relaxed family photos Dallas", "candid photographer for toddlers", "stress-free family portraits DFW"]
@@ -163,5 +163,26 @@ export const CITY_VIBES: Record<string, {
     wikipedia: "https://en.wikipedia.org/wiki/Prosper,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q975319",
     heroImage: "/images/marquee-2.jpg"
+  },
+  "highland-village": {
+    vibe: "Quiet & Lakeside",
+    narrative: "Highland Village provides a peaceful, family-oriented backdrop right along the shores of Lewisville Lake. It's the perfect setting for families wanting a calm, nature-filled session without the crowds, offering quiet parks and serene waterfront views that result in beautifully relaxed, authentic portraits.",
+    wikipedia: "https://en.wikipedia.org/wiki/Highland_Village,_Texas",
+    wikidata: "https://www.wikidata.org/wiki/Q975323",
+    heroImage: "/images/optimized/bento-5.webp"
+  },
+  "trophy-club": {
+    vibe: "Intimate & Green",
+    narrative: "Trophy Club's expansive green spaces and close-knit community feel make it a wonderful location for intimate family portraits. The natural trails and wide-open park spaces offer plenty of room for kids to run and play, ensuring we capture those genuine, unposed smiles in a beautiful setting.",
+    wikipedia: "https://en.wikipedia.org/wiki/Trophy_Club,_Texas",
+    wikidata: "https://www.wikidata.org/wiki/Q975324",
+    heroImage: "/images/optimized/bento-6.webp"
+  },
+  "argyle": {
+    vibe: "Rural & Pastoral",
+    narrative: "Argyle offers a stunning slice of wide-open Texas, with its rolling pastures, rustic fences, and rural charm. It's an especially gorgeous location for maternity photography, where the expansive, golden-hour fields provide a breathtaking, earthy canvas to celebrate your growing family.",
+    wikipedia: "https://en.wikipedia.org/wiki/Argyle,_Texas",
+    wikidata: "https://www.wikidata.org/wiki/Q975325",
+    heroImage: "/images/optimized/bento-7.webp"
   }
 };

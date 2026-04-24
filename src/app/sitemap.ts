@@ -14,7 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'colleyville',
     'highland-park',
     'prosper',
-    'dallas'
+    'dallas',
+    'highland-village',
+    'trophy-club',
+    'argyle'
   ];
 
   // Main pages
@@ -60,6 +63,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/flower-mound-mini-sessions`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/newborn-baby-photographer-flower-mound`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
     },
   ];
 
@@ -112,6 +127,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/blog/spring-2026-booking-announcement`,
       lastModified: new Date('2026-01-23'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/grapevine-botanical-gardens-maternity-guide`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/fall-mini-sessions-dfw`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/stone-creek-park-flower-mound-photography`,
+      lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },

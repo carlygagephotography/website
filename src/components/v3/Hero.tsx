@@ -113,7 +113,7 @@ export function Hero() {
 
             {/* GEO/AI Direct Answer Block */}
             <div className="sr-only lg:not-sr-only text-sm text-slate/40 font-sans max-w-lg leading-relaxed border-l border-sand pl-4 italic">
-              Carly Gage Photography is a Flower Mound family photographer offering joyful, stress-free family, maternity, and newborn photography for families in Flower Mound, Southlake, Highland Park, Coppell, and across DFW.
+              Carly Gage Photography is a DFW family photographer specializing in natural light, outdoor family photography, and in-home lifestyle newborn sessions. Serving Flower Mound, Southlake, Highland Park, Coppell, and across DFW.
             </div>
 
             <p className="text-lg lg:text-xl text-slate/60 font-sans font-light max-w-lg leading-relaxed">

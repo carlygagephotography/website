@@ -22,7 +22,7 @@ const cityData: Record<string, {
   "flower-mound": {
     name: "Flower Mound",
     displayName: "Flower Mound",
-    description: "Based right here in Flower Mound, I love capturing families in our beautiful local parks and natural spaces. From native grasses and oak groves to serene lake settings near Grapevine Lake, Flower Mound offers beautiful backdrops for authentic family moments.",
+    description: "As a local photographer in Flower Mound TX, I love capturing families in our beautiful local parks and natural spaces. From native grasses and oak groves to serene lake settings near Grapevine Lake, Flower Mound offers beautiful backdrops for authentic family moments.",
     locations: [
       { name: "Grapevine Lake Parks", description: "Beautiful waterfront settings with tall grasses and natural light perfect for golden hour sessions." },
       { name: "Murrell Park", description: "Spacious park with open fields, trees, and trails ideal for active families and children." },
@@ -102,7 +102,7 @@ const cityData: Record<string, {
   "grapevine": {
     name: "Grapevine",
     displayName: "Grapevine",
-    description: "Serving Grapevine families with relaxed, fun photography sessions. Grapevine's beautiful lake settings and charming community spaces provide perfect backdrops for family memories.",
+    description: "Serving Grapevine families with relaxed, fun photography sessions, including dedicated newborn photography. Grapevine's beautiful lake settings and charming community spaces provide perfect backdrops for family memories.",
     locations: [
       { name: "Grapevine Lake Parks", description: "Stunning waterfront locations with tall grasses, natural light, and beautiful sunsets perfect for golden hour sessions." },
       { name: "Grapevine Botanical Gardens", description: "Well-maintained gardens with diverse backdrops and seasonal beauty for elegant family portraits." },
@@ -112,6 +112,7 @@ const cityData: Record<string, {
     faqs: [
       { q: "What makes Grapevine lake sessions special?", a: "Grapevine Lake offers beautiful waterfront settings that are perfect for golden hour photography. The natural light reflecting off the water creates stunning backdrops." },
       { q: "Are lake sessions safe for kids?", a: "Absolutely! I choose safe, accessible locations with plenty of space away from the water's edge. Safety is always my top priority." },
+      { q: "Do you offer newborn photography in Grapevine?", a: "Yes! I offer dedicated newborn sessions for Grapevine families. You can learn more about my approach on my <a href=\"/newborn-baby-photographer-flower-mound\" class=\"underline hover:text-moss\">newborn photography page</a>." },
       { q: "Can we do sessions near Grapevine's wineries or historic areas?", a: "I can discuss specific locations that match your vision. Let's talk about what makes your family unique during our consultation." },
     ],
   },
@@ -198,6 +199,54 @@ const cityData: Record<string, {
       { q: "How far in advance should we book a Dallas session?", a: "I recommend booking 4-6 weeks in advance, especially during fall when schedules fill up quickly. Weekend golden hour slots in popular Dallas locations go fast!" },
     ],
   },
+  "highland-village": {
+    name: "Highland Village",
+    displayName: "Highland Village",
+    description: "Serving Highland Village families with authentic, joyful photography that captures your family's unique story. Highland Village's quiet lakeside parks and nature trails offer peaceful backdrops for beautiful portraits.",
+    locations: [
+      { name: "Highland Village City Park", description: "Spacious community park with natural areas and open fields perfect for active families." },
+      { name: "Doubletree Ranch Park", description: "Beautiful park featuring walking trails, natural landscapes, and great open spaces." },
+      { name: "The Shops at Highland Village", description: "More urban, architectural backdrops perfect for a polished family session." },
+      { name: "Lewisville Lake Shoreline", description: "Waterfront access offering beautiful golden hour light and natural beach-like settings." }
+    ],
+    faqs: [
+      { q: "What is the best time for photos at Lewisville Lake?", a: "Golden hour, the hour just before sunset, provides the best natural lighting over the water." },
+      { q: "Do you shoot in Highland Village year-round?", a: "Yes! Every season brings something special to Highland Village's natural spaces." },
+      { q: "What if my kids are wild during the session?", a: "That's exactly what I'm hoping for. I specialize in capturing the real energy of your family without stiff posing." }
+    ]
+  },
+  "trophy-club": {
+    name: "Trophy Club",
+    displayName: "Trophy Club",
+    description: "Serving Trophy Club families with relaxed, fun photography sessions. Trophy Club's expansive green spaces and close-knit community feel make it a wonderful location for intimate family portraits.",
+    locations: [
+      { name: "Trophy Club Park", description: "Expansive green spaces and natural trails perfect for letting kids run and play." },
+      { name: "Indian Creek Area", description: "Beautiful, mature trees and natural light offering a quiet setting for family photos." },
+      { name: "Trophy Club Trails", description: "Wooded trails providing a rustic, authentic North Texas feel." },
+      { name: "Neighborhood Parks", description: "Intimate and quiet spaces, perfect for keeping young children focused." }
+    ],
+    faqs: [
+      { q: "How long does a session in Trophy Club usually take?", a: "A standard family session usually takes about an hour, keeping it efficient and fun for the kids." },
+      { q: "Can we bring our dogs to Trophy Club Park?", a: "Absolutely. I love incorporating furry family members into the photos." },
+      { q: "What should we wear for outdoor Trophy Club photos?", a: "I provide all my clients with a detailed style guide once they book, helping coordinate the perfect outfits for the setting." }
+    ]
+  },
+  "argyle": {
+    name: "Argyle",
+    displayName: "Argyle",
+    description: "As a maternity photographer serving Argyle TX, I offer stunning, natural light maternity and family photography. Argyle's wide-open pastures, rustic fences, and rural charm provide breathtaking, earthy backdrops.",
+    locations: [
+      { name: "Argyle Pastures", description: "Wide open fields that catch the golden hour light perfectly for maternity and family sessions." },
+      { name: "Harvest Community Areas", description: "Beautifully landscaped community areas that offer a mix of natural and modern rustic backdrops." },
+      { name: "Rustic Fence Lines", description: "Classic Texas backdrops that add character and texture to your portraits." },
+      { name: "Private Argyle Land", description: "I can also come to your property if you have land in Argyle for a truly personalized session." }
+    ],
+    faqs: [
+      { q: "Is Argyle a good location for maternity photos?", a: "Yes! The wide open fields and golden light in Argyle make for absolutely stunning, dramatic maternity portraits." },
+      { q: "Do you offer wardrobe guidance for maternity sessions?", a: "I provide styling advice to ensure you feel beautiful, comfortable, and coordinated with your family." },
+      { q: "Can we take photos at our own ranch in Argyle?", a: "I love shooting on private property! It adds a deeply personal touch to your family's story." }
+    ]
+  }
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

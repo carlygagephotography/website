@@ -7,13 +7,13 @@ import { Footer } from "@/components/v3/Footer";
 
 export const metadata: Metadata = {
   title: "Best Photo Locations in Flower Mound, TX | Local Photographer's Guide 2026",
-  description: "Discover the top 8 photo locations in Flower Mound, Texas for stunning family portraits. A local photographer's insider guide to Murrell Park, Grapevine Lake, Heritage Park, and hidden gems.",
+  description: "Discover the top 9 photo locations in Flower Mound, Texas for stunning family portraits. A local photographer's insider guide to Murrell Park, Grapevine Lake, Heritage Park, and hidden gems.",
   alternates: {
     canonical: "/blog/best-photo-locations-flower-mound",
   },
   openGraph: {
     title: "Best Photo Locations in Flower Mound, TX | Local Photographer's Guide",
-    description: "A Flower Mound photographer's insider guide to the 8 best locations for family portraits, engagement photos, and senior pictures.",
+    description: "A Flower Mound photographer's insider guide to the 9 best locations for family portraits, engagement photos, and senior pictures.",
     url: "https://carlygage.com/blog/best-photo-locations-flower-mound",
     type: "article",
     publishedTime: "2026-02-05T00:00:00Z",
@@ -33,7 +33,7 @@ export default function FlowerMoundLocationsPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Best Photo Locations in Flower Mound, TX: A Local Photographer's Guide",
-    "description": "Discover the top 8 photo locations in Flower Mound, Texas for stunning family portraits, engagement photos, and senior pictures.",
+    "description": "Discover the top 9 photo locations in Flower Mound, Texas for stunning family portraits, engagement photos, and senior pictures.",
     "image": "https://carlygage.com/images/blog/flower-mound-locations-hero.jpg",
     "datePublished": "2026-02-05T00:00:00Z",
     "dateModified": "2026-02-05T00:00:00Z",
@@ -138,6 +138,16 @@ export default function FlowerMoundLocationsPost() {
       description: "I've cultivated relationships with local property owners who allow me to use their land for photo sessions. Rolling pastures, rustic fences, wildflower fields—these private locations offer backdrops you won't see anywhere else on Instagram.",
       tips: "Ask about private location access when booking. Availability varies by season.",
       mapUrl: null
+    },
+    {
+      name: "Stone Creek Park",
+      address: "1400 Fuqua Dr, Flower Mound, TX 75028",
+      vibe: "Intimate & Rocky",
+      bestFor: "Small families, Couples",
+      bestTime: "Late afternoon",
+      description: "A gorgeous hidden gem featuring a beautiful creek bed, large boulders, and lush tree canopy. The rocky creek bed provides a unique, textured backdrop that feels almost like the Hill Country right here in Flower Mound.",
+      tips: "The creek bed can be uneven, so wear sensible shoes for walking down. It's best after a few dry days so the rocks aren't slippery.",
+      mapUrl: "https://maps.google.com/?q=Stone+Creek+Park+Flower+Mound"
     }
   ];
 
