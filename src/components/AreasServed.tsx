@@ -31,10 +31,17 @@ export function AreasServed() {
           <ul className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {suburbs.map((suburb) => {
               const slug = suburb.toLowerCase().replace(/\s+/g, "-");
+              // Flower Mound is the home city — the homepage owns that term, and
+              // /locations/flower-mound-family-photographer 301-redirects to /.
+              // Link straight to / to avoid an internal redirect hop.
+              const href =
+                slug === "flower-mound"
+                  ? "/"
+                  : `/locations/${slug}-family-photographer`;
               return (
                 <li key={suburb}>
-                  <Link 
-                    href={`/locations/${slug}-family-photographer`}
+                  <Link
+                    href={href}
                     className="text-[11px] uppercase tracking-[0.3em] text-slate/60 hover:text-moss transition-colors duration-300 block py-2 border-b border-sand/20 hover:border-moss/40"
                   >
                     {suburb}

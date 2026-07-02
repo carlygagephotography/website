@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Navigation } from "@/components/v3/Navigation";
@@ -249,16 +250,27 @@ const cityData: Record<string, {
   }
 };
 
+// Only the known city slugs are valid. dynamicParams=false makes any other
+// /locations/<x>-family-photographer URL return a real 404 instead of a
+// soft-404 (HTTP 200 "Location Not Found" shell that Google can index).
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return Object.keys(cityData).map((slug) => ({
+    city: `${slug}-family-photographer`,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city } = await params;
   const citySlug = city.replace(/-family-photographer$/, "");
   const cityInfo = cityData[citySlug];
-  const vibeInfo = CITY_VIBES[citySlug];
-  
+
   if (!cityInfo) {
+    // Unknown slugs are blocked by dynamicParams=false; this is a safety net.
     return {
       title: `Family Photographer | Carly Gage Photography`,
-      description: `Dallas family photographer serving families throughout the DFW metroplex.`,
+      robots: { index: false, follow: false },
     };
   }
 
@@ -289,19 +301,8 @@ export default async function LocationPage({ params }: Props) {
   const vibeInfo = CITY_VIBES[citySlug];
 
   if (!cityInfo) {
-    return (
-      <main className="min-h-screen bg-bone">
-        <Navigation />
-        <div className="pt-32 pb-20 px-4 md:px-16">
-          <div className="max-w-[1200px] mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-serif text-slate mb-4">Location Not Found</h1>
-            <p className="text-lg text-slate/60 mb-8">I couldn't find information for this location.</p>
-            <Link href="/" className="text-slate hover:text-moss underline">Return Home</Link>
-          </div>
-        </div>
-        <Footer />
-      </main>
-    );
+    // Blocked by dynamicParams=false; safety net returns a real 404.
+    notFound();
   }
 
   const cityName = cityInfo.displayName;

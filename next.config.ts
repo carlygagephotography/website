@@ -2,6 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  async redirects() {
+    return [
+      // Exact-match keyword slug that used to 307 to the WRONG (baby-announcement)
+      // page. Point it permanently at the real newborn service page.
+      {
+        source: "/flower-mound-newborn-photographer",
+        destination: "/newborn-baby-photographer-flower-mound",
+        permanent: true,
+      },
+    ];
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

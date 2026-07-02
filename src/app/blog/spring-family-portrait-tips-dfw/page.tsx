@@ -338,7 +338,7 @@ export default function SpringTipsPost() {
                 </div>
                 <div>
                   <h4 className="font-display text-lg text-slate mb-2">What if my kids don't cooperate?</h4>
-                  <p className="text-sm text-slate/70">That's literally my specialty. <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline">Read about my approach</Link> to working with kids of all ages (and temperaments).</p>
+                  <p className="text-sm text-slate/70">That's literally my specialty. <Link href="/" className="text-moss hover:text-moss/80 underline">Read about my approach</Link> to working with kids of all ages (and temperaments).</p>
                 </div>
               </div>
 
@@ -369,7 +369,7 @@ export default function SpringTipsPost() {
                 </p>
               </Link>
               <Link
-                href="/locations/flower-mound-family-photographer"
+                href="/"
                 className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
               >
                 <h4 className="font-display text-lg text-slate mb-2 group-hover:text-moss transition-colors">
