@@ -6,17 +6,27 @@ import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { Logo } from "./Logo";
 
 const cities = [
-  { name: "Dallas", slug: "dallas" },
   { name: "Flower Mound", slug: "flower-mound" },
+  { name: "Highland Village", slug: "highland-village" },
   { name: "Southlake", slug: "southlake" },
-  { name: "Frisco", slug: "frisco" },
-  { name: "Highland Park", slug: "highland-park" },
-  { name: "Prosper", slug: "prosper" },
-  { name: "Colleyville", slug: "colleyville" },
   { name: "Grapevine", slug: "grapevine" },
-  { name: "McKinney", slug: "mckinney" },
   { name: "Coppell", slug: "coppell" },
+  { name: "Colleyville", slug: "colleyville" },
+  { name: "Argyle", slug: "argyle" },
+  { name: "Trophy Club", slug: "trophy-club" },
+  { name: "Frisco", slug: "frisco" },
   { name: "Plano", slug: "plano" },
+  { name: "McKinney", slug: "mckinney" },
+  { name: "Prosper", slug: "prosper" },
+  { name: "Highland Park", slug: "highland-park" },
+  { name: "Dallas", slug: "dallas" },
+];
+
+const sessions = [
+  { name: "Newborn & Baby", href: "/newborn-baby-photographer-flower-mound" },
+  { name: "Maternity", href: "/flower-mound-maternity-photographer" },
+  { name: "Baby Announcement", href: "/flower-mound-baby-announcement-photographer" },
+  { name: "Mini Sessions", href: "/flower-mound-mini-sessions" },
 ];
 
 export function Footer() {
@@ -38,11 +48,9 @@ export function Footer() {
               Friendly Flower Mound family photographer capturing real moments and genuine joy. Based in Flower Mound, serving families in Southlake, Highland Park, Coppell, and across DFW.
             </p>
             <div className="flex gap-6 md:gap-8 pt-2 md:pt-4">
-               {["Instagram", "Pinterest", "Facebook"].map(social => (
-                 <a key={social} href="#" className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 hover:text-slate transition-colors border-b border-transparent hover:border-slate/20 pb-1">
-                    {social}
-                 </a>
-               ))}
+               <a href="https://www.instagram.com/carlygage" target="_blank" rel="noopener noreferrer" className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] text-slate/40 hover:text-slate transition-colors border-b border-transparent hover:border-slate/20 pb-1">
+                  Instagram
+               </a>
             </div>
           </div>
 
@@ -52,6 +60,9 @@ export function Footer() {
              <div className="space-y-2 md:space-y-3">
                <a href="mailto:carlygagephotography@gmail.com" className="font-serif text-xl md:text-2xl lg:text-3xl text-slate hover:text-moss transition-colors duration-500 block break-all">
                  carlygagephotography@gmail.com
+               </a>
+               <a href="tel:+12144228050" className="font-serif text-lg md:text-xl text-slate hover:text-moss transition-colors duration-500 block">
+                 (214) 422-8050
                </a>
                <p className="font-sans text-slate/40 font-light text-xs md:text-sm">Flower Mound, Texas • Serving DFW</p>
              </div>
@@ -64,6 +75,24 @@ export function Footer() {
              </button>
           </div>
 
+        </div>
+
+        {/* Sessions Bar */}
+        <div className="py-8 md:py-12 border-t border-sand/50">
+           <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] md:tracking-[0.6em] text-slate/30 font-bold min-w-fit">Sessions</span>
+              <div className="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-2 md:gap-y-3">
+                 {sessions.map(session => (
+                   <Link
+                     key={session.href}
+                     href={session.href}
+                     className="text-[10px] md:text-[11px] font-serif italic text-slate/50 hover:text-moss transition-colors"
+                   >
+                      {session.name}
+                   </Link>
+                 ))}
+              </div>
+           </div>
         </div>
 
         {/* SEO Location Bar */}
@@ -107,7 +136,7 @@ export function Footer() {
             <div className="flex gap-8 text-[9px] uppercase tracking-[0.4em] text-slate/40">
               <span className="hover:text-slate cursor-pointer transition-colors">Privacy</span>
               <span className="hover:text-slate cursor-pointer transition-colors">Terms</span>
-              <span className="hover:text-slate cursor-pointer transition-colors">Sitemap</span>
+              <a href="/sitemap.xml" className="hover:text-slate transition-colors">Sitemap</a>
             </div>
           </div>
           <div className="pt-6 border-t border-sand/20 flex flex-col md:flex-row justify-between items-center gap-4">
