@@ -247,6 +247,54 @@ const cityData: Record<string, {
       { q: "Do you offer wardrobe guidance for maternity sessions?", a: "I provide styling advice to ensure you feel beautiful, comfortable, and coordinated with your family." },
       { q: "Can we take photos at our own ranch in Argyle?", a: "I love shooting on private property! It adds a deeply personal touch to your family's story." }
     ]
+  },
+  "copper-canyon": {
+    name: "Copper Canyon",
+    displayName: "Copper Canyon",
+    description: "Serving Copper Canyon families with relaxed, natural photography set against some of the most beautiful rural scenery in the area. Copper Canyon's open pastures and golden-hour light make it a favorite for maternity and family sessions just north of Flower Mound.",
+    locations: [
+      { name: "Open Pastures & Fields", description: "Wide, rural fields and split-rail fences that glow at sunset—a stunning, uncrowded backdrop, especially for maternity sessions." },
+      { name: "Tree-Lined Country Roads", description: "Quiet lanes framed by mature trees offering natural shade and a timeless, pastoral feel." },
+      { name: "Nearby Bartonville & Argyle", description: "Just minutes away, more open ranch-style settings for that classic Texas golden-hour look." },
+      { name: "At-Home Sessions", description: "Relaxed lifestyle sessions in your own Copper Canyon home and yard, perfect for newborns and young families." }
+    ],
+    faqs: [
+      { q: "Do you photograph maternity sessions in Copper Canyon?", a: "Yes—Copper Canyon's open, golden fields are some of my favorite maternity backdrops in the whole area. It's a beautiful, private setting just north of Flower Mound." },
+      { q: "What's the best time of day for photos in Copper Canyon?", a: "Golden hour, the hour before sunset, is magical here—the low light across the open fields is exactly what makes Copper Canyon so special. In summer, early morning is a comfortable alternative." },
+      { q: "How far is Copper Canyon from your Flower Mound base?", a: "Copper Canyon is just north of Flower Mound, so I photograph there regularly and it's well within my core service area." }
+    ]
+  },
+  "lewisville": {
+    name: "Lewisville",
+    displayName: "Lewisville",
+    description: "Serving Lewisville families with authentic, stress-free photography. From the shoreline of Lewisville Lake to the trails of the LLELA nature preserve and the charm of Old Town, Lewisville offers a wonderful range of natural backdrops for family, maternity, and newborn sessions.",
+    locations: [
+      { name: "Lewisville Lake Shoreline", description: "Wide-open water views and tall grasses that catch beautiful golden-hour light." },
+      { name: "LLELA Nature Preserve", description: "Wooded trails and bottomland forest for organic, earthy family portraits." },
+      { name: "Old Town Lewisville", description: "Charming historic streets and textured backdrops for a more urban, editorial feel." },
+      { name: "Central & Neighborhood Parks", description: "Well-kept community green spaces ideal for relaxed sessions with young kids." }
+    ],
+    faqs: [
+      { q: "Where do you like to photograph in Lewisville?", a: "Lewisville Lake and the LLELA nature preserve are gorgeous for natural sessions, while Old Town offers a fun, textured backdrop. I'll help you pick the spot that fits your family's style." },
+      { q: "Do you offer newborn sessions in Lewisville?", a: "Yes—I offer in-home lifestyle newborn sessions throughout Lewisville and the surrounding area, plus outdoor family, maternity, and mini sessions." },
+      { q: "How far in advance should I book a Lewisville session?", a: "Four to six weeks is ideal, especially for fall. Lewisville is right next to my Flower Mound base, so availability is generally good year-round." }
+    ]
+  },
+  "lantana": {
+    name: "Lantana",
+    displayName: "Lantana",
+    description: "Serving Lantana families with warm, relaxed photography close to home. Lantana's peaceful greenbelts and tree-lined streets—plus the open fields of neighboring Argyle and Copper Canyon—make for beautiful, comfortable family sessions just minutes from Flower Mound.",
+    locations: [
+      { name: "Lantana Greenbelts & Parks", description: "Tidy neighborhood green spaces and trails perfect for easy, close-to-home family sessions." },
+      { name: "Nearby Argyle Fields", description: "Open, golden pastures just minutes away for that wide-open, sun-drenched look." },
+      { name: "Copper Canyon Countryside", description: "Rural, pastoral backdrops nearby, especially beautiful for maternity and golden-hour sessions." },
+      { name: "At-Home Sessions", description: "Comfortable lifestyle sessions in your own Lantana home, ideal for newborns and busy families." }
+    ],
+    faqs: [
+      { q: "Do you serve the Lantana community?", a: "Absolutely—Lantana is just minutes from my Flower Mound base, so I photograph families there regularly within my core service area." },
+      { q: "Where are the best photo spots near Lantana?", a: "Lantana's own greenbelts are lovely, and the open fields of Argyle and Copper Canyon nearby are stunning at golden hour, especially for maternity sessions." },
+      { q: "What types of sessions do you offer in Lantana?", a: "Family, maternity, newborn, baby announcement, and seasonal mini sessions—all available throughout Lantana and the surrounding area." }
+    ]
   }
 };
 
@@ -512,9 +560,9 @@ export default async function LocationPage({ params }: Props) {
                 {cityInfo.locations.map((location, i) => (
                   <div key={i} className="space-y-4 p-6 border border-sand/30 rounded-sm bg-bone/30 hover:border-moss transition-colors group">
                     <div className="relative aspect-video rounded-sm overflow-hidden mb-4">
-                      <Image 
+                      <Image
                         src={`/images/bento-${(i % 7) + 1}.jpg`}
-                        alt={location.name}
+                        alt={`Family photography by Carly Gage in ${cityName}`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />

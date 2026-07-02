@@ -184,5 +184,26 @@ export const CITY_VIBES: Record<string, {
     wikipedia: "https://en.wikipedia.org/wiki/Argyle,_Texas",
     wikidata: "https://www.wikidata.org/wiki/Q975325",
     heroImage: "/images/optimized/bento-7.webp"
+  },
+  "copper-canyon": {
+    vibe: "Rural & Golden",
+    narrative: "Copper Canyon is a hidden gem for photography—a quiet, rural pocket just north of Flower Mound where open pastures, mature trees, and split-rail fences glow at golden hour. It's an especially breathtaking setting for maternity and family sessions, offering that wide-open, sun-drenched Texas feel without driving far from home.",
+    wikipedia: "https://en.wikipedia.org/wiki/Copper_Canyon,_Texas",
+    wikidata: "",
+    heroImage: "/images/optimized/bento-2.webp"
+  },
+  "lewisville": {
+    vibe: "Lakeside & Green",
+    narrative: "Lewisville pairs the wide shoreline of Lewisville Lake with leafy nature preserves and the charm of Old Town, giving families a wonderful range of backdrops. From the trails of the LLELA nature preserve to the water's edge at sunset, it's a relaxed, green setting that suits everything from newborn milestones to big extended-family sessions.",
+    wikipedia: "https://en.wikipedia.org/wiki/Lewisville,_Texas",
+    wikidata: "",
+    heroImage: "/images/optimized/bento-5.webp"
+  },
+  "lantana": {
+    vibe: "Peaceful & Manicured",
+    narrative: "Lantana's tree-lined streets, tidy greenbelts, and neighborhood parks make it a calm, welcoming backdrop for family portraits, with the open fields of nearby Argyle and Copper Canyon just minutes away for that golden-hour glow. It's an easy, comfortable setting for families who want beautiful images close to home.",
+    wikipedia: "https://en.wikipedia.org/wiki/Lantana,_Texas",
+    wikidata: "",
+    heroImage: "/images/optimized/bento-3.webp"
   }
 };

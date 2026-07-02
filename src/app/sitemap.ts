@@ -24,7 +24,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'dallas',
     'highland-village',
     'trophy-club',
-    'argyle'
+    'argyle',
+    'lewisville',
+    'lantana',
+    'copper-canyon'
   ];
 
   // Main pages
