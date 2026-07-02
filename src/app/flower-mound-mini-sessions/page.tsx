@@ -58,8 +58,27 @@ const relatedSessions = [
   },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Mini Session Photography",
+  "name": "Flower Mound Mini Sessions",
+  "url": "https://carlygage.com/flower-mound-mini-sessions",
+  "provider": { "@id": "https://carlygage.com" },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.0146, "longitude": -97.097 },
+    "geoRadius": "64373",
+  },
+};
+
 export default function FlowerMoundMiniSessionsPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
     <PortfolioGallery
       title="Flower Mound Mini Sessions"
       subtitle="Seasonal & Milestone Photographer"
@@ -68,5 +87,6 @@ export default function FlowerMoundMiniSessionsPage() {
       category="Flower Mound Mini Sessions"
       relatedSessions={relatedSessions}
     />
+    </>
   );
 }

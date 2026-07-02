@@ -3,32 +3,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
-import { ICP_CONTENT } from "@/data/icp-content";
+import { homepageFaqs } from "@/data/homepage-faq";
 
-// Convert ICP objections to FAQ format + add logistics questions
-const icpFaqs = ICP_CONTENT.flatMap(persona => 
-  persona.objections.map(obj => ({
-    question: obj.objection,
-    answer: obj.solutionNarrative
-  }))
-);
-
-const logisticsFaqs = [
-  {
-    question: "Do you offer Mini Sessions year-round?",
-    answer: "I offer Mini Sessions on specific dates each season, typically in Spring and Fall when the Texas weather and natural light are at their most beautiful. These limited sessions fill up quickly, so I recommend reaching out as soon as dates are announced to secure your preferred time slot."
-  },
-  {
-    question: "Do you serve other areas like Frisco, Southlake, or Highland Park?",
-    answer: "Yes! While I'm based in Flower Mound, I serve the entire DFW metroplex including Southlake, Frisco, Plano, Highland Park, McKinney, Prosper, Coppell, Colleyville, and Grapevine. I carefully select locations in each area that provide the best backdrops for your family's unique style and vision."
-  }
-];
-
-// Combine ICP-driven FAQs with logistics, prioritizing the most common objections
-const faqs = [
-  ...icpFaqs.slice(0, 5), // First 5 ICP objections
-  ...logisticsFaqs
-];
+// Single source of truth shared with the homepage FAQPage JSON-LD (page.tsx).
+const faqs = homepageFaqs;
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

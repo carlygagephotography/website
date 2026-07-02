@@ -17,10 +17,10 @@ const playfair = Playfair_Display({
   preload: true,
 });
 
+// Sitewide business entity only. Homepage-scoped nodes (WebPage, FAQPage) live
+// on the homepage (src/app/page.tsx) so they don't get emitted on every page.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
   "@type": "PhotographyBusiness",
   "name": "Carly Gage Photography",
   "image": "https://carlygage.com/images/hero-stephanie-new.webp",
@@ -31,7 +31,6 @@ const jsonLd = {
   "description": "Flower Mound family photographer creating joyful, stress-free family and newborn portraits for families in Flower Mound, Southlake, Highland Park, Coppell, and across DFW.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "",
     "addressLocality": "Flower Mound",
     "addressRegion": "TX",
     "postalCode": "75028",
@@ -52,66 +51,12 @@ const jsonLd = {
     { "@type": "City", "name": "Coppell", "sameAs": "https://en.wikipedia.org/wiki/Coppell,_Texas" },
     { "@type": "City", "name": "Colleyville", "sameAs": "https://en.wikipedia.org/wiki/Colleyville,_Texas" }
   ],
+  // Verified same-entity profiles (Google Business Profile, Yelp, Instagram).
+  // Facebook omitted until a verified business page URL is confirmed.
   "sameAs": [
-    "https://www.instagram.com/carlygagephotography",
-    "https://www.facebook.com/carlygagephotography"
-  ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What can we expect from our family portrait session?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Expect a relaxed, organic experience focused on genuine connection. I move beyond stiff posing to capture the natural interactions that define your family's unique story."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which areas of North Texas do you serve?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "I primarily serve the premier communities of DFW, including Southlake, Highland Park, Frisco, Flower Mound, Prosper, Colleyville, Grapevine, McKinney, Coppell, and Plano."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide styling for the whole family?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Every session includes a personalized styling consultation where I provide professional wardrobe tips and expert advice to help you coordinate colors and textures that photograph beautifully."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are you a family photographer near me?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Based in Flower Mound, TX, I serve families all across the Dallas-Fort Worth metroplex. If you live in DFW, I am likely a photographer near you and would love to travel to your area or meet at one of my favorite local spots."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you offer newborn and family photography?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! I love continuing the journey with my clients. I offer maternity, newborn, and family photography to capture your family through all its seasons."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://carlygage.com/#webpage",
-      "url": "https://carlygage.com/",
-      "name": "Flower Mound Family Photographer | Carly Gage Photography",
-      "datePublished": "2024-01-01T00:00:00+00:00",
-      "dateModified": new Date().toISOString(),
-      "publisher": { "@id": "https://carlygage.com" },
-      "description": "Flower Mound family photographer creating joyful, stress-free family and newborn portraits for families across Flower Mound, Southlake, Highland Park, Coppell, and DFW."
-    }
+    "https://www.google.com/maps?cid=1566287165136920608",
+    "https://www.yelp.com/biz/carly-gage-photography-flower-mound",
+    "https://www.instagram.com/carlygage"
   ]
 };
 

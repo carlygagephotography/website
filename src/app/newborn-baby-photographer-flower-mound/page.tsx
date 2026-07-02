@@ -61,8 +61,27 @@ const relatedSessions = [
   },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Newborn Photography",
+  "name": "Flower Mound Newborn & Baby Photographer",
+  "url": "https://carlygage.com/newborn-baby-photographer-flower-mound",
+  "provider": { "@id": "https://carlygage.com" },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.0146, "longitude": -97.097 },
+    "geoRadius": "64373",
+  },
+};
+
 export default function NewbornBabyPhotographerPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
     <PortfolioGallery
       title="Newborn & Baby Photography"
       subtitle="Flower Mound Newborn Photographer"
@@ -71,5 +90,6 @@ export default function NewbornBabyPhotographerPage() {
       category="Flower Mound Newborn Photographer"
       relatedSessions={relatedSessions}
     />
+    </>
   );
 }

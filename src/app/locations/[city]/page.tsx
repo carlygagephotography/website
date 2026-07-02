@@ -286,6 +286,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${cityName} Family Photographer | Carly Gage Photography`,
       description: `${nearbyBase} with authentic, joyful family photography and a relaxed session experience.`,
+      url: `https://carlygage.com/locations/${citySlug}-family-photographer`,
     },
     other: {
       "geo.region": "US-TX",
@@ -618,9 +619,12 @@ export default async function LocationPage({ params }: Props) {
                     </div>
                   </summary>
                   <div className="pt-2 pb-6 px-1">
-                    <p className="text-slate/60 font-sans font-light leading-relaxed">
-                      {faq.a}
-                    </p>
+                    {/* Answers are hardcoded, trusted content and may contain a
+                        single inline link (e.g. Grapevine -> newborn page). */}
+                    <p
+                      className="text-slate/60 font-sans font-light leading-relaxed [&_a]:underline [&_a]:text-moss"
+                      dangerouslySetInnerHTML={{ __html: faq.a }}
+                    />
                   </div>
                 </details>
               ))}

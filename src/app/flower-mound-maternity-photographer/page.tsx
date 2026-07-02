@@ -61,8 +61,27 @@ const relatedSessions = [
   },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Maternity Photography",
+  "name": "Flower Mound Maternity Photographer",
+  "url": "https://carlygage.com/flower-mound-maternity-photographer",
+  "provider": { "@id": "https://carlygage.com" },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.0146, "longitude": -97.097 },
+    "geoRadius": "64373",
+  },
+};
+
 export default function FlowerMoundMaternityPhotographerPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
     <PortfolioGallery
       title="Flower Mound & DFW Maternity Photography"
       subtitle="Flower Mound Maternity Photographer"
@@ -71,5 +90,6 @@ export default function FlowerMoundMaternityPhotographerPage() {
       category="Flower Mound Maternity Photographer"
       relatedSessions={relatedSessions}
     />
+    </>
   );
 }

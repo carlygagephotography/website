@@ -15,7 +15,7 @@ const suburbs = [
 
 export function AreasServed() {
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-bone border-t border-sand/30">
+    <section id="locations" className="py-12 md:py-16 lg:py-24 bg-bone border-t border-sand/30">
       <div className="max-w-[1800px] mx-auto px-4 md:px-16">
         <div className="space-y-6 md:space-y-8 lg:space-y-12">
           <div className="space-y-3 md:space-y-4">

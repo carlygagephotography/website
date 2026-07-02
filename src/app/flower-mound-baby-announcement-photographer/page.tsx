@@ -60,8 +60,27 @@ const relatedSessions = [
   },
 ];
 
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Baby Announcement Photography",
+  "name": "Flower Mound Baby Announcement Photographer",
+  "url": "https://carlygage.com/flower-mound-baby-announcement-photographer",
+  "provider": { "@id": "https://carlygage.com" },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.0146, "longitude": -97.097 },
+    "geoRadius": "64373",
+  },
+};
+
 export default function FlowerMoundBabyAnnouncementPhotographerPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
     <PortfolioGallery
       title="Flower Mound Baby Announcement Photography"
       subtitle="Flower Mound Baby Announcement Photographer"
@@ -70,5 +89,6 @@ export default function FlowerMoundBabyAnnouncementPhotographerPage() {
       category="Flower Mound Baby Announcement Photographer"
       relatedSessions={relatedSessions}
     />
+    </>
   );
 }
