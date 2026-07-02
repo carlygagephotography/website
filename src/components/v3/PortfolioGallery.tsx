@@ -24,6 +24,9 @@ interface PortfolioGalleryProps {
     image: string;
     alt: string;
   }>;
+  /** Optional long-form content (prose, venues, FAQ, testimonial) rendered
+      below the gallery. Passed from the page as a server-rendered slot. */
+  content?: React.ReactNode;
 }
 
 export function PortfolioGallery({
@@ -32,7 +35,8 @@ export function PortfolioGallery({
   description,
   images,
   category,
-  relatedSessions
+  relatedSessions,
+  content
 }: PortfolioGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
@@ -304,6 +308,9 @@ export function PortfolioGallery({
             </div>
           </div>
         )}
+
+        {/* Long-form content slot (SEO prose, venues, FAQ, testimonial) */}
+        {content}
 
         {/* Related Sessions */}
         <section className="py-12 md:py-24 px-4 md:px-16 bg-white border-t border-sand">
