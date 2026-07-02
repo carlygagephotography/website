@@ -83,8 +83,8 @@ export default function NewbornBabyPhotographerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
     <PortfolioGallery
-      title="Newborn & Baby Photography"
-      subtitle="Flower Mound Newborn Photographer"
+      title="Flower Mound Newborn & Baby Photographer"
+      subtitle="Serving Flower Mound & DFW"
       description="From the quiet, intimate moments of an in-home lifestyle newborn or Fresh 48 session to the joyful chaos of a first birthday cake smash, I specialize in documenting your baby's earliest milestones. Based in Flower Mound and serving the entire DFW metroplex, my approach to newborn and baby photography is unposed, organic, and driven by natural light, allowing your family's authentic connection to shine through."
       images={images}
       category="Flower Mound Newborn Photographer"
