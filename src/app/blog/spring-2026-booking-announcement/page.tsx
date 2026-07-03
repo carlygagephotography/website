@@ -228,7 +228,7 @@ export default function Spring2026BookingPost() {
                 </p>
               </Link>
               <Link 
-                href="/locations/flower-mound-family-photographer"
+                href="/"
                 className="group p-4 border border-sand rounded-sm hover:border-moss hover:bg-sand/20 transition-all"
               >
                 <h4 className="font-display text-lg text-slate mb-2 group-hover:text-moss transition-colors">

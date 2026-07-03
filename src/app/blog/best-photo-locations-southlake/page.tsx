@@ -249,7 +249,7 @@ export default function SouthlakeLocationsPost() {
               <div className="border-t border-sand pt-8 mt-12">
                 <h3 className="font-display text-xl text-slate mb-4">About the Author</h3>
                 <p className="text-sm">
-                  <strong>Carly Gage</strong> is a <Link href="/locations/southlake-family-photographer" className="text-moss hover:text-moss/80 underline">Southlake family photographer</Link> based in nearby Flower Mound. She serves families throughout the DFW metroplex including <Link href="/locations/dallas-family-photographer" className="text-moss hover:text-moss/80 underline">Dallas</Link>, <Link href="/locations/frisco-family-photographer" className="text-moss hover:text-moss/80 underline">Frisco</Link>, and <Link href="/locations/flower-mound-family-photographer" className="text-moss hover:text-moss/80 underline">Flower Mound</Link>.
+                  <strong>Carly Gage</strong> is a <Link href="/locations/southlake-family-photographer" className="text-moss hover:text-moss/80 underline">Southlake family photographer</Link> based in nearby Flower Mound. She serves families throughout the DFW metroplex including <Link href="/locations/dallas-family-photographer" className="text-moss hover:text-moss/80 underline">Dallas</Link>, <Link href="/locations/frisco-family-photographer" className="text-moss hover:text-moss/80 underline">Frisco</Link>, and <Link href="/" className="text-moss hover:text-moss/80 underline">Flower Mound</Link>.
                 </p>
               </div>
             </div>

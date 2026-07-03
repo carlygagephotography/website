@@ -15,13 +15,16 @@ export const ContextualCTA = ({ intent, cityName, className = "" }: ContextualCT
       case "wardrobe":
         return {
           text: "View Styling Tips",
-          href: "/#wardrobe",
+          // No dedicated /#wardrobe section exists; the homepage FAQ covers
+          // what-to-wear guidance, so send styling intent there.
+          href: "/#faq",
           subtext: "Personalized wardrobe advice for your family"
         };
       case "pricing":
         return {
           text: "View Investment Guide",
-          href: "/#pricing",
+          // No public pricing page; route to the inquiry form.
+          href: "/#contact",
           subtext: "Transparent pricing for family memories"
         };
       case "portfolio":

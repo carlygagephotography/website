@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "The ultimate guide to Fall mini sessions in DFW. What to expect, when to book, and how to get the most out of your 20-minute session.",
     url: "https://carlygage.com/blog/fall-mini-sessions-dfw",
     type: "article",
-    publishedTime: "2026-08-01T00:00:00Z",
+    publishedTime: "2026-04-24T00:00:00Z",
     images: [
       {
         url: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
@@ -35,8 +35,8 @@ export default function FallMiniSessionsDfwPost() {
     "headline": "Fall Mini Sessions DFW: The Ultimate Family Guide",
     "description": "Everything you need to know about booking Fall mini photo sessions in Dallas-Fort Worth. Outfit ideas, tips, and location insights.",
     "image": "https://carlygage.com/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
-    "datePublished": "2026-08-01T00:00:00Z",
-    "dateModified": "2026-08-01T00:00:00Z",
+    "datePublished": "2026-04-24T00:00:00Z",
+    "dateModified": "2026-04-24T00:00:00Z",
     "author": {
       "@type": "Person",
       "name": "Carly Gage",
@@ -104,7 +104,7 @@ export default function FallMiniSessionsDfwPost() {
             </span>
             <time className="flex items-center gap-2 text-[9px] uppercase tracking-[0.3em] text-slate/40 font-bold">
               <Calendar className="w-3 h-3" />
-              August 1, 2026
+              April 24, 2026
             </time>
             <span className="flex items-center gap-2 text-[9px] uppercase tracking-[0.3em] text-slate/40 font-bold">
               <MapPin className="w-3 h-3" />

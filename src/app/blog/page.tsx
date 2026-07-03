@@ -66,6 +66,30 @@ const blogPosts = [
     date: "January 23, 2026",
     image: "/images/blog/spring-2026-hero.jpg",
     category: "Studio Updates"
+  },
+  {
+    slug: "stone-creek-park-flower-mound-photography",
+    title: "Stone Creek Park Photography Guide: Flower Mound, TX",
+    excerpt: "A complete guide to family photos at Stone Creek Park in Flower Mound—the best spots along the rocky creek bed, lighting, and accessibility.",
+    date: "June 15, 2026",
+    image: "/images/blog/flower-mound-locations-hero.jpg",
+    category: "Location Guides"
+  },
+  {
+    slug: "grapevine-botanical-gardens-maternity-guide",
+    title: "Grapevine Botanical Gardens Maternity Guide: Best Photo Spots",
+    excerpt: "A complete maternity photography guide to the Grapevine Botanical Gardens—best photo spots, ideal timing, what to wear, and insider tips.",
+    date: "April 24, 2026",
+    image: "/images/blog/murrell-park-hero.jpg",
+    category: "Location Guides"
+  },
+  {
+    slug: "fall-mini-sessions-dfw",
+    title: "Fall Mini Sessions DFW: A Family Photographer's Guide",
+    excerpt: "Everything you need to know about booking Fall mini sessions in DFW—tips, outfit ideas, and location insights from a local family photographer.",
+    date: "April 24, 2026",
+    image: "/images/portfolio/shawna-eric-mini-session/Shawna-and-Eric-mini013.jpg",
+    category: "Session Guides"
   }
 ];
 
