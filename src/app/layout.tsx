@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { promoBanner } from "@/config/promo-banner";
+import { PromoMarquee } from "@/components/v3/PromoMarquee";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -113,8 +115,11 @@ export default function RootLayout({
         {/* Note: Image preload is handled automatically by Next.js Image component with priority prop */}
       </head>
       <body
-        className={`${geistSans.variable} ${playfair.variable} antialiased bg-grain`}
+        className={`${geistSans.variable} ${playfair.variable} antialiased bg-grain${
+          promoBanner.enabled ? " has-promo" : ""
+        }`}
       >
+        <PromoMarquee />
         {/* Google Analytics - Deferred to not block rendering */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4E5F8C8H7E"

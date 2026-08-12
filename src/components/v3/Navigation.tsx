@@ -30,7 +30,9 @@ export function Navigation() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn(
-        "fixed top-0 left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
+        // site-nav carries the promo-banner top offset (globals.css); it is
+        // top:0 unless the temporary promo marquee is enabled.
+        "site-nav fixed left-0 w-full z-[1000] transition-all duration-700 px-4 md:px-16",
         isScrolled 
           ? "py-3 md:py-4 bg-bone/80 backdrop-blur-xl border-b border-sand" 
           : "py-6 md:py-10 bg-transparent"

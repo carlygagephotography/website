@@ -14,6 +14,57 @@
   
   --border-subtle: rgba(61, 64, 67, 0.08);
   --border-strong: rgba(61, 64, 67, 0.15);
+
+  /* Height of the temporary promo marquee. 0 unless <body> has .has-promo,
+     so removing the banner restores the original layout exactly. */
+  --promo-h: 0px;
+}
+
+/* Promo marquee (src/config/promo-banner.ts) */
+body.has-promo {
+  --promo-h: 36px;
+  padding-top: var(--promo-h);
+}
+
+@media (min-width: 768px) {
+  body.has-promo {
+    --promo-h: 40px;
+  }
+}
+
+/* Fixed nav sits directly below the marquee. */
+.site-nav {
+  top: 0;
+}
+
+body.has-promo .site-nav {
+  top: var(--promo-h);
+}
+
+.promo-marquee__rail {
+  animation: promo-marquee 34s linear infinite;
+}
+
+.promo-marquee:hover .promo-marquee__rail {
+  animation-play-state: paused;
+}
+
+@keyframes promo-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Reduced motion: swap the scrolling track for a single centered message.
+   Hiding the track matters — left in place it is far wider than the viewport
+   and reads as text running off the edge of the screen. */
+@media (prefers-reduced-motion: reduce) {
+  .promo-marquee__rail {
+    display: none;
+  }
+
+  .promo-marquee__static {
+    display: flex;
+  }
 }
 
 @theme inline {
