@@ -7,8 +7,14 @@
 export const promoBanner = {
   enabled: true,
 
-  /** Where the banner sends people. */
-  href: "https://book.usesession.com/i/UZGvKNsfvj",
+  /**
+   * Where the banner sends people.
+   *
+   * An in-site link ("/#contact") scrolls to the inquiry form in the same tab.
+   * An absolute URL (e.g. a usesession booking page) opens in a new tab
+   * automatically — no component change needed to switch back.
+   */
+  href: "/#contact",
 
   /** Repeated across the scrolling track. Keep it short. */
   message: "Mini Sessions Now Booking",

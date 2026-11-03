@@ -1,6 +1,18 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { promoBanner } from "@/config/promo-banner";
+
+// An absolute URL leaves the site and opens in a new tab; anything else is an
+// in-site destination handled in the current tab.
+const isExternal = /^https?:\/\//i.test(promoBanner.href);
+
+// "/#contact" -> "#contact", so the homepage can smooth-scroll instead of
+// doing a full navigation. null for any other kind of link.
+const sectionHash = promoBanner.href.startsWith("/#")
+  ? promoBanner.href.slice(1)
+  : null;
 
 function Track() {
   return (
@@ -22,17 +34,27 @@ function Track() {
 }
 
 export function PromoMarquee() {
+  const pathname = usePathname();
+  const { handleAnchorClick } = useSmoothScroll();
+
   if (!promoBanner.enabled) return null;
+
+  // Already on the page that holds the section: scroll to it in place, the way
+  // the nav and sticky mobile bar do. Otherwise follow the full path.
+  const scrollsInPage = !isExternal && sectionHash !== null && pathname === "/";
+  const href = scrollsInPage ? sectionHash : promoBanner.href;
 
   return (
     <a
-      href={promoBanner.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={() => {
+      href={href}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      onClick={(e) => {
         window.gtag?.("event", "promo_banner_click", {
           link_url: promoBanner.href,
         });
+        if (scrollsInPage) {
+          handleAnchorClick(e, sectionHash);
+        }
       }}
       // Sits above the fixed nav (z-1000); the nav is offset by --promo-h.
       className="promo-marquee fixed top-0 left-0 z-[1100] flex h-[var(--promo-h)] w-full items-center overflow-hidden bg-slate text-bone no-underline"
